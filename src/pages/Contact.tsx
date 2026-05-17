@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { Linkedin, Mail, Phone, MapPin, Send, ArrowUpRight } from 'lucide-react'
+import { Linkedin, Mail, Phone, MapPin, Send, ArrowUpRight, AlertTriangle } from 'lucide-react'
 import { motion } from 'framer-motion'
+
+const WEB3FORMS_KEY = '2e721e4d-8afd-4911-ae66-5f2766eb52cb'
 
 const inputCls = `
   w-full px-5 py-3.5 text-sm text-ink placeholder-ink/35 font-medium
@@ -9,20 +11,55 @@ const inputCls = `
   transition-colors duration-200
 `
 
-const Contact: React.FC = () => {
-  const [form, setForm]           = useState({ name: '', email: '', context: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
+type Status = 'idle' | 'sending' | 'sent' | 'error'
 
-  const handleSubmit = (e: React.FormEvent) => {
+const Contact: React.FC = () => {
+  const [form, setForm]       = useState({ name: '', email: '', context: '', message: '', botcheck: '' })
+  const [status, setStatus]   = useState<Status>('idle')
+  const [errorMsg, setErrorMsg] = useState<string>('')
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`${form.context || 'Inquiry'} — from ${form.name || 'portfolio'}`)
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nTopic: ${form.context}\n\n${form.message}`,
-    )
-    window.location.href = `mailto:Noopur.trivedi@hotmail.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
-    setForm({ name: '', email: '', context: '', message: '' })
-    setTimeout(() => setSubmitted(false), 6000)
+    if (status === 'sending') return
+
+    // Honeypot: if filled, silently succeed (it's a bot)
+    if (form.botcheck) {
+      setStatus('sent')
+      return
+    }
+
+    setStatus('sending')
+    setErrorMsg('')
+
+    const payload = {
+      access_key: WEB3FORMS_KEY,
+      subject:    `[noopurtrivedi.com] ${form.context || 'New inquiry'} — from ${form.name}`,
+      from_name:  `${form.name} · via noopurtrivedi.com`,
+      replyto:    form.email,
+      name:       form.name,
+      email:      form.email,
+      topic:      form.context,
+      message:    form.message,
+    }
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(payload),
+      })
+      const result = await res.json()
+      if (result.success) {
+        setStatus('sent')
+        setForm({ name: '', email: '', context: '', message: '', botcheck: '' })
+      } else {
+        setStatus('error')
+        setErrorMsg(result.message || 'Something went wrong. Please email me directly.')
+      }
+    } catch {
+      setStatus('error')
+      setErrorMsg('Network issue — please try again, or email me directly.')
+    }
   }
 
   return (
@@ -51,21 +88,44 @@ const Contact: React.FC = () => {
 
           {/* Form */}
           <div className="lg:col-span-7">
-            {submitted ? (
+            {status === 'sent' ? (
               <motion.div
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="border border-accent/25 p-12 text-center bg-accent-soft/30"
               >
                 <div className="text-4xl mb-4">✦</div>
-                <h3 className="font-serif text-2xl font-medium text-ink mb-2">Message drafted.</h3>
-                <p className="text-ink/55 text-sm">
-                  Your email client should have opened with your note ready to send.
-                  If not, write to <a className="underline text-accent" href="mailto:Noopur.trivedi@hotmail.com">Noopur.trivedi@hotmail.com</a>.
+                <h3 className="font-serif text-2xl font-medium text-ink mb-2">Message sent.</h3>
+                <p className="text-ink/65 text-sm max-w-md mx-auto">
+                  Thank you — it’s landed in my inbox. I’ll be in touch within
+                  one business day. If something’s urgent, you can also reach
+                  me directly at{' '}
+                  <a className="underline text-accent" href="mailto:Noopur.trivedi@hotmail.com">
+                    Noopur.trivedi@hotmail.com
+                  </a>.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => setStatus('idle')}
+                  className="btn-outline mt-8 px-6 py-2.5 text-[12px]"
+                >
+                  Send another message
+                </button>
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                {/* Honeypot — hidden from real users, bots fill it */}
+                <input
+                  type="text"
+                  name="botcheck"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.botcheck}
+                  onChange={(e) => setForm({ ...form, botcheck: e.target.value })}
+                  className="hidden"
+                  aria-hidden="true"
+                />
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label className="section-label block mb-2">Name</label>
@@ -76,6 +136,7 @@ const Contact: React.FC = () => {
                       className={inputCls}
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      disabled={status === 'sending'}
                     />
                   </div>
                   <div>
@@ -87,6 +148,7 @@ const Contact: React.FC = () => {
                       className={inputCls}
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      disabled={status === 'sending'}
                     />
                   </div>
                 </div>
@@ -98,6 +160,7 @@ const Contact: React.FC = () => {
                     className={inputCls + ' cursor-pointer'}
                     value={form.context}
                     onChange={(e) => setForm({ ...form, context: e.target.value })}
+                    disabled={status === 'sending'}
                   >
                     <option value="">Select a topic…</option>
                     <option value="Founding / advisory conversation">Founding / advisory conversation</option>
@@ -122,15 +185,32 @@ const Contact: React.FC = () => {
                     style={{ resize: 'vertical' }}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
+                    disabled={status === 'sending'}
                   />
                 </div>
 
-                <button type="submit" className="btn-primary px-8 py-4 text-[13px] self-start">
-                  Send Message <Send className="ml-2 w-4 h-4" />
+                {status === 'error' && (
+                  <div className="flex items-start gap-3 p-4 border border-red-300/50 bg-red-50 text-[13px] text-red-900">
+                    <AlertTriangle className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                    <span>
+                      {errorMsg}{' '}
+                      <a href="mailto:Noopur.trivedi@hotmail.com" className="underline font-semibold">
+                        Noopur.trivedi@hotmail.com
+                      </a>
+                    </span>
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={status === 'sending'}
+                  className="btn-primary px-8 py-4 text-[13px] self-start disabled:opacity-60 disabled:cursor-not-allowed"
+                >
+                  {status === 'sending' ? 'Sending…' : <>Send Message <Send className="ml-2 w-4 h-4" /></>}
                 </button>
 
                 <p className="text-[11px] text-ink/40 mt-1">
-                  Opens your email client pre-filled. Prefer to email directly?{' '}
+                  Delivered directly to my inbox. Prefer to email me yourself?{' '}
                   <a href="mailto:Noopur.trivedi@hotmail.com" className="text-accent underline">
                     Noopur.trivedi@hotmail.com
                   </a>
