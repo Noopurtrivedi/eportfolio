@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
               Noopur Trivedi
             </p>
             <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold">
-              Senior Business Systems Analyst · AI Systems Builder
+              Senior Business Analyst · Founder · Co-founder
             </p>
             <p className="mt-5 text-sm text-ink/60 leading-relaxed max-w-md">
               Eleven years delivering enterprise IT change — SAP, BI, retail systems

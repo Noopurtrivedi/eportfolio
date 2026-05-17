@@ -158,7 +158,7 @@ const Portfolio: React.FC = () => {
         <div className="container-wide py-24 text-center">
           <h2 className="display-md mb-3">Have a brief I should look at?</h2>
           <p className="text-ink/55 mb-8 text-sm max-w-md mx-auto">
-            Senior BSA contracts, BI/integration programs, or product partnerships
+            Senior BA contracts, BI / integration programs, or product partnerships
             — send the context, I’ll respond within a day.
           </p>
           <Link to="/contact" className="btn-primary px-10 py-4 text-[13px]">

@@ -33,13 +33,13 @@ const chapters = [
   },
   {
     year:    '2023',
-    title:   'ConvertX — the first thing I built that paid for itself.',
-    body:    'ConvertX started as a side script and became a working outbound engine — GPT-4 personalization wired into LinkedIn and CRM. The first client paid within a month. Reply rates ran 3–5× ahead of manual. The pattern was obvious: the bottleneck wasn\'t AI capability, it was the orchestration layer around it.',
+    title:   'The first builds that paid for themselves.',
+    body:    'Sketches turned into systems. I wired GPT-4 into orchestration layers around outbound, lead enrichment and pipeline work — the first commercial AI builds, the first paying clients. The pattern was obvious early: the bottleneck wasn\'t AI capability, it was the orchestration layer wrapped around it.',
   },
   {
     year:    '2024',
-    title:   'AI ATS — flipping the side I was on.',
-    body:    'Having been the one writing resumes for years, I knew exactly what was broken about hiring. The ATS build used semantic embeddings to match intent, not keywords, and it cut time-to-first-interview by 60%. The deeper insight: the same orchestration patterns from ConvertX worked here, and they\'d work everywhere.',
+    title:   'TrinityTalent.ai — flipping the side I was on.',
+    body:    'After years of writing resumes for myself and watching the hiring system reject good people for the wrong reasons, I founded TrinityTalent.ai — an AI-native hiring platform using semantic embeddings to match intent, not keywords. Pilots cut time-to-first-interview by 60%. The deeper insight: the same orchestration patterns worked here, and they\'d work everywhere.',
   },
   {
     year:    '2024',
@@ -48,8 +48,8 @@ const chapters = [
   },
   {
     year:    '2025',
-    title:   'CreationX — productizing the pattern.',
-    body:    'CreationX is the marketplace I kept being asked for. Operators who see what AI can do but can\'t hire a team. The catalog is small on purpose: a few opinionated agents, hardened from real client work, with sane defaults. I\'m treating the build like an enterprise rollout — instrumented, documented, with a real user feedback loop.',
+    title:   'CreationX — co-founding the productized pattern.',
+    body:    'CreationX is the marketplace operators kept asking for — people who see what AI can do but can\'t hire a team. Co-founded with a small group, the catalog is intentionally tight: a few opinionated agents, hardened from real client work, with sane defaults. We\'re treating the build like an enterprise rollout — instrumented, documented, with a real user feedback loop.',
   },
   {
     year:    'Next',
@@ -199,19 +199,19 @@ const Journey: React.FC = () => {
             <div className="lg:col-span-7 flex flex-col gap-4">
               {[
                 {
+                  name:   'TrinityTalent.ai',
+                  stage:  'Founder · live build',
+                  desc:   'AI-native hiring intelligence — semantic matching, explainable scoring and an automated pipeline. Expanding interview scoring and recruiter co-pilot features.',
+                },
+                {
                   name:   'CreationX',
-                  stage:  'MVP build',
-                  desc:   'AI agent marketplace for operators. Productized layer over the bespoke client builds.',
+                  stage:  'Co-founder · MVP',
+                  desc:   'AI agent marketplace for operators. Productized layer over the bespoke client builds — small, opinionated catalog, instrumented from day one.',
                 },
                 {
-                  name:   'ConvertX',
-                  stage:  'Beta · multi-tenant',
-                  desc:   'Scaling the outbound engine from a custom-built tool into a SaaS with a multi-client dashboard.',
-                },
-                {
-                  name:   'AI ATS Platform',
-                  stage:  'Alpha · expanding',
-                  desc:   'Layering interview scoring, candidate ranking explanations, and recruiter co-pilot features.',
+                  name:   'BC Hydro · Senior BA',
+                  stage:  'Current role',
+                  desc:   'Senior Business Analyst inside a regulated Crown utility — the enterprise discipline that keeps the founder work honest.',
                 },
               ].map((b, i) => (
                 <motion.div key={b.name} {...inView(i * 0.06)} className="card p-7 card-hover">
@@ -233,7 +233,7 @@ const Journey: React.FC = () => {
           {[
             { label: 'Read the case studies',  to: '/portfolio',      sub: 'How the work shows up day-to-day.' },
             { label: 'The other side of life', to: '/life',           sub: 'Mountains, animals, art, and the rest of me.' },
-            { label: 'Get in touch',           to: '/contact',        sub: 'Senior BSA, AI build, or founder conversation.' },
+            { label: 'Get in touch',           to: '/contact',        sub: 'Senior BA contract, AI build, or founder conversation.' },
           ].map((c) => (
             <Link
               key={c.label}

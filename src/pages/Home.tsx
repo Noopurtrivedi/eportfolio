@@ -24,7 +24,8 @@ const marqueeItems = [
   'POS · Payments · ERP Integration',
   'Agile / Scrum Delivery',
   'GPT-4 Workflow Design',
-  'Founder · CreationX',
+  'Founder · TrinityTalent.ai',
+  'Co-founder · CreationX',
 ]
 
 const Home: React.FC = () => {
@@ -50,7 +51,7 @@ const Home: React.FC = () => {
           <motion.div {...fadeUp(0)} className="mb-10">
             <span className="tag-accent">
               <span className="w-1.5 h-1.5 rounded-full bg-accent mr-2 animate-pulse" />
-              Open to senior BSA, BI &amp; integration engagements
+              Open to Senior BA, BI &amp; integration engagements
             </span>
           </motion.div>
 
@@ -77,7 +78,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
               className="display-xl"
             >
-              Systems Analyst
+              Analyst
             </motion.h1>
           </div>
           <div className="overflow-hidden">
@@ -116,11 +117,11 @@ const Home: React.FC = () => {
           {/* Tag strip */}
           <motion.div {...fadeUp(0.65)} className="flex flex-wrap gap-3 mt-14">
             {[
-              'BC Hydro · SAP',
+              'BC Hydro · Senior BA',
               'MTU · M365 Modernization',
               'Bell · BI & ETL',
-              'NRI · POS Integration',
-              'Founder · CreationX',
+              'Founder · TrinityTalent.ai',
+              'Co-founder · CreationX',
             ].map((t) => (
               <span key={t} className="tag-ink">{t}</span>
             ))}
@@ -269,8 +270,8 @@ const Home: React.FC = () => {
               {
                 num: '03',
                 title: 'AI & Automation',
-                items: ['GPT-4 agents · vector embeddings', 'Zapier · Make · Python workflows', 'LinkedIn / outbound automation', 'Founder of CreationX'],
-                note: 'I build production AI products on the side — ConvertX, the ATS platform, CreationX — applying enterprise rigor to modern stacks.',
+                items: ['GPT-4 agents · vector embeddings', 'Zapier · Make · Python workflows', 'Founder · TrinityTalent.ai', 'Co-founder · CreationX'],
+                note: 'I build production AI products on the side — TrinityTalent.ai and CreationX — applying enterprise rigor to modern stacks.',
               },
             ].map((pillar, i) => (
               <motion.div
@@ -446,7 +447,7 @@ const Home: React.FC = () => {
               Let’s talk about what you’re building.
             </h2>
             <p className="lead mt-6 mb-12">
-              Senior BSA contracts, BI / integration programs, or an AI product
+              Senior BA contracts, BI / integration programs, or an AI product
               that needs disciplined delivery — I bring both halves.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">

@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
             <span className="italic font-light" style={{ color: '#0f5d4a' }}> — about your roadmap, your role, or a build.</span>
           </h1>
           <p className="lead max-w-xl">
-            Senior BSA engagements, BI &amp; integration programs, AI product
+            Senior BA engagements, BI &amp; integration programs, AI product
             partnerships, or hiring conversations — I read every message and
             respond within one business day.
           </p>
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                     onChange={(e) => setForm({ ...form, context: e.target.value })}
                   >
                     <option value="">Select a topic…</option>
-                    <option value="Senior BSA / Contract role">Senior BSA / Contract role</option>
+                    <option value="Senior BA / Contract role">Senior BA / Contract role</option>
                     <option value="BI, ETL or reporting program">BI, ETL or reporting program</option>
                     <option value="Systems / API integration">Systems / API integration</option>
                     <option value="SAP / M365 / SharePoint engagement">SAP / M365 / SharePoint engagement</option>
@@ -174,7 +174,7 @@ const Contact: React.FC = () => {
               <p className="eyebrow mb-5">Open to</p>
               <div className="flex flex-col gap-2.5">
                 {[
-                  'Senior BSA / Lead BA contracts',
+                  'Senior BA / Lead BA contracts',
                   'BI, ETL and reporting programs',
                   'Enterprise integration (SAP, M365, POS)',
                   'AI / automation product builds',

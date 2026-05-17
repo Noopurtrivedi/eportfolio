@@ -183,57 +183,27 @@ export const projects: Project[] = [
     accentColor: '#5a3a82',
   },
 
-  /* ─── Side builds — AI & product work ──────────────────────────────────── */
+  /* ─── Side builds — founder ventures ──────────────────────────────────── */
   {
     id: '6',
-    slug: 'convertx-ai-lead-automation',
-    title: 'ConvertX — AI Lead Automation Engine',
-    client: 'Independent / CreationX',
-    period: '2023 – Present',
-    tagline: 'GPT-driven outbound that personalizes at scale and sequences itself.',
-    description:
-      'An AI-powered lead generation and nurturing system combining LinkedIn automation, GPT-driven personalization, and CRM orchestration to run outbound sales on autopilot.',
-    category: ['AI', 'Automation', 'Founder'],
-    role: 'Founder & Lead Builder',
-    tools: ['OpenAI GPT-4', 'Zapier', 'Make.com', 'Python', 'Airtable', 'LinkedIn API', 'Webhooks'],
-    problem:
-      'Outbound sales is high-effort, low-consistency. Most teams send generic messages at scale and wonder why no one replies. True personalization at scale was considered impossible — until LLMs made it tractable.',
-    approach:
-      'Designed an orchestration layer that pulls and enriches lead data, generates uniquely personalized outreach with GPT-4, sequences follow-ups based on engagement signals, and logs everything to CRM automatically.',
-    execution:
-      'Built multi-step Zapier and Make.com workflows alongside custom Python middleware for enrichment, generation and sequencing. Added rate-limiting, A/B variants and feedback loops so the system learns what converts.',
-    outcome:
-      'Clients running ConvertX saw 3–5× reply-rate lift versus manual outreach, with no additional headcount. The system runs 24/7 and produces qualified conversations while operators sleep.',
-    metrics: [
-      '3–5× reply-rate improvement',
-      '80% reduction in manual outreach time',
-      '500+ leads/month handled per client',
-      'Runs 24/7 without human intervention',
-    ],
-    featured: false,
-    kind: 'side',
-    accentColor: '#7a5fc7',
-  },
-  {
-    id: '7',
-    slug: 'ai-resume-ats-automation',
-    title: 'AI Resume & ATS Intelligence Platform',
-    client: 'Independent build',
+    slug: 'trinitytalent-ai',
+    title: 'TrinityTalent.ai — AI Hiring Intelligence Platform',
+    client: 'TrinityTalent.ai',
     period: '2024 – Present',
-    tagline: 'Semantic resume matching that replaces keyword bingo.',
+    tagline: 'Semantic hiring intelligence that replaces keyword bingo.',
     description:
-      'An AI-powered ATS that analyzes resumes semantically, scores them against job descriptions with vector embeddings, and automates the hiring pipeline from application to interview scheduling.',
+      'TrinityTalent.ai is an AI-native hiring platform: it analyzes resumes semantically, scores candidates against job descriptions with vector embeddings, and automates the pipeline from application through interview scheduling. Founded to fix the broken middle of hiring on both sides.',
     category: ['AI', 'Automation', 'Founder'],
-    role: 'Lead Product Builder',
+    role: 'Founder',
     tools: ['OpenAI', 'Python', 'FastAPI', 'React', 'Pinecone', 'PostgreSQL', 'Tailwind CSS'],
     problem:
-      'Companies reject ~75% of resumes before a human reads them, using rigid keyword matching that misses strong candidates. Candidates get ghosted, hiring managers drown in noise.',
+      'Companies reject ~75% of resumes before a human reads them — rigid keyword matching that misses strong candidates. Candidates get ghosted. Hiring managers drown in noise. The process is broken on both sides.',
     approach:
       'Built a semantic analysis engine that understands intent rather than keywords. Vector embeddings score candidates against role requirements holistically, with explainable rationale and integrated scheduling.',
     execution:
       'Full-stack product — React frontend with drag-and-drop resume parsing, FastAPI backend for AI processing, Pinecone vector store, Postgres for pipeline data. Workflow automation triggers emails, calendar links and Slack notifications at each stage.',
     outcome:
-      'Reduced time-to-first-interview by 60%. Hiring managers spend time only on candidates who fit, and candidates get clear, actionable feedback instead of silence.',
+      'Reduced time-to-first-interview by 60% in pilots. Hiring managers spend their time only on candidates who fit; candidates get clear, actionable feedback instead of silence.',
     metrics: [
       '60% reduction in time-to-first-interview',
       '40% match-score accuracy improvement',
@@ -245,29 +215,29 @@ export const projects: Project[] = [
     accentColor: '#b88a2c',
   },
   {
-    id: '8',
+    id: '7',
     slug: 'creationx-ai-agent-marketplace',
     title: 'CreationX — AI Agent Platform for Operators',
-    client: 'Founder',
+    client: 'CreationX',
     period: '2024 – Present',
-    tagline: 'A productized layer over the AI work I keep being asked to build.',
+    tagline: 'A productized layer over the AI work operators keep asking for.',
     description:
-      'A platform where non-technical founders plug in pre-built AI agents for sales, ops and growth — the productized layer on top of the bespoke AI systems I’ve built for clients.',
+      'A platform where non-technical founders and operators plug in pre-built AI agents for sales, ops and growth — the productized layer on top of the bespoke AI systems we kept building one client at a time. Co-founded to make that pattern accessible.',
     category: ['Founder', 'AI', 'Automation'],
-    role: 'Founder',
+    role: 'Co-founder',
     tools: ['React', 'TypeScript', 'Supabase', 'OpenAI', 'Stripe', 'Vercel'],
     problem:
       'Operators see what AI can do but can’t hire a team to build it. Off-the-shelf tools are too generic; bespoke builds are too expensive. There is a missing middle layer.',
     approach:
       'Package the most-requested agent patterns into a small, opinionated catalog with sane defaults. Lower the activation energy from “hire a builder” to “turn it on and connect a few accounts.”',
     execution:
-      'Designing the MVP, the agent catalog, and the onboarding experience. Drawing on patterns I’ve built repeatedly inside ConvertX and the ATS work.',
+      'Designing the MVP, the agent catalog and the onboarding experience with a co-founding team. Drawing on patterns hardened across years of bespoke client and product work.',
     outcome:
       'Currently in build. Treating it like an enterprise rollout — clear specs, instrumented from day one, with a real user feedback loop.',
     metrics: [
       'MVP in active build',
       'Agent catalog scoped',
-      'Productizing proven client patterns',
+      'Productizing proven patterns',
     ],
     featured: false,
     kind: 'side',

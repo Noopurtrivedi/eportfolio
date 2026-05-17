@@ -32,7 +32,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
             <div className="lg:col-span-7 space-y-6 text-ink/70 leading-relaxed text-[17px]">
               <p>
-                I’m a Senior Business Systems Analyst with eleven years of experience
+                I’m a Senior Business Analyst with eleven years of experience
                 delivering complex IT change inside large, regulated enterprises —
                 BC Hydro, MTU Canada, Bell Canada, Syncrude, Imperial Oil.
               </p>
@@ -46,11 +46,12 @@ const About: React.FC = () => {
                 alignment matter as much as the code.
               </p>
               <p>
-                On the side, I build AI products — ConvertX (autonomous outbound),
-                an AI-driven ATS platform, and CreationX (an AI agent marketplace
-                for operators). They’re where I get to apply enterprise rigor to
-                a modern stack, and where I prove out the patterns I later bring
-                back into client work.
+                On the side, I’m the founder of <strong className="text-ink">TrinityTalent.ai</strong>,
+                an AI-native hiring intelligence platform, and co-founder of
+                <strong className="text-ink"> CreationX</strong>, an AI agent
+                marketplace for operators. They’re where I apply enterprise rigor
+                to a modern stack — and where I harden the patterns I bring back
+                into client work.
               </p>
             </div>
 
@@ -70,7 +71,7 @@ const About: React.FC = () => {
                     Noopur Trivedi
                   </p>
                   <p className="text-[10px] uppercase tracking-[0.22em] text-ink/55 font-semibold mt-0.5">
-                    Senior BSA · Builder
+                    Senior BA · Founder · Co-founder
                   </p>
                 </figcaption>
               </figure>
@@ -79,12 +80,13 @@ const About: React.FC = () => {
                 <p className="eyebrow mb-5">At a glance</p>
                 <dl className="flex flex-col gap-4 text-sm">
                   {[
-                    { k: 'Role',       v: 'Senior Business Systems Analyst' },
-                    { k: 'Experience', v: '11+ years · Enterprise IT delivery' },
-                    { k: 'Industries', v: 'Utilities · Aerospace · Telecom · Retail · Energy' },
-                    { k: 'Specialty',  v: 'SAP · BI · Data integration · POS/payments' },
-                    { k: 'Also builds',v: 'AI products — ConvertX, ATS, CreationX' },
-                    { k: 'Method',     v: 'Agile / Scrum, audit-grade documentation' },
+                    { k: 'Current role', v: 'Senior Business Analyst · BC Hydro' },
+                    { k: 'Founder',      v: 'TrinityTalent.ai — AI hiring intelligence' },
+                    { k: 'Co-founder',   v: 'CreationX — AI agent marketplace' },
+                    { k: 'Experience',   v: '11+ years · Enterprise IT delivery' },
+                    { k: 'Industries',   v: 'Utilities · Aerospace · Telecom · Retail · Energy' },
+                    { k: 'Specialty',    v: 'SAP · BI · Data integration · POS / payments' },
+                    { k: 'Method',       v: 'Agile / Scrum, audit-grade documentation' },
                   ].map((row) => (
                     <div key={row.k} className="grid grid-cols-12 gap-3 border-b border-ink/8 pb-3 last:border-b-0 last:pb-0">
                       <dt className="col-span-4 text-[11px] uppercase tracking-[0.20em] text-ink/45 font-semibold pt-0.5">{row.k}</dt>
@@ -131,7 +133,7 @@ const About: React.FC = () => {
               {
                 num: '03',
                 title: 'I build what I keep being asked to build.',
-                desc: "ConvertX, the ATS platform and CreationX all started as bespoke client work. Productizing them is how I make sure each pattern is hardened, not just shipped once.",
+                desc: "TrinityTalent.ai and CreationX both started as bespoke patterns I kept building one client at a time. Productizing them is how I make sure each pattern is hardened, not just shipped once.",
               },
             ].map((lens, i) => (
               <motion.div key={lens.num} {...inView(i * 0.1)} className="p-10">
@@ -252,7 +254,7 @@ const About: React.FC = () => {
       <section className="container-wide py-24 text-center">
         <h2 className="display-md mb-3">Ready to bring me onto your team?</h2>
         <p className="text-ink/55 text-sm mb-8 max-w-md mx-auto">
-          If you’re hiring for a senior BSA, BI lead or integration analyst — or
+          If you’re hiring for a Senior BA, BI lead or integration analyst — or
           you want to discuss product work — let’s talk.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
