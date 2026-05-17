@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { Award, ArrowUpRight, ShieldCheck } from 'lucide-react'
+import { Award, ArrowUpRight, ShieldCheck, FileText } from 'lucide-react'
 
 const inView = (delay = 0) => ({
   initial:     { opacity: 0, y: 18 },
@@ -16,12 +16,24 @@ interface Cert {
   year: string
   credentialId?: string
   url?: string
-  category: 'Agile & Delivery' | 'Data & BI' | 'Platforms' | 'AI & Automation'
+  pdf?: string
+  category: 'Quality & Testing' | 'Agile & Delivery' | 'Data & BI' | 'Platforms' | 'AI & Automation'
   placeholder?: boolean
 }
 
 const certifications: Cert[] = [
-  /* PLACEHOLDERS — replace `placeholder: true` items with real credentials. */
+  /* ─── Verified credentials ──────────────────────────────────────────── */
+  {
+    name:         'Certified Tester, Foundation Level (CTFL)',
+    issuer:       'ASTQB · ISTQB Certification in the U.S.',
+    year:         'July 2021',
+    credentialId: '21-CTFL-01364-USA',
+    url:          'https://atsqa.org/certified-testers',
+    pdf:          '/credentials/ctfl-21-01364-usa.pdf',
+    category:     'Quality & Testing',
+  },
+
+  /* ─── Placeholders — replace as real credentials land ─────────────── */
   {
     name:    'Certified Scrum Product Owner (CSPO)',
     issuer:  'Scrum Alliance',
@@ -94,7 +106,7 @@ const certifications: Cert[] = [
   },
 ]
 
-const categories: Cert['category'][] = ['Agile & Delivery', 'Data & BI', 'Platforms', 'AI & Automation']
+const categories: Cert['category'][] = ['Quality & Testing', 'Agile & Delivery', 'Data & BI', 'Platforms', 'AI & Automation']
 
 const Certifications: React.FC = () => {
   return (
@@ -115,11 +127,17 @@ const Certifications: React.FC = () => {
         </div>
       </section>
 
-      {/* Placeholder note */}
+      {/* Status note */}
       <section className="border-b border-ink/10 bg-sand">
-        <div className="container-wide py-6 text-[12px] text-ink/55 font-medium">
-          <span className="text-accent font-semibold uppercase tracking-[0.22em] text-[11px] mr-3">Placeholder</span>
-          Items marked as placeholders are typical for this role. Send me your real cert list (name, issuer, year, credential ID, verify URL) and I'll swap them in.
+        <div className="container-wide py-6 text-[12px] text-ink/55 font-medium flex flex-wrap items-center gap-x-4 gap-y-2">
+          <span className="inline-flex items-center gap-2">
+            <span className="tag-accent">Verified</span>
+            <span>= official PDF and credential ID on file.</span>
+          </span>
+          <span className="inline-flex items-center gap-2">
+            <span className="tag-gold">Placeholder</span>
+            <span>= typical for this role; real details pending.</span>
+          </span>
         </div>
       </section>
 
@@ -144,10 +162,12 @@ const Certifications: React.FC = () => {
                     >
                       <div className="flex items-start justify-between gap-4 mb-4">
                         <div className="w-9 h-9 border border-ink/15 flex items-center justify-center flex-shrink-0">
-                          <ShieldCheck className="w-4 h-4 text-accent" strokeWidth={1.5} />
+                          <ShieldCheck className={`w-4 h-4 ${c.placeholder ? 'text-ink/30' : 'text-accent'}`} strokeWidth={1.5} />
                         </div>
-                        {c.placeholder && (
+                        {c.placeholder ? (
                           <span className="tag-gold">Placeholder</span>
+                        ) : (
+                          <span className="tag-accent">Verified</span>
                         )}
                       </div>
                       <h3 className="font-serif text-lg font-medium text-ink leading-snug">{c.name}</h3>
@@ -156,21 +176,33 @@ const Certifications: React.FC = () => {
                         <p className="text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold">
                           {c.year}
                         </p>
-                        {c.url ? (
-                          <a
-                            href={c.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-[12px] font-semibold text-accent hover:text-accent-dark transition-colors"
-                          >
-                            Verify <ArrowUpRight className="w-3 h-3" />
-                          </a>
-                        ) : (
-                          <span className="text-[11px] text-ink/35">Verification link pending</span>
-                        )}
+                        <div className="flex items-center gap-4">
+                          {c.pdf && (
+                            <a
+                              href={c.pdf}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-[12px] font-semibold text-accent hover:text-accent-dark transition-colors"
+                            >
+                              <FileText className="w-3 h-3" /> View PDF
+                            </a>
+                          )}
+                          {c.url ? (
+                            <a
+                              href={c.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-1 text-[12px] font-semibold text-accent hover:text-accent-dark transition-colors"
+                            >
+                              Verify <ArrowUpRight className="w-3 h-3" />
+                            </a>
+                          ) : (
+                            !c.pdf && <span className="text-[11px] text-ink/35">Verification link pending</span>
+                          )}
+                        </div>
                       </div>
                       {c.credentialId && (
-                        <p className="mt-3 text-[11px] text-ink/40 font-mono">{c.credentialId}</p>
+                        <p className="mt-3 text-[11px] text-ink/40 font-mono">ID: {c.credentialId}</p>
                       )}
                     </div>
                   ))}

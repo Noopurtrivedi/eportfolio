@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Linkedin, Mail, Phone, MapPin, FileText } from 'lucide-react'
 import { workExperience, education } from '../data/projects'
 
 const inView = (delay = 0) => ({
@@ -203,9 +203,25 @@ const About: React.FC = () => {
             <p className="eyebrow mb-5">Education</p>
             {education.map((e) => (
               <div key={e.credential} className="card p-6">
-                <p className="font-serif text-xl font-medium text-ink">{e.credential}</p>
-                <p className="mt-1 text-sm text-ink/55">{e.school}</p>
-                <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-accent font-semibold">{e.period}</p>
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="font-serif text-xl font-medium text-ink">{e.credential}</p>
+                    <p className="mt-1 text-sm text-ink/55">{e.school}</p>
+                    <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-accent font-semibold">{e.period}</p>
+                  </div>
+                  <span className="tag-accent">Verified</span>
+                </div>
+                <div className="mt-5 pt-5 border-t border-ink/10">
+                  <a
+                    href="/credentials/bba-thompson-rivers.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-[12px] font-semibold text-accent hover:text-accent-dark transition-colors"
+                  >
+                    <FileText className="w-3.5 h-3.5" /> View degree (PDF)
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                </div>
               </div>
             ))}
           </div>
