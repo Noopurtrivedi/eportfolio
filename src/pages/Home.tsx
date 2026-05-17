@@ -89,7 +89,7 @@ const Home: React.FC = () => {
               className="display-xl italic font-light"
               style={{ color: '#0f5d4a' }}
             >
-              &amp; AI Systems Builder.
+              &amp; AI Founder.
             </motion.h1>
           </div>
 

@@ -229,7 +229,7 @@ export const projects: Project[] = [
     problem:
       'Operators see what AI can do but can’t hire a team to build it. Off-the-shelf tools are too generic; bespoke builds are too expensive. There is a missing middle layer.',
     approach:
-      'Package the most-requested agent patterns into a small, opinionated catalog with sane defaults. Lower the activation energy from “hire a builder” to “turn it on and connect a few accounts.”',
+      'Package the most-requested agent patterns into a small, opinionated catalog with sane defaults. Lower the activation energy from “hire a developer” to “turn it on and connect a few accounts.”',
     execution:
       'Designing the MVP, the agent catalog and the onboarding experience with a co-founding team. Drawing on patterns hardened across years of bespoke client and product work.',
     outcome:

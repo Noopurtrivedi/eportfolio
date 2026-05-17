@@ -1,7 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, ArrowUpRight, Linkedin, Mail, Phone, MapPin, FileText } from 'lucide-react'
+import {
+  ArrowRight, ArrowUpRight, Linkedin, Mail, Phone, MapPin, FileText,
+  Compass, Layers, Anchor, Sparkles, Camera, Brush, Heart, Mountain,
+} from 'lucide-react'
 import { workExperience, education } from '../data/projects'
 
 const inView = (delay = 0) => ({
@@ -21,40 +24,125 @@ const About: React.FC = () => {
           <p className="eyebrow mb-5">About</p>
           <h1 className="display-xl max-w-4xl">
             Senior delivery from a regulated-IT background,
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and a builder’s instinct for what comes next.</span>
+            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and an operator’s instinct for what comes next.</span>
           </h1>
+          <p className="lead mt-8 max-w-2xl">
+            Two careers, one operating style. Eleven years inside regulated
+            enterprises learning how systems are actually delivered — and a
+            decade of side work that took those disciplines into products of my
+            own.
+          </p>
         </div>
       </section>
 
-      {/* ─── Bio ──────────────────────────────────────────────────────── */}
+      {/* ─── Bio + portrait + at-a-glance ───────────────────────────── */}
       <section className="border-b border-ink/10">
         <div className="container-wide py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-            <div className="lg:col-span-7 space-y-6 text-ink/70 leading-relaxed text-[17px]">
-              <p>
-                I’m a Senior Business Analyst with eleven years of experience
-                delivering complex IT change inside large, regulated enterprises —
-                BC Hydro, MTU Canada, Bell Canada, Syncrude, Imperial Oil.
-              </p>
-              <p>
-                My specialty is the unglamorous middle: translating cross-functional
-                business needs into the kind of technical specifications engineering
-                can actually build against, then coordinating the data migrations,
-                API and file-based integrations, and reporting layers that make a
-                system safe to release. I work natively in Agile and Scrum, and I’m
-                most useful in environments where audit, governance, and stakeholder
-                alignment matter as much as the code.
-              </p>
-              <p>
-                On the side, I’m the founder of <strong className="text-ink">TrinityTalent.ai</strong>,
-                an AI-native hiring intelligence platform, and co-founder of
-                <strong className="text-ink"> CreationX</strong>, an AI agent
-                marketplace for operators. They’re where I apply enterprise rigor
-                to a modern stack — and where I harden the patterns I bring back
-                into client work.
-              </p>
+
+            {/* Bio prose */}
+            <div className="lg:col-span-7 text-ink/75 leading-relaxed text-[17px] space-y-12">
+
+              {/* Section 1: who I am now */}
+              <div>
+                <p className="eyebrow mb-3">Where I am now</p>
+                <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
+                  Senior Business Analyst at BC Hydro. Founder of TrinityTalent.ai.
+                  Co-founder of CreationX.
+                </h2>
+                <p>
+                  My current role is Senior Business Analyst on the SAP program at
+                  BC Hydro — a 1,000+ person Crown utility where the standard for
+                  delivery is whatever survives an audit. The work is exactly the
+                  shape I keep gravitating to: cross-functional, integration-heavy,
+                  and unforgiving of vague specs.
+                </p>
+                <p className="mt-4">
+                  In parallel, I founded <strong className="text-ink">TrinityTalent.ai</strong>,
+                  an AI-native hiring intelligence platform that uses semantic
+                  embeddings to match candidates to roles by intent — not keywords.
+                  And I’m co-founder of <strong className="text-ink">CreationX</strong>,
+                  an AI agent marketplace for operators who see what AI can do but
+                  can’t hire a team to do it.
+                </p>
+              </div>
+
+              {/* Section 2: the path */}
+              <div>
+                <p className="eyebrow mb-3">How I got here</p>
+                <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
+                  An indirect path that turned into the right one.
+                </h2>
+                <p>
+                  I didn’t take a straight line. I started in oil-sands operations
+                  at Syncrude — six years of cost analysis, planning, and a stretch
+                  behind the wheel of a haul truck — which is probably where I
+                  learned that any process that depends on heroics is not a
+                  process. From there came technical analyst work at Imperial Oil
+                  through Acrodex, agency project coordination at Opal Marketing,
+                  quality engineering at X360 Digital, lead-BA integration work at
+                  NRI Distributions, BI development at Bell Canada, and analytics
+                  ownership for MTU Canada’s M365 modernization.
+                </p>
+                <p className="mt-4">
+                  Each role taught me something the next one needed. Operations
+                  taught me about reliability. Quality work taught me about
+                  visibility. Integration work taught me about contracts between
+                  systems. BI work taught me that reporting is the product, not the
+                  by-product. By the time I arrived at senior BA work, the shape of
+                  what I wanted to do had stopped being a question.
+                </p>
+              </div>
+
+              {/* Section 3: the founder side */}
+              <div>
+                <p className="eyebrow mb-3">Why I also build products</p>
+                <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
+                  Founder work as application of enterprise discipline, not escape from it.
+                </h2>
+                <p>
+                  TrinityTalent.ai and CreationX aren’t an escape from enterprise
+                  work — they’re an application of it. The same disciplines that
+                  make a Crown utility’s SAP rollout reliable are what make an AI
+                  product not break in front of its users. Audit-grade
+                  documentation, explicit contracts between components, clean
+                  reporting from day one — they don’t become less valuable because
+                  the stack is younger.
+                </p>
+                <p className="mt-4">
+                  Founding gives me the freedom to take the patterns I’ve hardened
+                  inside enterprises and ship them in a form operators can actually
+                  use. It also keeps me close to the technology layer, which is the
+                  only honest way to remain useful as a senior analyst in an
+                  AI-saturated world.
+                </p>
+              </div>
+
+              {/* Section 4: what I care about */}
+              <div>
+                <p className="eyebrow mb-3">What I actually care about</p>
+                <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
+                  The boring layer underneath everything.
+                </h2>
+                <p>
+                  I care about systems that survive their first stress test. About
+                  reporting that becomes the system of record, not a slide for the
+                  steering committee. About teams that ship instead of re-plan.
+                  And, mostly, about the boring layer underneath everything — the
+                  spec, the audit trail, the contract between two services —
+                  because that’s where products live or die.
+                </p>
+                <p className="mt-4">
+                  Outside of all this I’m at my best on a long approach with a pack
+                  on, in a studio with paint and slow light, or with the rescue
+                  community I’ve been part of for years. Those parts of my life
+                  aren’t a counterweight to the work — they share an operating
+                  style with it.
+                </p>
+              </div>
             </div>
 
+            {/* Portrait + at-a-glance */}
             <aside className="lg:col-span-5">
               <figure className="mb-6 relative overflow-hidden border border-ink/10 bg-sand">
                 <img
@@ -76,7 +164,7 @@ const About: React.FC = () => {
                 </figcaption>
               </figure>
 
-              <div className="card p-8">
+              <div className="card p-8 sticky top-24">
                 <p className="eyebrow mb-5">At a glance</p>
                 <dl className="flex flex-col gap-4 text-sm">
                   {[
@@ -87,6 +175,9 @@ const About: React.FC = () => {
                     { k: 'Industries',   v: 'Utilities · Aerospace · Telecom · Retail · Energy' },
                     { k: 'Specialty',    v: 'SAP · BI · Data integration · POS / payments' },
                     { k: 'Method',       v: 'Agile / Scrum, audit-grade documentation' },
+                    { k: 'Based in',     v: 'British Columbia · Canada · Remote-first' },
+                    { k: 'Education',    v: 'BBA · Thompson Rivers University (verified)' },
+                    { k: 'Languages',    v: 'English · Hindi' },
                   ].map((row) => (
                     <div key={row.k} className="grid grid-cols-12 gap-3 border-b border-ink/8 pb-3 last:border-b-0 last:pb-0">
                       <dt className="col-span-4 text-[11px] uppercase tracking-[0.20em] text-ink/45 font-semibold pt-0.5">{row.k}</dt>
@@ -114,35 +205,237 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Three lenses ─────────────────────────────────────────────── */}
+      {/* ─── What I bring ────────────────────────────────────────────── */}
       <section className="border-b border-ink/10 bg-sand">
         <div className="container-wide py-20">
-          <p className="eyebrow mb-12">How I work</p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-ink/10 bg-surface divide-y md:divide-y-0 md:divide-x divide-ink/10">
+          <div className="mb-14 max-w-2xl">
+            <p className="eyebrow mb-3">What I bring</p>
+            <h2 className="display-lg">Four things you can count on, regardless of brief.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-ink/10 bg-surface divide-y lg:divide-y-0 lg:divide-x divide-ink/10">
+            {[
+              {
+                icon: Anchor,
+                title: 'Senior delivery in regulated environments.',
+                desc: 'Eleven years inside organizations where mistakes are visible — utilities, aerospace, telecom, energy. Audit trails, governance and stakeholder alignment are second nature.',
+              },
+              {
+                icon: Layers,
+                title: 'Cross-domain depth at the seams.',
+                desc: 'Not just SAP, not just BI, not just integration — the seams between them, where most programs actually fail. I’ve worked all three sides of that wall.',
+              },
+              {
+                icon: Compass,
+                title: 'Founder pace, enterprise discipline.',
+                desc: 'I own outcomes, run with low management overhead, and know when to ship vs. when to wait. Years of running products on the side made that reflex permanent.',
+              },
+              {
+                icon: Sparkles,
+                title: 'A real, practical bridge to AI.',
+                desc: 'Hands-on with LLM orchestration, embeddings and modern AI stacks through TrinityTalent.ai and CreationX — not theory, not slides. I’ve shipped this work.',
+              },
+            ].map((item, i) => (
+              <motion.div key={item.title} {...inView(i * 0.06)} className="p-8 flex flex-col gap-5">
+                <div className="w-11 h-11 border border-ink/15 flex items-center justify-center">
+                  <item.icon className="w-4 h-4 text-accent" strokeWidth={1.5} />
+                </div>
+                <h3 className="font-serif text-xl font-medium text-ink leading-snug">{item.title}</h3>
+                <p className="text-[15px] text-ink/65 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── How I work — principles ─────────────────────────────────── */}
+      <section className="border-b border-ink/10">
+        <div className="container-wide py-20">
+          <div className="mb-14 max-w-2xl">
+            <p className="eyebrow mb-3">How I work</p>
+            <h2 className="display-lg">A few opinions that have stopped being negotiable.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-ink/10 bg-surface divide-y md:divide-y-0 md:divide-x divide-ink/10">
             {[
               {
                 num: '01',
                 title: 'I write the spec before the slide.',
-                desc: "The deliverable I’m proudest of is rarely a deck. It’s the requirements document, the data flow, the test plan — the artifact a build team can act on without ambiguity.",
+                desc: 'The deliverable I’m proudest of is rarely a deck. It’s the requirements document, the data flow, the test plan — the artifact a team can act on without ambiguity.',
               },
               {
                 num: '02',
-                title: 'I treat reporting as the product.',
-                desc: "Dashboards aren’t the by-product of the project; they’re the system of record once it ships. I build the KPI and governance layer that outlives the rollout.",
+                title: 'Reporting is the product.',
+                desc: 'Dashboards aren’t the by-product of the project; they’re the system of record once it ships. I deliver the KPI and governance layer that outlives the rollout.',
               },
               {
                 num: '03',
-                title: 'I build what I keep being asked to build.',
-                desc: "TrinityTalent.ai and CreationX both started as bespoke patterns I kept building one client at a time. Productizing them is how I make sure each pattern is hardened, not just shipped once.",
+                title: 'Visibility beats willpower.',
+                desc: 'Teams don’t lift the metric they can’t see. Instrumentation and clean reporting are the cheapest leverage in any organization — and the first thing I add.',
+              },
+              {
+                num: '04',
+                title: 'I keep one foot inside.',
+                desc: 'Enterprise grounds you. Founder work without it drifts into demos. Founder energy without enterprise drifts into bureaucracy. I want both, on purpose.',
               },
             ].map((lens, i) => (
-              <motion.div key={lens.num} {...inView(i * 0.1)} className="p-10">
+              <motion.div
+                key={lens.num}
+                {...inView(i * 0.08)}
+                className={`p-10 ${i >= 2 ? 'md:border-t md:border-ink/10' : ''}`}
+              >
                 <span className="font-serif text-sm" style={{ color: 'rgba(15,93,74,0.55)' }}>
                   {lens.num}
                 </span>
                 <h3 className="font-serif text-xl font-medium text-ink mt-3 mb-4 leading-snug">{lens.title}</h3>
-                <p className="text-sm text-ink/60 leading-relaxed">{lens.desc}</p>
+                <p className="text-sm text-ink/65 leading-relaxed">{lens.desc}</p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── What I'm looking for next ──────────────────────────────── */}
+      <section className="border-b border-ink/10 bg-sand">
+        <div className="container-wide py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5">
+              <p className="eyebrow mb-3">What I’m open to</p>
+              <h2 className="display-lg">The kind of work I’d like to do next.</h2>
+              <p className="lead mt-6">
+                I’m open to a small number of conversations a year — the kind worth
+                doing well. If any of these match what you’re hiring or partnering
+                on, write to me.
+              </p>
+              <Link to="/contact" className="mt-8 btn-primary px-7 py-3.5 text-[13px] inline-flex">
+                Start a conversation <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </div>
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-0 border border-ink/10 bg-surface divide-y sm:divide-y-0 sm:divide-x divide-ink/10">
+              {[
+                {
+                  k: 'Senior / Lead BA contracts',
+                  d: 'Long engagements inside complex enterprises — SAP, M365, BI or integration programs.',
+                },
+                {
+                  k: 'BI &amp; data programs',
+                  d: 'ETL, reporting and KPI ownership work that needs a senior analyst at the helm.',
+                },
+                {
+                  k: 'Integration ownership',
+                  d: 'POS, ERP, payments, API/file integrations where the audit trail is non-negotiable.',
+                },
+                {
+                  k: 'AI founding / advisory',
+                  d: 'Founding or advisory conversations with AI-first companies that need an operator-analyst.',
+                },
+              ].map((row, i) => (
+                <motion.div
+                  key={row.k}
+                  {...inView(i * 0.05)}
+                  className={`p-7 ${i >= 2 ? 'sm:border-t sm:border-ink/10' : ''}`}
+                >
+                  <p className="font-serif text-lg font-medium text-ink" dangerouslySetInnerHTML={{ __html: row.k }} />
+                  <p className="mt-2 text-sm text-ink/60 leading-relaxed">{row.d}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Currently (now strip) ──────────────────────────────────── */}
+      <section className="border-b border-ink/10">
+        <div className="container-wide py-20">
+          <div className="mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+            <div>
+              <p className="eyebrow mb-3 inline-flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5" /> Currently
+              </p>
+              <h2 className="display-lg">A "now" page, for the people who like those.</h2>
+            </div>
+            <p className="hidden sm:block text-sm text-ink/45 italic font-serif max-w-xs text-right">
+              Updated when something meaningful changes.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-ink/10 bg-surface divide-y md:divide-y-0 md:divide-x divide-ink/10">
+            {[
+              {
+                head: 'Working',
+                items: [
+                  'Senior BA on the SAP program at BC Hydro',
+                  'Founding TrinityTalent.ai — AI hiring intelligence',
+                  'Co-founding CreationX — AI agent marketplace',
+                ],
+              },
+              {
+                head: 'Thinking about',
+                items: [
+                  'How AI changes the senior BA role — and where it doesn’t',
+                  'Productized agents for non-technical operators',
+                  'The right shape for hiring software once embeddings replace keywords',
+                ],
+              },
+              {
+                head: 'Living',
+                items: [
+                  'Based in British Columbia',
+                  'Hiking, photography, paint, rescue work on the side',
+                  'Replying to every message that isn’t obvious spam',
+                ],
+              },
+            ].map((col, i) => (
+              <motion.div key={col.head} {...inView(i * 0.06)} className="p-10">
+                <h3 className="text-[11px] uppercase tracking-[0.22em] text-accent font-semibold mb-5">{col.head}</h3>
+                <ul className="flex flex-col gap-3">
+                  {col.items.map((it) => (
+                    <li key={it} className="flex items-start gap-3 text-[15px] text-ink/70 leading-relaxed">
+                      <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0 mt-2.5" />
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Beyond the work cross-link ─────────────────────────────── */}
+      <section className="border-b border-ink/10 bg-sand">
+        <div className="container-wide py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-10">
+            <div className="lg:col-span-7">
+              <p className="eyebrow mb-3">Beyond the work</p>
+              <h2 className="display-lg">There’s a wider address — wander through it.</h2>
+            </div>
+            <p className="lg:col-span-5 text-[15px] text-ink/65 leading-relaxed">
+              The career sections explain what I do for a living. These are the
+              places that explain why I am the way I am about it.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border border-ink/10 bg-surface divide-x divide-y lg:divide-y-0 divide-ink/10">
+            {[
+              { to: '/life/photography', label: 'Photography', icon: Camera },
+              { to: '/life/art',         label: 'Painting & Art', icon: Brush },
+              { to: '/life/animals',     label: 'Animal Advocacy', icon: Heart },
+              { to: '/life/adventures',  label: 'Adventures', icon: Mountain },
+            ].map((tile, i) => (
+              <Link
+                key={tile.to}
+                to={tile.to}
+                className={`group p-8 hover:bg-sand transition-colors flex flex-col gap-4 ${i === 0 ? 'lg:border-l-0' : ''} ${i === 1 ? 'lg:border-t-0' : ''}`}
+              >
+                <div className="w-10 h-10 border border-ink/15 flex items-center justify-center group-hover:border-accent group-hover:bg-accent transition-all">
+                  <tile.icon className="w-4 h-4 text-accent group-hover:text-canvas transition-colors" strokeWidth={1.5} />
+                </div>
+                <p className="font-serif text-xl font-medium text-ink group-hover:text-accent transition-colors">
+                  {tile.label}
+                </p>
+                <div className="mt-auto pt-3 inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.22em] font-semibold text-accent">
+                  Enter <ArrowUpRight className="w-3 h-3" />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -224,6 +517,13 @@ const About: React.FC = () => {
                 </div>
               </div>
             ))}
+
+            <Link
+              to="/certifications"
+              className="mt-5 inline-flex items-center gap-2 text-[12px] font-semibold text-accent hover:text-accent-dark transition-colors"
+            >
+              See all certifications <ArrowUpRight className="w-3 h-3" />
+            </Link>
           </div>
 
           <div className="md:col-span-6">
@@ -233,7 +533,7 @@ const About: React.FC = () => {
                 { icon: Mail,  label: 'Email',    value: 'Noopur.trivedi@hotmail.com', href: 'mailto:Noopur.trivedi@hotmail.com' },
                 { icon: Phone, label: 'Phone',    value: '+1 (306) 471-1222',          href: 'tel:+13064711222' },
                 { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/noopur-trivedi', href: 'https://linkedin.com/in/noopur-trivedi' },
-                { icon: MapPin, label: 'Based in', value: 'Canada · Remote-first',     href: null },
+                { icon: MapPin, label: 'Based in', value: 'British Columbia · Canada · Remote-first', href: null },
               ].map((row) => {
                 const Inner = (
                   <div className="flex items-center gap-4 p-5">
