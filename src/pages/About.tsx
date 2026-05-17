@@ -160,8 +160,8 @@ const About: React.FC = () => {
                   alt="Portrait of Noopur Trivedi"
                   loading="eager"
                   decoding="async"
-                  width={853}
-                  height={1280}
+                  width={848}
+                  height={1264}
                   className="w-full h-auto block aspect-[2/3] object-cover"
                 />
                 <figcaption className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-gradient-to-t from-canvas/95 via-canvas/70 to-transparent">

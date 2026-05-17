@@ -88,18 +88,33 @@ const Journey: React.FC = () => {
       {/* ─── Hero ─────────────────────────────────────────────────────── */}
       <section className="border-b border-ink/10 pt-36 pb-20">
         <div className="container-wide">
-          <p className="eyebrow mb-5">The Journey</p>
-          <h1 className="display-xl max-w-4xl">
-            From operator to founder —
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and the long arc that turned both into one craft.</span>
-          </h1>
-          <p className="lead mt-8 max-w-2xl">
-            Eleven years inside regulated enterprises learning how systems are
-            actually delivered. Six years on the side building products that
-            apply that rigor to a modern stack. Two companies founded along the
-            way. This is how those tracks ran together — and where they’re
-            heading next.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            <div className="lg:col-span-8 order-2 lg:order-1">
+              <p className="eyebrow mb-5">The Journey</p>
+              <h1 className="display-xl">
+                From operator to founder —
+                <span className="italic font-light" style={{ color: '#0f5d4a' }}> and the long arc that turned both into one craft.</span>
+              </h1>
+              <p className="lead mt-8 max-w-2xl">
+                Eleven years inside regulated enterprises learning how systems
+                are actually delivered. Six years on the side building products
+                that apply that rigor to a modern stack. Two companies founded
+                along the way. This is how those tracks ran together — and
+                where they’re heading next.
+              </p>
+            </div>
+            <figure className="lg:col-span-4 order-1 lg:order-2 relative overflow-hidden border border-ink/10 bg-sand">
+              <img
+                src="/noopur-journey.jpg"
+                alt="Portrait of Noopur Trivedi"
+                loading="eager"
+                decoding="async"
+                width={853}
+                height={1280}
+                className="w-full h-auto block aspect-[2/3] object-cover"
+              />
+            </figure>
+          </div>
         </div>
       </section>
 

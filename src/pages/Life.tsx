@@ -48,16 +48,32 @@ const Life: React.FC = () => {
       {/* ─── Hero ─────────────────────────────────────────────────────── */}
       <section className="border-b border-ink/10 pt-36 pb-20">
         <div className="container-wide">
-          <p className="eyebrow mb-5">Life Beyond the Work</p>
-          <h1 className="display-xl max-w-4xl">
-            The rest of the
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> address.</span>
-          </h1>
-          <p className="lead mt-8 max-w-2xl">
-            The career sections explain what I do for a living. These are the
-            places that explain why I am the way I am about it — the cameras,
-            the canvas, the causes, and the long roads. Wander as you like.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 order-2 lg:order-1">
+              <p className="eyebrow mb-5">Life Beyond the Work</p>
+              <h1 className="display-xl">
+                The rest of the
+                <span className="italic font-light" style={{ color: '#0f5d4a' }}> address.</span>
+              </h1>
+              <p className="lead mt-8 max-w-2xl">
+                The career sections explain what I do for a living. These are
+                the places that explain why I am the way I am about it — the
+                cameras, the canvas, the causes, and the long roads. Wander as
+                you like.
+              </p>
+            </div>
+            <figure className="lg:col-span-5 order-1 lg:order-2 relative overflow-hidden border border-ink/10 bg-sand">
+              <img
+                src="/noopur-life.jpg"
+                alt="Portrait of Noopur Trivedi"
+                loading="eager"
+                decoding="async"
+                width={1280}
+                height={1280}
+                className="w-full h-auto block aspect-square object-cover"
+              />
+            </figure>
+          </div>
         </div>
       </section>
 
