@@ -66,13 +66,13 @@ export const projects: Project[] = [
     id: '2',
     slug: 'mtu-microsoft365-modernization',
     title: 'Microsoft 365 & SharePoint Analytics Modernization',
-    client: 'MTU Canada',
+    client: 'MTU Maintenance Canada',
     period: 'Apr 2023 – Present',
-    tagline: 'Standing up KPIs, governance and Tableau dashboards across a global aerospace organization.',
+    tagline: 'Standing up KPIs, governance and Tableau dashboards across a global aerospace MRO.',
     description:
-      'Leading the analytics workstream of a Microsoft 365 / SharePoint modernization inside a Scrum team. Defined KPIs and governance, then partnered with global cross-functional teams to model data and ship cross-department dashboards.',
+      'Leading the analytics workstream of a Microsoft 365 / SharePoint modernization inside a Scrum team at MTU Maintenance Canada — the Canadian operation of a global aerospace MRO. Defined KPIs and governance, then partnered with global cross-functional teams to model data and ship cross-department dashboards.',
     category: ['Enterprise', 'BSA', 'Data & BI'],
-    role: 'Business Analyst & Project Manager',
+    role: 'Senior Business Analyst',
     tools: ['Microsoft 365', 'SharePoint', 'Tableau', 'Power BI', 'Power Query', 'Jira', 'Confluence'],
     problem:
       'Departments were operating on inconsistent data and ad-hoc reporting. Modernization required not only migrating to M365 but also establishing the analytical layer, governance, and KPIs that would survive after the project ended.',
@@ -274,11 +274,11 @@ export const workExperience: Role[] = [
     ],
   },
   {
-    title: 'Business Analyst & Project Manager',
-    org:   'MTU Canada',
+    title: 'Senior Business Analyst',
+    org:   'MTU Maintenance Canada',
     period:'Apr 2023 – Present',
     summary:
-      'Leading analytics for a Microsoft 365 / SharePoint modernization. Defined KPIs, governance and Tableau dashboards. Partnered with global cross-functional teams on metadata, modeling and reporting.',
+      'Current role. Senior BA at the Canadian operation of a global aerospace MRO — leading analytics for a Microsoft 365 / SharePoint modernization. Defined KPIs, governance and Tableau dashboards; partner with global cross-functional teams on metadata, modeling and reporting.',
     highlights: [
       'Established KPIs, governance and Tableau dashboards across departments',
       'Translated business needs into analytical specifications for cross-department reporting',

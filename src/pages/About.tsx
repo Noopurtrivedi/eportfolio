@@ -28,9 +28,10 @@ const About: React.FC = () => {
           </h1>
           <p className="lead mt-8 max-w-2xl">
             Founder of TrinityTalent.ai. Co-founder of CreationX. Senior
-            Business Analyst at BC Hydro. Eleven years of regulated-enterprise
-            delivery underneath all of it — and an operating style that
-            refuses to separate the strategy from the execution.
+            Business Analyst at MTU Maintenance Canada. Eleven years of
+            regulated-enterprise delivery underneath all of it — and an
+            operating style that refuses to separate the strategy from the
+            execution.
           </p>
         </div>
       </section>
@@ -48,7 +49,7 @@ const About: React.FC = () => {
                 <p className="eyebrow mb-3">Where I am now</p>
                 <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
                   Founder of TrinityTalent.ai. Co-founder of CreationX. Senior
-                  Business Analyst at BC Hydro.
+                  Business Analyst at MTU Maintenance Canada.
                 </h2>
                 <p>
                   I founded <strong className="text-ink">TrinityTalent.ai</strong>
@@ -59,16 +60,20 @@ const About: React.FC = () => {
                   but can’t hire a team to do it.
                 </p>
                 <p className="mt-4">
-                  My day role is Senior Business Analyst on the SAP program at
-                  BC Hydro — a 1,000+ person Crown utility where the standard
-                  for delivery is whatever survives an audit. It’s the shape of
-                  work I keep gravitating to: cross-functional,
-                  integration-heavy, unforgiving of vague specs.
+                  My current role is Senior Business Analyst at
+                  <strong className="text-ink"> MTU Maintenance Canada</strong> —
+                  the Canadian operation of a global aerospace MRO — leading
+                  analytics modernization across Microsoft 365 and SharePoint,
+                  with KPI frameworks, governance and Tableau dashboards
+                  spanning departments. It’s the shape of work I keep
+                  gravitating to: cross-functional, integration-heavy,
+                  unforgiving of vague specs.
                 </p>
                 <p className="mt-4">
                   Two roles, one operating style. The same disciplines that
-                  make a Crown utility’s SAP rollout reliable are what keep a
-                  founder-stage AI product from breaking in front of its users.
+                  make an aerospace MRO’s analytics layer trustworthy are
+                  what keep a founder-stage AI product from breaking in front
+                  of its users.
                 </p>
               </div>
 
@@ -87,7 +92,7 @@ const About: React.FC = () => {
                   through Acrodex, agency project coordination at Opal Marketing,
                   quality engineering at X360 Digital, lead-BA integration work at
                   NRI Distributions, BI development at Bell Canada, and analytics
-                  ownership for MTU Canada’s M365 modernization.
+                  ownership for MTU Maintenance Canada’s M365 modernization.
                 </p>
                 <p className="mt-4">
                   Each role taught me something the next one needed. Operations
@@ -175,7 +180,7 @@ const About: React.FC = () => {
                   {[
                     { k: 'Founder',      v: 'TrinityTalent.ai — AI hiring intelligence' },
                     { k: 'Co-founder',   v: 'CreationX — AI agent marketplace' },
-                    { k: 'Current role', v: 'Senior Business Analyst · BC Hydro' },
+                    { k: 'Current role', v: 'Senior Business Analyst · MTU Maintenance Canada' },
                     { k: 'Experience',   v: '11+ years · Enterprise IT delivery' },
                     { k: 'Industries',   v: 'Utilities · Aerospace · Telecom · Retail · Energy' },
                     { k: 'Specialty',    v: 'SAP · BI · Data integration · POS / payments' },
@@ -369,7 +374,7 @@ const About: React.FC = () => {
                 items: [
                   'TrinityTalent.ai — AI hiring intelligence (Founder)',
                   'CreationX — AI agent marketplace (Co-founder)',
-                  'BC Hydro — Senior BA on the SAP program',
+                  'MTU Maintenance Canada — Senior BA, analytics & M365 modernization',
                 ],
               },
               {

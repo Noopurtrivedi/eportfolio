@@ -20,7 +20,7 @@ const inView = (delay = 0) => ({
 const marqueeItems = [
   'Founder · TrinityTalent.ai',
   'Co-founder · CreationX',
-  'Senior BA · BC Hydro',
+  'Senior BA · MTU Maintenance Canada',
   'M365 Modernization',
   'ETL & BI Pipelines',
   'POS · Payments · ERP Integration',
@@ -100,9 +100,10 @@ const Home: React.FC = () => {
               className="lead max-w-xl"
             >
               I’m the founder of TrinityTalent.ai and co-founder of CreationX,
-              anchored by eleven years of senior enterprise delivery at BC Hydro,
-              MTU Canada, Bell and Syncrude. Two careers, one operating style —
-              executed where systems meet strategy.
+              currently Senior Business Analyst at MTU Maintenance Canada —
+              anchored by eleven years of senior enterprise delivery across
+              MTU, BC Hydro, Bell and Syncrude. Two careers, one operating
+              style — executed where systems meet strategy.
             </motion.p>
 
             <motion.div {...fadeUp(0.55)} className="flex flex-col sm:flex-row gap-4 shrink-0">
@@ -120,8 +121,8 @@ const Home: React.FC = () => {
             {[
               'Founder · TrinityTalent.ai',
               'Co-founder · CreationX',
-              'BC Hydro · Senior BA',
-              'MTU · M365 Modernization',
+              'MTU Maintenance Canada · Senior BA',
+              'BC Hydro · SAP (past)',
               'Bell · BI & ETL',
               'Pacific Northwest · Remote-first',
             ].map((t) => (
@@ -155,7 +156,7 @@ const Home: React.FC = () => {
           {[
             { value: '2',     label: 'Companies Founded' },
             { value: '11+',   label: 'Years Enterprise IT' },
-            { value: '1,000+',label: 'Person Org · BC Hydro' },
+            { value: '1,000+',label: 'Person Enterprise Served' },
             { value: '5',     label: 'Industries Served' },
           ].map((s, i) => (
             <motion.div
@@ -261,7 +262,7 @@ const Home: React.FC = () => {
                 num: '01',
                 title: 'Enterprise BSA',
                 items: ['Requirements & technical specifications', 'SAP / M365 / SharePoint', 'Stakeholder & governance leadership', 'Agile / Scrum delivery'],
-                note: 'I’ve translated complex business needs into the kind of specs engineering can actually build against — at BC Hydro, MTU and Syncrude.',
+                note: 'I’ve translated complex business needs into the kind of specs engineering can actually build against — at MTU Maintenance Canada, BC Hydro and Syncrude.',
               },
               {
                 num: '02',

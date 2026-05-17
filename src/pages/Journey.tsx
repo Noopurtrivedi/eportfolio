@@ -42,9 +42,9 @@ const chapters = [
     body:    'After years of writing resumes for myself and watching the hiring system reject good people for the wrong reasons, I founded TrinityTalent.ai — an AI-native hiring platform using semantic embeddings to match intent, not keywords. Pilots cut time-to-first-interview by 60%. The deeper insight: the same orchestration patterns worked here, and they\'d work everywhere.',
   },
   {
-    year:    '2024',
+    year:    '2024 – 25',
     title:   'BC Hydro — the other half of the brain.',
-    body:    'Joining BC Hydro as SAP Business Decision Analyst was a deliberate choice. I didn\'t want to leave enterprise — I wanted to keep one foot in the world where rigor is non-negotiable. Building products without that ballast tends to produce demos. Building with it produces systems.',
+    body:    'A deliberate stint as SAP Business Decision Analyst at BC Hydro, alongside the founder work and the ongoing role at MTU Maintenance Canada. I wanted to keep one foot in the world where rigor is non-negotiable. Building products without that ballast tends to produce demos; building with it produces systems. The engagement wrapped in October 2025.',
   },
   {
     year:    '2025',
@@ -209,9 +209,9 @@ const Journey: React.FC = () => {
                   desc:   'AI agent marketplace for operators. Productized layer over the bespoke client builds — small, opinionated catalog, instrumented from day one.',
                 },
                 {
-                  name:   'BC Hydro · Senior BA',
+                  name:   'MTU Maintenance Canada · Senior BA',
                   stage:  'Current role',
-                  desc:   'Senior Business Analyst inside a regulated Crown utility — the enterprise discipline that keeps the founder work honest.',
+                  desc:   'Senior Business Analyst at the Canadian operation of a global aerospace MRO — leading analytics modernization across Microsoft 365 and SharePoint. The enterprise discipline that keeps the founder work honest.',
                 },
               ].map((b, i) => (
                 <motion.div key={b.name} {...inView(i * 0.06)} className="card p-7 card-hover">
