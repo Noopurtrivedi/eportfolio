@@ -23,14 +23,15 @@ const About: React.FC = () => {
         <div className="container-wide">
           <p className="eyebrow mb-5">About</p>
           <h1 className="display-xl max-w-4xl">
-            Senior delivery from a regulated-IT background,
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and an operator’s instinct for what comes next.</span>
+            Founder, operator,
+            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and Executive MBA candidate.</span>
           </h1>
           <p className="lead mt-8 max-w-2xl">
-            Two careers, one operating style. Eleven years inside regulated
-            enterprises learning how systems are actually delivered — and a
-            decade of side work that took those disciplines into products of my
-            own.
+            Founder of TrinityTalent.ai. Co-founder of CreationX. Senior
+            Business Analyst at BC Hydro. Eleven years of regulated-enterprise
+            delivery underneath all of it — and an Executive MBA as the next
+            chapter, to formalize the strategy and leadership toolkit alongside
+            the operator one.
           </p>
         </div>
       </section>
@@ -47,23 +48,30 @@ const About: React.FC = () => {
               <div>
                 <p className="eyebrow mb-3">Where I am now</p>
                 <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
-                  Senior Business Analyst at BC Hydro. Founder of TrinityTalent.ai.
-                  Co-founder of CreationX.
+                  Founder of TrinityTalent.ai. Co-founder of CreationX. Senior
+                  Business Analyst at BC Hydro. EMBA candidate.
                 </h2>
                 <p>
-                  My current role is Senior Business Analyst on the SAP program at
-                  BC Hydro — a 1,000+ person Crown utility where the standard for
-                  delivery is whatever survives an audit. The work is exactly the
-                  shape I keep gravitating to: cross-functional, integration-heavy,
-                  and unforgiving of vague specs.
+                  I founded <strong className="text-ink">TrinityTalent.ai</strong>
+                  — an AI-native hiring intelligence platform that uses semantic
+                  embeddings to match candidates to roles by intent, not
+                  keywords — and I’m co-founder of <strong className="text-ink">CreationX</strong>,
+                  an AI agent marketplace for operators who see what AI can do
+                  but can’t hire a team to do it.
                 </p>
                 <p className="mt-4">
-                  In parallel, I founded <strong className="text-ink">TrinityTalent.ai</strong>,
-                  an AI-native hiring intelligence platform that uses semantic
-                  embeddings to match candidates to roles by intent — not keywords.
-                  And I’m co-founder of <strong className="text-ink">CreationX</strong>,
-                  an AI agent marketplace for operators who see what AI can do but
-                  can’t hire a team to do it.
+                  My day role is Senior Business Analyst on the SAP program at
+                  BC Hydro — a 1,000+ person Crown utility where the standard for
+                  delivery is whatever survives an audit. It’s the shape of work
+                  I keep gravitating to: cross-functional, integration-heavy,
+                  unforgiving of vague specs.
+                </p>
+                <p className="mt-4">
+                  The next chapter is an <strong className="text-ink">Executive MBA</strong>
+                  — not as a credential collection, but to formalize the strategy,
+                  finance and leadership toolkit I keep reaching for as a
+                  founder, and to do it inside the kind of senior cohort that
+                  makes the operator playbook fluent.
                 </p>
               </div>
 
@@ -96,48 +104,70 @@ const About: React.FC = () => {
 
               {/* Section 3: the founder side */}
               <div>
-                <p className="eyebrow mb-3">Why I also build products</p>
+                <p className="eyebrow mb-3">Why I build companies</p>
                 <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
-                  Founder work as application of enterprise discipline, not escape from it.
+                  Founding as application of enterprise discipline, not escape from it.
                 </h2>
                 <p>
                   TrinityTalent.ai and CreationX aren’t an escape from enterprise
                   work — they’re an application of it. The same disciplines that
-                  make a Crown utility’s SAP rollout reliable are what make an AI
-                  product not break in front of its users. Audit-grade
+                  make a Crown utility’s SAP rollout reliable are what keep an AI
+                  product from breaking in front of its users. Audit-grade
                   documentation, explicit contracts between components, clean
-                  reporting from day one — they don’t become less valuable because
-                  the stack is younger.
+                  reporting from day one — they don’t become less valuable
+                  because the stack is younger.
                 </p>
                 <p className="mt-4">
-                  Founding gives me the freedom to take the patterns I’ve hardened
-                  inside enterprises and ship them in a form operators can actually
-                  use. It also keeps me close to the technology layer, which is the
-                  only honest way to remain useful as a senior analyst in an
-                  AI-saturated world.
+                  Founding gives me freedom to take the patterns I’ve hardened
+                  inside enterprises and ship them in a form operators can
+                  actually use. It also keeps me close to the technology layer
+                  — the only honest way to remain useful as a senior operator
+                  in an AI-saturated world.
                 </p>
               </div>
 
-              {/* Section 4: what I care about */}
+              {/* Section 4: the EMBA bet */}
+              <div>
+                <p className="eyebrow mb-3">Why the Executive MBA</p>
+                <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
+                  Formalizing the second half of the toolkit.
+                </h2>
+                <p>
+                  Founding TrinityTalent.ai and co-founding CreationX taught me
+                  where the operator playbook ends and the executive one begins
+                  — capital strategy, board-level governance, M&amp;A frames,
+                  organizational design at scale. I’ve been picking those up
+                  in fragments. The Executive MBA is how I make them fluent.
+                </p>
+                <p className="mt-4">
+                  I’m looking at programs that take senior cohorts seriously and
+                  treat the classroom as a working room — Ivey, Rotman, INSEAD
+                  EMBA, Wharton EMBA and the equivalent global cohorts. The aim
+                  is the kind of peer set that compounds for the next twenty
+                  years, not a credential I can list on a slide.
+                </p>
+              </div>
+
+              {/* Section 5: what I care about */}
               <div>
                 <p className="eyebrow mb-3">What I actually care about</p>
                 <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
                   The boring layer underneath everything.
                 </h2>
                 <p>
-                  I care about systems that survive their first stress test. About
-                  reporting that becomes the system of record, not a slide for the
-                  steering committee. About teams that ship instead of re-plan.
-                  And, mostly, about the boring layer underneath everything — the
-                  spec, the audit trail, the contract between two services —
-                  because that’s where products live or die.
+                  Systems that survive their first stress test. Reporting that
+                  becomes the system of record, not a slide for the steering
+                  committee. Teams that ship instead of re-plan. And, mostly,
+                  the boring layer underneath everything — the spec, the audit
+                  trail, the contract between two services — because that’s
+                  where products live or die.
                 </p>
                 <p className="mt-4">
-                  Outside of all this I’m at my best on a long approach with a pack
-                  on, in a studio with paint and slow light, or with the rescue
-                  community I’ve been part of for years. Those parts of my life
-                  aren’t a counterweight to the work — they share an operating
-                  style with it.
+                  Outside all of this I’m at my best on a long approach with a
+                  pack on, in a studio with paint and slow light, or with the
+                  rescue community I’ve been part of for years. Those parts of
+                  my life aren’t a counterweight to the work — they share an
+                  operating style with it.
                 </p>
               </div>
             </div>
@@ -168,13 +198,14 @@ const About: React.FC = () => {
                 <p className="eyebrow mb-5">At a glance</p>
                 <dl className="flex flex-col gap-4 text-sm">
                   {[
-                    { k: 'Current role', v: 'Senior Business Analyst · BC Hydro' },
                     { k: 'Founder',      v: 'TrinityTalent.ai — AI hiring intelligence' },
                     { k: 'Co-founder',   v: 'CreationX — AI agent marketplace' },
+                    { k: 'Current role', v: 'Senior Business Analyst · BC Hydro' },
+                    { k: 'Next chapter', v: 'Executive MBA — preparing for 2026 intake' },
                     { k: 'Experience',   v: '11+ years · Enterprise IT delivery' },
                     { k: 'Industries',   v: 'Utilities · Aerospace · Telecom · Retail · Energy' },
                     { k: 'Specialty',    v: 'SAP · BI · Data integration · POS / payments' },
-                    { k: 'Method',       v: 'Agile / Scrum, audit-grade documentation' },
+                    { k: 'Method',       v: 'Agile / Scrum · audit-grade documentation' },
                     { k: 'Based in',     v: 'British Columbia · Canada · Remote-first' },
                     { k: 'Education',    v: 'BBA · Thompson Rivers University (verified)' },
                     { k: 'Languages',    v: 'English · Hindi' },
@@ -312,20 +343,20 @@ const About: React.FC = () => {
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-0 border border-ink/10 bg-surface divide-y sm:divide-y-0 sm:divide-x divide-ink/10">
               {[
                 {
-                  k: 'Senior / Lead BA contracts',
+                  k: 'Founding &amp; advisory',
+                  d: 'Founding partners, design partners, or advisory roles with AI-first companies that need an operator-founder at the table.',
+                },
+                {
+                  k: 'EMBA &amp; cohort conversations',
+                  d: 'Schools, programs, alums and admissions teams — happy to talk about Executive MBA fit and the operator-founder profile.',
+                },
+                {
+                  k: 'Senior BA / Lead BA contracts',
                   d: 'Long engagements inside complex enterprises — SAP, M365, BI or integration programs.',
                 },
                 {
-                  k: 'BI &amp; data programs',
-                  d: 'ETL, reporting and KPI ownership work that needs a senior analyst at the helm.',
-                },
-                {
-                  k: 'Integration ownership',
-                  d: 'POS, ERP, payments, API/file integrations where the audit trail is non-negotiable.',
-                },
-                {
-                  k: 'AI founding / advisory',
-                  d: 'Founding or advisory conversations with AI-first companies that need an operator-analyst.',
+                  k: 'BI, data &amp; integration programs',
+                  d: 'ETL, reporting, POS / ERP / payments — the kind of program where the audit trail is non-negotiable.',
                 },
               ].map((row, i) => (
                 <motion.div
@@ -360,27 +391,27 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-ink/10 bg-surface divide-y md:divide-y-0 md:divide-x divide-ink/10">
             {[
               {
-                head: 'Working',
+                head: 'Building',
                 items: [
-                  'Senior BA on the SAP program at BC Hydro',
-                  'Founding TrinityTalent.ai — AI hiring intelligence',
-                  'Co-founding CreationX — AI agent marketplace',
+                  'TrinityTalent.ai — AI hiring intelligence (Founder)',
+                  'CreationX — AI agent marketplace (Co-founder)',
+                  'BC Hydro — Senior BA on the SAP program',
+                ],
+              },
+              {
+                head: 'Preparing',
+                items: [
+                  'Executive MBA — researching cohorts and applications',
+                  'GMAT / GRE prep and recommender outreach',
+                  'Talking with EMBA alumni about the operator-founder fit',
                 ],
               },
               {
                 head: 'Thinking about',
                 items: [
+                  'Capital strategy and governance for AI-first companies',
                   'How AI changes the senior BA role — and where it doesn’t',
-                  'Productized agents for non-technical operators',
                   'The right shape for hiring software once embeddings replace keywords',
-                ],
-              },
-              {
-                head: 'Living',
-                items: [
-                  'Based in British Columbia',
-                  'Hiking, photography, paint, rescue work on the side',
-                  'Replying to every message that isn’t obvious spam',
                 ],
               },
             ].map((col, i) => (
@@ -494,6 +525,27 @@ const About: React.FC = () => {
         <div className="container-wide py-20 grid grid-cols-1 md:grid-cols-12 gap-10">
           <div className="md:col-span-6">
             <p className="eyebrow mb-5">Education</p>
+
+            {/* EMBA — in progress */}
+            <div className="card p-6 mb-4">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-serif text-xl font-medium text-ink">Executive MBA</p>
+                  <p className="mt-1 text-sm text-ink/55">Preparing for 2026 intake — top global cohorts</p>
+                  <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-accent font-semibold">In progress · application phase</p>
+                </div>
+                <span className="tag-gold">Upcoming</span>
+              </div>
+              <div className="mt-5 pt-5 border-t border-ink/10">
+                <p className="text-[13px] text-ink/65 leading-relaxed">
+                  Researching senior cohorts at programs that take the
+                  operator-founder profile seriously. Happy to talk with
+                  alumni, admissions teams or current candidates.
+                </p>
+              </div>
+            </div>
+
+            {/* BBA — verified */}
             {education.map((e) => (
               <div key={e.credential} className="card p-6">
                 <div className="flex items-start justify-between gap-4">
@@ -568,10 +620,11 @@ const About: React.FC = () => {
 
       {/* ─── CTA ─────────────────────────────────────────────────────── */}
       <section className="container-wide py-24 text-center">
-        <h2 className="display-md mb-3">Ready to bring me onto your team?</h2>
+        <h2 className="display-md mb-3">Let’s talk — founding, hiring, or EMBA.</h2>
         <p className="text-ink/55 text-sm mb-8 max-w-md mx-auto">
-          If you’re hiring for a Senior BA, BI lead or integration analyst — or
-          you want to discuss product work — let’s talk.
+          Founding and advisory conversations, Senior BA / integration
+          engagements, or EMBA cohort and admissions conversations — all
+          welcome.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link to="/contact" className="btn-primary px-8 py-4 text-[13px]">

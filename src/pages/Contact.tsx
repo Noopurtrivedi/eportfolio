@@ -37,9 +37,10 @@ const Contact: React.FC = () => {
             <span className="italic font-light" style={{ color: '#0f5d4a' }}> — about your roadmap, your role, or a build.</span>
           </h1>
           <p className="lead max-w-xl">
-            Senior BA engagements, BI &amp; integration programs, AI product
-            partnerships, or hiring conversations — I read every message and
-            respond within one business day.
+            Founding and advisory conversations, Senior BA engagements, BI
+            &amp; integration programs, hiring conversations, or EMBA cohort
+            and admissions chats — I read every message and respond within
+            one business day.
           </p>
         </div>
       </section>
@@ -99,13 +100,14 @@ const Contact: React.FC = () => {
                     onChange={(e) => setForm({ ...form, context: e.target.value })}
                   >
                     <option value="">Select a topic…</option>
+                    <option value="Founding / advisory conversation">Founding / advisory conversation</option>
+                    <option value="Investor / partnership conversation">Investor / partnership conversation</option>
+                    <option value="Executive MBA — cohort, admissions or alumni chat">Executive MBA — cohort, admissions or alumni chat</option>
                     <option value="Senior BA / Contract role">Senior BA / Contract role</option>
                     <option value="BI, ETL or reporting program">BI, ETL or reporting program</option>
                     <option value="Systems / API integration">Systems / API integration</option>
                     <option value="SAP / M365 / SharePoint engagement">SAP / M365 / SharePoint engagement</option>
-                    <option value="AI / automation build">AI / automation build</option>
                     <option value="Hiring conversation">Hiring conversation</option>
-                    <option value="Partnership or referral">Partnership or referral</option>
                     <option value="Something else">Something else</option>
                   </select>
                 </div>
@@ -174,11 +176,12 @@ const Contact: React.FC = () => {
               <p className="eyebrow mb-5">Open to</p>
               <div className="flex flex-col gap-2.5">
                 {[
+                  'Founding / advisory conversations',
+                  'Investor & partnership intros',
+                  'Executive MBA — cohort, admissions, alumni chats',
                   'Senior BA / Lead BA contracts',
                   'BI, ETL and reporting programs',
                   'Enterprise integration (SAP, M365, POS)',
-                  'AI / automation product builds',
-                  'Founding / advisory conversations',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3 text-sm text-ink/65">
                     <span className="w-1.5 h-1.5 bg-accent flex-shrink-0" />

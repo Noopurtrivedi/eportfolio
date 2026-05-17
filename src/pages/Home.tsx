@@ -18,14 +18,14 @@ const inView = (delay = 0) => ({
 })
 
 const marqueeItems = [
-  'SAP Decision Analytics',
-  'Microsoft 365 Modernization',
-  'ETL & BI Pipelines',
-  'POS · Payments · ERP Integration',
-  'Agile / Scrum Delivery',
-  'GPT-4 Workflow Design',
   'Founder · TrinityTalent.ai',
   'Co-founder · CreationX',
+  'Senior BA · BC Hydro',
+  'M365 Modernization',
+  'ETL & BI Pipelines',
+  'POS · Payments · ERP Integration',
+  'GPT-4 Workflow Design',
+  'Executive MBA Candidate',
 ]
 
 const Home: React.FC = () => {
@@ -51,13 +51,13 @@ const Home: React.FC = () => {
           <motion.div {...fadeUp(0)} className="mb-10">
             <span className="tag-accent">
               <span className="w-1.5 h-1.5 rounded-full bg-accent mr-2 animate-pulse" />
-              Open to Senior BA, BI &amp; integration engagements
+              Founder · Senior BA · Preparing for the Executive MBA
             </span>
           </motion.div>
 
           {/* Eyebrow */}
           <motion.p {...fadeUp(0.05)} className="eyebrow mb-6">
-            Noopur Trivedi  ·  Eleven Years in Enterprise IT
+            Noopur Trivedi  ·  Founder  ·  Operator  ·  EMBA Candidate
           </motion.p>
 
           {/* Headline */}
@@ -68,7 +68,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="display-xl"
             >
-              Senior Business
+              Founder.
             </motion.h1>
           </div>
           <div className="overflow-hidden">
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
               className="display-xl"
             >
-              Analyst
+              Senior Business Analyst.
             </motion.h1>
           </div>
           <div className="overflow-hidden">
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
               className="display-xl italic font-light"
               style={{ color: '#0f5d4a' }}
             >
-              &amp; AI Founder.
+              Executive MBA next.
             </motion.h1>
           </div>
 
@@ -99,9 +99,11 @@ const Home: React.FC = () => {
               {...fadeUp(0.45)}
               className="lead max-w-xl"
             >
-              I lead end-to-end IT delivery in regulated enterprises — SAP, BI,
-              retail systems integration — and build AI products on the side
-              that bring the same discipline to modern workflows.
+              I’m the founder of TrinityTalent.ai and co-founder of CreationX —
+              built on eleven years of senior enterprise delivery at BC Hydro,
+              MTU Canada, Bell and Syncrude. The Executive MBA is the next
+              chapter, formalizing the strategy and leadership toolkit alongside
+              the operator one.
             </motion.p>
 
             <motion.div {...fadeUp(0.55)} className="flex flex-col sm:flex-row gap-4 shrink-0">
@@ -117,11 +119,12 @@ const Home: React.FC = () => {
           {/* Tag strip */}
           <motion.div {...fadeUp(0.65)} className="flex flex-wrap gap-3 mt-14">
             {[
+              'Founder · TrinityTalent.ai',
+              'Co-founder · CreationX',
               'BC Hydro · Senior BA',
               'MTU · M365 Modernization',
               'Bell · BI & ETL',
-              'Founder · TrinityTalent.ai',
-              'Co-founder · CreationX',
+              'EMBA Candidate',
             ].map((t) => (
               <span key={t} className="tag-ink">{t}</span>
             ))}
@@ -151,10 +154,10 @@ const Home: React.FC = () => {
       <section className="container-wide py-24">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-y border-ink/10">
           {[
+            { value: '2',     label: 'Companies Founded' },
             { value: '11+',   label: 'Years Enterprise IT' },
             { value: '1,000+',label: 'Person Org · BC Hydro' },
-            { value: '31%',   label: 'Defect Reduction · X360' },
-            { value: '30%',   label: 'Decision Speed Lift · Bell' },
+            { value: 'EMBA',  label: 'Next Chapter' },
           ].map((s, i) => (
             <motion.div
               key={s.label}
@@ -447,8 +450,9 @@ const Home: React.FC = () => {
               Let’s talk about what you’re building.
             </h2>
             <p className="lead mt-6 mb-12">
-              Senior BA contracts, BI / integration programs, or an AI product
-              that needs disciplined delivery — I bring both halves.
+              Founding partnerships, advisory roles, Senior BA contracts, or
+              EMBA-aligned conversations — I bring the operator-founder lens
+              and the discipline behind it.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact" className="btn-primary px-10 py-4 text-[13px]">
