@@ -53,8 +53,8 @@ const chapters = [
   },
   {
     year:    'Next',
-    title:   'The bet I\'m making — and the EMBA that goes with it.',
-    body:    'AI is going to flood every product surface in the next 24 months. The differentiator won\'t be the model — it\'ll be whether the team around it can specify, integrate, and govern the system well enough to trust it with the work. That\'s the seam I sit on. The Executive MBA is the next deliberate step: a senior cohort, the strategy and capital toolkit done formally, and the peer set that compounds for the decade after.',
+    title:   'The bet I\'m making.',
+    body:    'AI is going to flood every product surface in the next 24 months. The differentiator won\'t be the model — it\'ll be whether the team around it can specify, integrate, and govern the system well enough to trust it with the work. That\'s the seam I sit on, and it\'s where the next decade of my career is being built.',
   },
 ]
 
@@ -91,14 +91,14 @@ const Journey: React.FC = () => {
           <p className="eyebrow mb-5">The Journey</p>
           <h1 className="display-xl max-w-4xl">
             From operator to founder —
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and the Executive MBA that comes next.</span>
+            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and the long arc that turned both into one craft.</span>
           </h1>
           <p className="lead mt-8 max-w-2xl">
             Eleven years inside regulated enterprises learning how systems are
             actually delivered. Six years on the side building products that
             apply that rigor to a modern stack. Two companies founded along the
-            way. This is how those tracks ran together — and the EMBA chapter
-            that comes next.
+            way. This is how those tracks ran together — and where they’re
+            heading next.
           </p>
         </div>
       </section>
@@ -213,11 +213,6 @@ const Journey: React.FC = () => {
                   stage:  'Current role',
                   desc:   'Senior Business Analyst inside a regulated Crown utility — the enterprise discipline that keeps the founder work honest.',
                 },
-                {
-                  name:   'Executive MBA',
-                  stage:  'Preparing · 2026 intake',
-                  desc:   'Researching senior cohorts at top global programs. Formalizing the strategy, finance and leadership toolkit alongside the operator-founder one.',
-                },
               ].map((b, i) => (
                 <motion.div key={b.name} {...inView(i * 0.06)} className="card p-7 card-hover">
                   <div className="flex items-center justify-between mb-3">
@@ -238,7 +233,7 @@ const Journey: React.FC = () => {
           {[
             { label: 'Read the case studies',  to: '/portfolio',      sub: 'How the work shows up day-to-day.' },
             { label: 'The other side of life', to: '/life',           sub: 'Mountains, animals, art, and the rest of me.' },
-            { label: 'Get in touch',           to: '/contact',        sub: 'Founding, advisory, Senior BA contract or EMBA conversation.' },
+            { label: 'Get in touch',           to: '/contact',        sub: 'Founding, advisory, board, or senior contract conversation.' },
           ].map((c) => (
             <Link
               key={c.label}

@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
               Noopur Trivedi
             </span>
             <span className="hidden sm:inline text-[10px] uppercase tracking-[0.22em] text-ink/40 font-semibold">
-              · Founder · BA · EMBA
+              · Founder · Operator
             </span>
           </Link>
 

@@ -14,13 +14,13 @@ const Footer: React.FC = () => {
               Noopur Trivedi
             </p>
             <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold">
-              Founder · Senior Business Analyst · EMBA Candidate
+              Founder · Operator · Senior Business Analyst
             </p>
             <p className="mt-5 text-sm text-ink/60 leading-relaxed max-w-md">
               Founder of TrinityTalent.ai and co-founder of CreationX, anchored
-              by eleven years of senior enterprise delivery. Preparing for the
-              Executive MBA — formalizing the strategy and leadership toolkit
-              alongside the operator one.
+              by eleven years of senior enterprise delivery across utilities,
+              aerospace, telecom, retail and energy. Two careers, one operating
+              style.
             </p>
           </div>
 

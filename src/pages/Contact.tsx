@@ -37,10 +37,10 @@ const Contact: React.FC = () => {
             <span className="italic font-light" style={{ color: '#0f5d4a' }}> — about your roadmap, your role, or a build.</span>
           </h1>
           <p className="lead max-w-xl">
-            Founding and advisory conversations, Senior BA engagements, BI
-            &amp; integration programs, hiring conversations, or EMBA cohort
-            and admissions chats — I read every message and respond within
-            one business day.
+            Founding and advisory conversations, board or executive
+            introductions, Senior BA engagements, BI &amp; integration
+            programs, or hiring conversations — I read every message and
+            respond within one business day.
           </p>
         </div>
       </section>
@@ -101,8 +101,8 @@ const Contact: React.FC = () => {
                   >
                     <option value="">Select a topic…</option>
                     <option value="Founding / advisory conversation">Founding / advisory conversation</option>
+                    <option value="Board / fractional executive role">Board / fractional executive role</option>
                     <option value="Investor / partnership conversation">Investor / partnership conversation</option>
-                    <option value="Executive MBA — cohort, admissions or alumni chat">Executive MBA — cohort, admissions or alumni chat</option>
                     <option value="Senior BA / Contract role">Senior BA / Contract role</option>
                     <option value="BI, ETL or reporting program">BI, ETL or reporting program</option>
                     <option value="Systems / API integration">Systems / API integration</option>
@@ -177,8 +177,8 @@ const Contact: React.FC = () => {
               <div className="flex flex-col gap-2.5">
                 {[
                   'Founding / advisory conversations',
+                  'Board / fractional executive roles',
                   'Investor & partnership intros',
-                  'Executive MBA — cohort, admissions, alumni chats',
                   'Senior BA / Lead BA contracts',
                   'BI, ETL and reporting programs',
                   'Enterprise integration (SAP, M365, POS)',

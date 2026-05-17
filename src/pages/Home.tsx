@@ -25,7 +25,7 @@ const marqueeItems = [
   'ETL & BI Pipelines',
   'POS · Payments · ERP Integration',
   'GPT-4 Workflow Design',
-  'Executive MBA Candidate',
+  'Five Industries · One Operating Style',
 ]
 
 const Home: React.FC = () => {
@@ -51,13 +51,13 @@ const Home: React.FC = () => {
           <motion.div {...fadeUp(0)} className="mb-10">
             <span className="tag-accent">
               <span className="w-1.5 h-1.5 rounded-full bg-accent mr-2 animate-pulse" />
-              Founder · Senior BA · Preparing for the Executive MBA
+              Open to founding, advisory and senior engagements
             </span>
           </motion.div>
 
           {/* Eyebrow */}
           <motion.p {...fadeUp(0.05)} className="eyebrow mb-6">
-            Noopur Trivedi  ·  Founder  ·  Operator  ·  EMBA Candidate
+            Noopur Trivedi  ·  Founder  ·  Operator
           </motion.p>
 
           {/* Headline */}
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
               className="display-xl italic font-light"
               style={{ color: '#0f5d4a' }}
             >
-              Executive MBA next.
+              Operator at the seam.
             </motion.h1>
           </div>
 
@@ -99,11 +99,10 @@ const Home: React.FC = () => {
               {...fadeUp(0.45)}
               className="lead max-w-xl"
             >
-              I’m the founder of TrinityTalent.ai and co-founder of CreationX —
-              built on eleven years of senior enterprise delivery at BC Hydro,
-              MTU Canada, Bell and Syncrude. The Executive MBA is the next
-              chapter, formalizing the strategy and leadership toolkit alongside
-              the operator one.
+              I’m the founder of TrinityTalent.ai and co-founder of CreationX,
+              anchored by eleven years of senior enterprise delivery at BC Hydro,
+              MTU Canada, Bell and Syncrude. Two careers, one operating style —
+              executed where systems meet strategy.
             </motion.p>
 
             <motion.div {...fadeUp(0.55)} className="flex flex-col sm:flex-row gap-4 shrink-0">
@@ -124,7 +123,7 @@ const Home: React.FC = () => {
               'BC Hydro · Senior BA',
               'MTU · M365 Modernization',
               'Bell · BI & ETL',
-              'EMBA Candidate',
+              'Pacific Northwest · Remote-first',
             ].map((t) => (
               <span key={t} className="tag-ink">{t}</span>
             ))}
@@ -157,7 +156,7 @@ const Home: React.FC = () => {
             { value: '2',     label: 'Companies Founded' },
             { value: '11+',   label: 'Years Enterprise IT' },
             { value: '1,000+',label: 'Person Org · BC Hydro' },
-            { value: 'EMBA',  label: 'Next Chapter' },
+            { value: '5',     label: 'Industries Served' },
           ].map((s, i) => (
             <motion.div
               key={s.label}
@@ -450,9 +449,9 @@ const Home: React.FC = () => {
               Let’s talk about what you’re building.
             </h2>
             <p className="lead mt-6 mb-12">
-              Founding partnerships, advisory roles, Senior BA contracts, or
-              EMBA-aligned conversations — I bring the operator-founder lens
-              and the discipline behind it.
+              Founding partnerships, advisory and board conversations, Senior
+              BA contracts, or strategic engagements — I bring the
+              operator-founder lens and the discipline behind it.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact" className="btn-primary px-10 py-4 text-[13px]">
