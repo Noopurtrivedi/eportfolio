@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Linkedin, Mail, Phone, ArrowUpRight } from 'lucide-react'
+import { Linkedin, Mail, ArrowUpRight } from 'lucide-react'
 
 const Footer: React.FC = () => {
   return (
@@ -53,7 +53,6 @@ const Footer: React.FC = () => {
             <div className="flex flex-col gap-3">
               {[
                 { icon: Mail,     label: 'Noopur.trivedi@hotmail.com', href: 'mailto:Noopur.trivedi@hotmail.com' },
-                { icon: Phone,    label: '+1 (306) 471-1222',          href: 'tel:+13064711222' },
                 { icon: Linkedin, label: 'linkedin.com/in/noopur-trivedi', href: 'https://linkedin.com/in/noopur-trivedi' },
               ].map((s) => (
                 <a

@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, ArrowUpRight, Linkedin, Mail, Phone, MapPin, FileText,
+  ArrowRight, ArrowUpRight, Linkedin, Mail, MapPin, FileText,
   Compass, Layers, Anchor, Sparkles, Camera, Brush, Heart, Mountain,
 } from 'lucide-react'
 import { workExperience, education } from '../data/projects'
@@ -541,7 +541,6 @@ const About: React.FC = () => {
             <div className="card divide-y divide-ink/8">
               {[
                 { icon: Mail,  label: 'Email',    value: 'Noopur.trivedi@hotmail.com', href: 'mailto:Noopur.trivedi@hotmail.com' },
-                { icon: Phone, label: 'Phone',    value: '+1 (306) 471-1222',          href: 'tel:+13064711222' },
                 { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/noopur-trivedi', href: 'https://linkedin.com/in/noopur-trivedi' },
                 { icon: MapPin, label: 'Based in', value: 'British Columbia · Canada · Remote-first', href: null },
               ].map((row) => {

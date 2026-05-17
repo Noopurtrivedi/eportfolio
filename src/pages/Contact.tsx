@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Linkedin, Mail, Phone, MapPin, Send, ArrowUpRight, AlertTriangle } from 'lucide-react'
+import { Linkedin, Mail, MapPin, Send, ArrowUpRight, AlertTriangle } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const WEB3FORMS_KEY = '2e721e4d-8afd-4911-ae66-5f2766eb52cb'
@@ -228,7 +228,6 @@ const Contact: React.FC = () => {
               <div className="card divide-y divide-ink/8">
                 {[
                   { icon: Mail,     label: 'Email',    value: 'Noopur.trivedi@hotmail.com', href: 'mailto:Noopur.trivedi@hotmail.com' },
-                  { icon: Phone,    label: 'Phone',    value: '+1 (306) 471-1222',          href: 'tel:+13064711222' },
                   { icon: Linkedin, label: 'LinkedIn', value: '/in/noopur-trivedi',          href: 'https://linkedin.com/in/noopur-trivedi' },
                 ].map((ch) => (
                   <a
