@@ -55,6 +55,26 @@ const About: React.FC = () => {
             </div>
 
             <aside className="lg:col-span-5">
+              <figure className="mb-6 relative overflow-hidden border border-ink/10 bg-sand">
+                <img
+                  src="/noopur.jpg"
+                  alt="Portrait of Noopur Trivedi"
+                  loading="eager"
+                  decoding="async"
+                  width={848}
+                  height={1264}
+                  className="w-full h-auto block aspect-[2/3] object-cover"
+                />
+                <figcaption className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-gradient-to-t from-canvas/95 via-canvas/70 to-transparent">
+                  <p className="font-serif text-sm font-medium text-ink leading-tight">
+                    Noopur Trivedi
+                  </p>
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-ink/55 font-semibold mt-0.5">
+                    Senior BSA · Builder
+                  </p>
+                </figcaption>
+              </figure>
+
               <div className="card p-8">
                 <p className="eyebrow mb-5">At a glance</p>
                 <dl className="flex flex-col gap-4 text-sm">
