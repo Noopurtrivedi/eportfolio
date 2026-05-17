@@ -102,11 +102,11 @@ const Life: React.FC = () => {
         <div className="container-wide py-24 text-center">
           <motion.blockquote {...inView(0)} className="max-w-3xl mx-auto">
             <p className="font-serif text-3xl sm:text-4xl italic font-light text-ink leading-snug">
-              "I have lived a useful life, but it has been a wide life too — the
-              two things turned out to need each other."
+              "A useful life and a wide one — the two turn out to need
+              each other."
             </p>
             <footer className="mt-8 text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold">
-              Editor's note · placeholder, swap with your own
+              — Noopur
             </footer>
           </motion.blockquote>
         </div>

@@ -136,42 +136,30 @@ const Animals: React.FC = () => {
         </div>
       </section>
 
-      {/* Companions placeholder */}
+      {/* Get involved */}
       <section className="border-b border-ink/10 bg-sand">
-        <div className="container-wide py-20">
-          <div className="mb-8">
-            <p className="eyebrow mb-3">Companions</p>
-            <h2 className="display-md">The ones I get to live with.</h2>
-            <p className="lead mt-4 max-w-xl">Photos of the rescues and companions who share this life. Placeholders for now — real frames coming.</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {[1,2,3,4].map((n) => (
-              <div key={n} className="relative aspect-square bg-surface border border-ink/10 overflow-hidden group">
-                <div
-                  className="absolute inset-0 opacity-60"
-                  style={{
-                    background:
-                      'radial-gradient(circle at 50% 40%, rgba(15,93,74,0.12), transparent 70%)',
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <PawPrint className="w-7 h-7 text-ink/20" strokeWidth={1.25} />
-                </div>
-              </div>
-            ))}
+        <div className="container-wide py-24">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex w-14 h-14 border border-ink/15 items-center justify-center mb-8">
+              <Heart className="w-5 h-5 text-accent" strokeWidth={1.25} />
+            </div>
+            <h2 className="display-md mb-5">If you run a rescue or sanctuary, I want to hear from you.</h2>
+            <p className="lead">
+              Foster networks, transport coordinators, sanctuary operators,
+              vet-access funds — write to me. I’m always looking for the kind of
+              ongoing, relational work that actually changes outcomes.
+            </p>
+            <a
+              href="mailto:Noopur.trivedi@hotmail.com?subject=Animal%20advocacy%20%E2%80%94%20get%20in%20touch"
+              className="mt-10 btn-primary px-8 py-3.5 text-[13px] inline-flex"
+            >
+              Reach out
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Asset note */}
-      <section className="border-b border-ink/10">
-        <div className="container-wide py-6 text-[12px] text-ink/55 font-medium">
-          <span className="text-accent font-semibold uppercase tracking-[0.22em] text-[11px] mr-3">Placeholder</span>
-          Drop companion photos into <code className="bg-sand px-1.5 py-0.5 border border-ink/10">/public/life/animals/</code>; tell me which organizations to name and link.
-        </div>
-      </section>
-
-      <section className="border-t border-ink/10 bg-sand">
+      <section className="border-t border-ink/10">
         <div className="container-wide py-16 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
           <div>
             <p className="eyebrow mb-2">Next in Life</p>

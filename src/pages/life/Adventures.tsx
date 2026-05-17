@@ -136,14 +136,6 @@ const Adventures: React.FC = () => {
         </div>
       </section>
 
-      {/* Asset note */}
-      <section className="border-b border-ink/10">
-        <div className="container-wide py-6 text-[12px] text-ink/55 font-medium">
-          <span className="text-accent font-semibold uppercase tracking-[0.22em] text-[11px] mr-3">Placeholder</span>
-          Add field photos into <code className="bg-sand px-1.5 py-0.5 border border-ink/10">/public/life/adventures/</code> and tell me which trips to write up in full.
-        </div>
-      </section>
-
       <section className="border-t border-ink/10 bg-sand">
         <div className="container-wide py-16 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
           <div>

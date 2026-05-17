@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Camera } from 'lucide-react'
+import { ArrowLeft, Camera, Mail } from 'lucide-react'
 
 const inView = (delay = 0) => ({
   initial:     { opacity: 0, y: 18 },
@@ -10,21 +10,13 @@ const inView = (delay = 0) => ({
   transition:  { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 })
 
-/* Placeholders — replace with real images dropped into /public/life/photography/
-   then update this list. Aspect ratios are mixed on purpose for a masonry feel. */
-const placeholders = [
-  { id: 1,  aspect: 'aspect-[4/5]',  label: 'Pacific coast',           series: 'Coast Series' },
-  { id: 2,  aspect: 'aspect-[3/2]',  label: 'Highway 99 at golden hr', series: 'Roads' },
-  { id: 3,  aspect: 'aspect-square', label: 'Studio detail',           series: 'Quiet Objects' },
-  { id: 4,  aspect: 'aspect-[4/5]',  label: 'Rainforest morning',      series: 'BC Wild' },
-  { id: 5,  aspect: 'aspect-[3/2]',  label: 'Mountain pass · winter',  series: 'High Country' },
-  { id: 6,  aspect: 'aspect-square', label: 'Street portrait',         series: 'Strangers' },
-  { id: 7,  aspect: 'aspect-[3/2]',  label: 'Industrial silhouette',   series: 'Working Land' },
-  { id: 8,  aspect: 'aspect-[4/5]',  label: 'Calm before the storm',   series: 'Skies' },
-  { id: 9,  aspect: 'aspect-square', label: 'Animal sanctuary',        series: 'Field Visits' },
-  { id: 10, aspect: 'aspect-[3/2]',  label: 'Roadside chapel',         series: 'Roads' },
-  { id: 11, aspect: 'aspect-[4/5]',  label: 'Dog at the lake',         series: 'Companions' },
-  { id: 12, aspect: 'aspect-square', label: 'Tea, light, hands',       series: 'Quiet Objects' },
+const series = [
+  { title: 'Coast Series',     note: 'Long-form work along the Pacific coastline — light, water and weather.' },
+  { title: 'BC Wild',          note: 'Quiet frames from the rainforests, mountains and waterways of British Columbia.' },
+  { title: 'High Country',     note: 'Alpine and backcountry photography from multi-day approaches.' },
+  { title: 'Quiet Objects',    note: 'Studio still lifes — the small, deliberate frames that ask for a second look.' },
+  { title: 'Companions',       note: 'A long-running record of the animals who have shared this life.' },
+  { title: 'Working Land',     note: 'Industrial and rural landscapes from years on field sites.' },
 ]
 
 const Photography: React.FC = () => {
@@ -48,7 +40,7 @@ const Photography: React.FC = () => {
             <div className="lg:col-span-4">
               <p className="text-[15px] text-ink/65 leading-relaxed">
                 Mostly natural light, mostly Pacific Northwest. I shoot for the
-                quiet frames — the ones that don't ask anything of the viewer
+                quiet frames — the ones that don’t ask anything of the viewer
                 except a second look.
               </p>
             </div>
@@ -56,51 +48,58 @@ const Photography: React.FC = () => {
         </div>
       </section>
 
-      {/* Asset note */}
-      <section className="border-b border-ink/10 bg-sand">
-        <div className="container-wide py-6 text-[12px] text-ink/55 font-medium">
-          <span className="text-accent font-semibold uppercase tracking-[0.22em] text-[11px] mr-3">Placeholder</span>
-          Drop final images into <code className="bg-surface px-1.5 py-0.5 border border-ink/10">/public/life/photography/</code> and swap in real captions.
+      {/* Series list */}
+      <section className="border-b border-ink/10">
+        <div className="container-wide py-20">
+          <div className="mb-12">
+            <p className="eyebrow mb-3">Series in progress</p>
+            <h2 className="display-md">The bodies of work I’m putting together.</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border border-ink/10 bg-surface divide-y md:divide-y-0 md:divide-x divide-ink/10">
+            {series.map((s, i) => (
+              <motion.div
+                key={s.title}
+                {...inView((i % 3) * 0.06)}
+                className={`p-8 ${i >= 3 ? 'md:border-t md:border-ink/10' : ''}`}
+              >
+                <p className="font-serif text-xs uppercase tracking-[0.22em] text-ink/35 mb-2">0{i + 1}</p>
+                <h3 className="font-serif text-xl font-medium text-ink leading-snug">{s.title}</h3>
+                <p className="mt-3 text-sm text-ink/60 leading-relaxed">{s.note}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Masonry */}
-      <section className="container-wide py-20">
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5">
-          {placeholders.map((p, i) => (
-            <motion.figure
-              key={p.id}
-              {...inView((i % 6) * 0.04)}
-              className="break-inside-avoid mb-5 group"
+      {/* Gallery in preparation */}
+      <section className="border-b border-ink/10 bg-sand">
+        <div className="container-wide py-24">
+          <motion.div {...inView(0)} className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex w-14 h-14 border border-ink/15 items-center justify-center mb-8">
+              <Camera className="w-5 h-5 text-accent" strokeWidth={1.25} />
+            </div>
+            <h2 className="display-md mb-5">The gallery is being curated.</h2>
+            <p className="lead">
+              Full prints, sequencing, and titles are coming together for each
+              series above. If you’d like an early look — or you’re interested in
+              a print of something specific — write to me.
+            </p>
+            <a
+              href="mailto:Noopur.trivedi@hotmail.com?subject=Photography%20%E2%80%94%20early%20look"
+              className="mt-10 btn-primary px-8 py-3.5 text-[13px] inline-flex"
             >
-              <div className={`relative ${p.aspect} bg-sand border border-ink/10 overflow-hidden`}>
-                {/* subtle ornamental placeholder */}
-                <div
-                  className="absolute inset-0 opacity-50"
-                  style={{
-                    background:
-                      'repeating-linear-gradient(135deg, rgba(15,93,74,0.05) 0px, rgba(15,93,74,0.05) 1px, transparent 1px, transparent 18px)',
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Camera className="w-7 h-7 text-ink/15" strokeWidth={1.25} />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-canvas/95 via-canvas/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="font-serif text-sm font-medium text-ink leading-snug">{p.label}</p>
-                  <p className="text-[10px] text-ink/55 uppercase tracking-[0.22em] mt-1 font-semibold">{p.series}</p>
-                </div>
-              </div>
-            </motion.figure>
-          ))}
+              <Mail className="mr-2 w-4 h-4" /> Request an early look
+            </a>
+          </motion.div>
         </div>
       </section>
 
       {/* Next */}
-      <section className="border-t border-ink/10 bg-sand">
+      <section className="border-t border-ink/10">
         <div className="container-wide py-16 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
           <div>
             <p className="eyebrow mb-2">Next in Life</p>
-            <h2 className="font-serif text-2xl font-medium text-ink">Painting & Art →</h2>
+            <h2 className="font-serif text-2xl font-medium text-ink">Painting &amp; Art →</h2>
           </div>
           <Link to="/life/art" className="btn-outline px-7 py-3.5 text-[13px]">
             Continue to the studio

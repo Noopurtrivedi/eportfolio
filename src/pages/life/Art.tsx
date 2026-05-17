@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowLeft, Brush } from 'lucide-react'
+import { ArrowLeft, Brush, Mail } from 'lucide-react'
 
 const inView = (delay = 0) => ({
   initial:     { opacity: 0, y: 18 },
@@ -9,15 +9,6 @@ const inView = (delay = 0) => ({
   viewport:    { once: true },
   transition:  { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 })
-
-const works = [
-  { id: 1, title: 'Untitled, after the storm',     medium: 'Acrylic on canvas',  size: '24 × 30 in', year: '2024' },
-  { id: 2, title: 'Letter from the high country',  medium: 'Watercolour & ink',   size: '12 × 16 in', year: '2024' },
-  { id: 3, title: 'Field study no. 7',             medium: 'Gouache on paper',    size: '8 × 10 in',  year: '2023' },
-  { id: 4, title: 'Self portrait as a sparrow',    medium: 'Oil on linen',        size: '18 × 24 in', year: '2023' },
-  { id: 5, title: 'Notes on quiet',                medium: 'Mixed media',         size: '16 × 20 in', year: '2022' },
-  { id: 6, title: 'Two trees, one root',           medium: 'Charcoal on paper',   size: '14 × 18 in', year: '2022' },
-]
 
 const Art: React.FC = () => {
   return (
@@ -31,7 +22,7 @@ const Art: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8">
-              <p className="eyebrow mb-4 inline-flex items-center gap-2"><Brush className="w-3.5 h-3.5" /> Painting & Art</p>
+              <p className="eyebrow mb-4 inline-flex items-center gap-2"><Brush className="w-3.5 h-3.5" /> Painting &amp; Art</p>
               <h1 className="display-xl">
                 Paint as a quieter
                 <span className="italic font-light" style={{ color: '#0f5d4a' }}> language.</span>
@@ -39,57 +30,17 @@ const Art: React.FC = () => {
             </div>
             <div className="lg:col-span-4">
               <p className="text-[15px] text-ink/65 leading-relaxed">
-                Specifications are precise. Paint is honest about what it can't
+                Specifications are precise. Paint is honest about what it can’t
                 say. I work in small, deliberate series — colour studies,
-                portraits, the occasional landscape I've actually walked.
+                portraits, and the occasional landscape I’ve actually walked.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Asset note */}
-      <section className="border-b border-ink/10 bg-sand">
-        <div className="container-wide py-6 text-[12px] text-ink/55 font-medium">
-          <span className="text-accent font-semibold uppercase tracking-[0.22em] text-[11px] mr-3">Placeholder</span>
-          Drop scans into <code className="bg-surface px-1.5 py-0.5 border border-ink/10">/public/life/art/</code> and replace this list with real titles, mediums and dimensions.
-        </div>
-      </section>
-
-      {/* Grid */}
-      <section className="container-wide py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {works.map((w, i) => (
-            <motion.figure
-              key={w.id}
-              {...inView((i % 3) * 0.05)}
-              className="group"
-            >
-              <div className="relative aspect-[4/5] bg-sand border border-ink/10 overflow-hidden">
-                {/* Placeholder texture */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    background:
-                      'radial-gradient(circle at 30% 30%, rgba(15,93,74,0.10), transparent 60%), radial-gradient(circle at 70% 70%, rgba(169,133,50,0.08), transparent 60%)',
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Brush className="w-7 h-7 text-ink/15" strokeWidth={1.25} />
-                </div>
-              </div>
-              <figcaption className="mt-4">
-                <p className="font-serif text-lg font-medium text-ink italic">{w.title}</p>
-                <p className="mt-1 text-xs text-ink/55">{w.medium} · {w.size}</p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.22em] text-accent font-semibold">{w.year}</p>
-              </figcaption>
-            </motion.figure>
-          ))}
-        </div>
-      </section>
-
-      {/* Statement */}
-      <section className="border-t border-ink/10 bg-sand">
+      {/* Artist statement — anchored */}
+      <section className="border-b border-ink/10">
         <div className="container-wide py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-4">
@@ -103,13 +54,38 @@ const Art: React.FC = () => {
                 opposite practice. It lets the ambiguity stay.
               </p>
               <p>
-                I tend to work small and slow. The pieces here are placeholders
-                — when the real scans go in, the captions will read differently.
-                If you'd like to see something in person, write to me.
+                I work small and slow. A study at a time, mostly in series, mostly
+                from memory rather than reference. The work isn’t a commercial
+                practice — but the catalog is real and I’m happy to share
+                originals or scans by request.
               </p>
               <p className="font-serif italic text-ink/55">— Noopur</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Studio in preparation */}
+      <section className="border-b border-ink/10 bg-sand">
+        <div className="container-wide py-24">
+          <motion.div {...inView(0)} className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex w-14 h-14 border border-ink/15 items-center justify-center mb-8">
+              <Brush className="w-5 h-5 text-accent" strokeWidth={1.25} />
+            </div>
+            <h2 className="display-md mb-5">The studio gallery is being assembled.</h2>
+            <p className="lead">
+              Scans of the current series are coming up here — colour studies,
+              charcoal, gouache and a small body of oil work. If you’d like to
+              see a piece in person, or you’re curious about something specific,
+              write to me.
+            </p>
+            <a
+              href="mailto:Noopur.trivedi@hotmail.com?subject=Art%20%E2%80%94%20studio%20visit"
+              className="mt-10 btn-primary px-8 py-3.5 text-[13px] inline-flex"
+            >
+              <Mail className="mr-2 w-4 h-4" /> Ask about a piece
+            </a>
+          </motion.div>
         </div>
       </section>
 
