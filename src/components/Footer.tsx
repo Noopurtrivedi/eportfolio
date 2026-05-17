@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
                 { label: 'Journey',        href: '/journey'        },
                 { label: 'Life',           href: '/life'           },
                 { label: 'Certifications', href: '/certifications' },
-                { label: 'About',          href: '/about'          },
+                { label: 'About',          href: '/'               },
                 { label: 'Contact',        href: '/contact'        },
               ].map((l) => (
                 <Link

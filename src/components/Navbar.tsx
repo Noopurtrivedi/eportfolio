@@ -4,10 +4,10 @@ import { Menu, X } from 'lucide-react'
 import { clsx } from 'clsx'
 
 const nav = [
+  { name: 'About',   href: '/'          },
   { name: 'Work',    href: '/portfolio' },
   { name: 'Journey', href: '/journey'   },
   { name: 'Life',    href: '/life'      },
-  { name: 'About',   href: '/about'     },
   { name: 'Contact', href: '/contact'   },
 ]
 
