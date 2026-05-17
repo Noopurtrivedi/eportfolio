@@ -1,200 +1,247 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Award, BookOpen, Briefcase, Lightbulb, Coffee, Rocket, Target, Globe, Heart } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ArrowRight, ArrowUpRight, Linkedin, Mail, Phone, MapPin } from 'lucide-react'
+import { workExperience, education } from '../data/projects'
+
+const inView = (delay = 0) => ({
+  initial:     { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport:    { once: true },
+  transition:  { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+})
 
 const About: React.FC = () => {
   return (
-    <div className="pb-20">
-      {/* Hero Section - The "Hook" */}
-      <section className="bg-white py-20 lg:py-32 overflow-hidden relative">
-        <div className="container-custom relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl"
-          >
-            <span className="text-primary-600 font-bold tracking-widest uppercase text-sm mb-4 block">The Narrative</span>
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 mb-8 leading-tight">
-              I don't just analyze systems. <br />
-              <span className="text-primary-600">I reinvent them.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-500 leading-relaxed max-w-3xl">
-              From a Business Analyst curiosity to an AI Builder's execution, my journey has been defined by one goal: bridging the gap between human intuition and machine intelligence.
-            </p>
-          </motion.div>
+    <div className="bg-canvas">
+
+      {/* ─── Header ───────────────────────────────────────────────────── */}
+      <section className="border-b border-ink/10 pt-36 pb-20">
+        <div className="container-wide">
+          <p className="eyebrow mb-5">About</p>
+          <h1 className="display-xl max-w-4xl">
+            Senior delivery from a regulated-IT background,
+            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and a builder’s instinct for what comes next.</span>
+          </h1>
         </div>
-        {/* Background Accent */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50 -z-10 skew-x-12 translate-x-24"></div>
       </section>
 
-      {/* The Journey - Timeline Style */}
-      <section className="container-custom py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          <div className="lg:col-span-4">
-             <div className="sticky top-24">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">The Evolution</h2>
-                <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                  My career hasn't been a straight line. It's been a series of strategic pivots, each adding a new tool to my arsenal.
-                </p>
-                <div className="flex flex-col gap-4">
-                   <div className="p-4 bg-primary-50 rounded-2xl border border-primary-100">
-                      <div className="text-primary-700 font-bold">2018 — The Foundation</div>
-                      <div className="text-sm text-primary-600">Business Analysis & Strategy</div>
-                   </div>
-                   <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                      <div className="text-gray-900 font-bold">2021 — The Shift</div>
-                      <div className="text-sm text-gray-500">Automation & Product Building</div>
-                   </div>
-                   <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                      <div className="text-gray-900 font-bold">2024 — The Future</div>
-                      <div className="text-sm text-gray-500">AI Integration & Entrepreneurship</div>
-                   </div>
+      {/* ─── Bio ──────────────────────────────────────────────────────── */}
+      <section className="border-b border-ink/10">
+        <div className="container-wide py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <div className="lg:col-span-7 space-y-6 text-ink/70 leading-relaxed text-[17px]">
+              <p>
+                I’m a Senior Business Systems Analyst with eleven years of experience
+                delivering complex IT change inside large, regulated enterprises —
+                BC Hydro, MTU Canada, Bell Canada, Syncrude, Imperial Oil.
+              </p>
+              <p>
+                My specialty is the unglamorous middle: translating cross-functional
+                business needs into the kind of technical specifications engineering
+                can actually build against, then coordinating the data migrations,
+                API and file-based integrations, and reporting layers that make a
+                system safe to release. I work natively in Agile and Scrum, and I’m
+                most useful in environments where audit, governance, and stakeholder
+                alignment matter as much as the code.
+              </p>
+              <p>
+                On the side, I build AI products — ConvertX (autonomous outbound),
+                an AI-driven ATS platform, and CreationX (an AI agent marketplace
+                for operators). They’re where I get to apply enterprise rigor to
+                a modern stack, and where I prove out the patterns I later bring
+                back into client work.
+              </p>
+            </div>
+
+            <aside className="lg:col-span-5">
+              <div className="card p-8">
+                <p className="eyebrow mb-5">At a glance</p>
+                <dl className="flex flex-col gap-4 text-sm">
+                  {[
+                    { k: 'Role',       v: 'Senior Business Systems Analyst' },
+                    { k: 'Experience', v: '11+ years · Enterprise IT delivery' },
+                    { k: 'Industries', v: 'Utilities · Aerospace · Telecom · Retail · Energy' },
+                    { k: 'Specialty',  v: 'SAP · BI · Data integration · POS/payments' },
+                    { k: 'Also builds',v: 'AI products — ConvertX, ATS, CreationX' },
+                    { k: 'Method',     v: 'Agile / Scrum, audit-grade documentation' },
+                  ].map((row) => (
+                    <div key={row.k} className="grid grid-cols-12 gap-3 border-b border-ink/8 pb-3 last:border-b-0 last:pb-0">
+                      <dt className="col-span-4 text-[11px] uppercase tracking-[0.20em] text-ink/45 font-semibold pt-0.5">{row.k}</dt>
+                      <dd className="col-span-8 text-ink/80">{row.v}</dd>
+                    </div>
+                  ))}
+                </dl>
+
+                <div className="mt-8 pt-6 border-t border-ink/10 flex flex-wrap gap-3">
+                  <Link to="/contact" className="btn-primary px-5 py-2.5 text-[12px]">
+                    Get in Touch <ArrowRight className="ml-2 w-3.5 h-3.5" />
+                  </Link>
+                  <a
+                    href="https://linkedin.com/in/noopur-trivedi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-outline px-5 py-2.5 text-[12px]"
+                  >
+                    <Linkedin className="mr-2 w-3.5 h-3.5" /> LinkedIn
+                  </a>
                 </div>
-             </div>
-          </div>
-          
-          <div className="lg:col-span-8 space-y-20">
-            <div className="relative pl-12 border-l-2 border-gray-100">
-              <div className="absolute top-0 left-0 -translate-x-[calc(50%+1px)] w-6 h-6 bg-primary-600 rounded-full ring-8 ring-primary-50"></div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Phase 1: Decoding Complexity</h3>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  I started my career deep in the trenches of business operations. My job was to listen, observe, and document. I learned how to talk to stakeholders, how to spot a bottleneck from a mile away, and how to translate "we have a problem" into a 50-page requirement document.
-                </p>
-                <p>
-                  But I soon realized that documentation wasn't enough. I wanted to be the one who fixed the problem, not just the one who described it.
-                </p>
               </div>
-            </div>
-
-            <div className="relative pl-12 border-l-2 border-gray-100">
-              <div className="absolute top-0 left-0 -translate-x-[calc(50%+1px)] w-6 h-6 bg-primary-600 rounded-full ring-8 ring-primary-50"></div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Phase 2: Building the Bridge</h3>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  I taught myself to code. Not to become a "Software Engineer" in the traditional sense, but to become a "Problem Solver" with a broader toolkit. I started building custom CRMs, automation workflows, and internal tools that saved teams hundreds of hours.
-                </p>
-                <p>
-                  This is where I discovered the power of the "Builder-Analyst" hybrid. I could see the business need and implement the technical solution simultaneously.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative pl-12 border-l-2 border-gray-100">
-              <div className="absolute top-0 left-0 -translate-x-[calc(50%+1px)] w-6 h-6 bg-primary-600 rounded-full ring-8 ring-primary-50"></div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Phase 3: The AI Frontier</h3>
-              <div className="space-y-4 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Now, I focus on the most powerful tool in our history: Artificial Intelligence. I don't just use AI; I integrate it into the core of business strategy. I build systems that think, learn, and act—allowing human teams to focus on what they do best: creativity and connection.
-                </p>
-                <p>
-                  Today, I operate as a fractional CTO/COO for startups, helping them navigate the complex world of AI transformation.
-                </p>
-              </div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
 
-      {/* Philosophy - What I stand for */}
-      <section className="bg-gray-900 py-32 text-white">
-        <div className="container-custom">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl font-bold mb-6">Core Principles</h2>
-            <p className="text-gray-400 text-lg">The values that guide every project I take on.</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {/* ─── Three lenses ─────────────────────────────────────────────── */}
+      <section className="border-b border-ink/10 bg-sand">
+        <div className="container-wide py-20">
+          <p className="eyebrow mb-12">How I work</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-ink/10 bg-surface divide-y md:divide-y-0 md:divide-x divide-ink/10">
             {[
-              { 
-                icon: Target, 
-                title: 'Outcomes > Outputs', 
-                desc: 'I don\'t care how many lines of code I write or how many pages a report is. I care if the business grew or the costs went down.' 
+              {
+                num: '01',
+                title: 'I write the spec before the slide.',
+                desc: "The deliverable I’m proudest of is rarely a deck. It’s the requirements document, the data flow, the test plan — the artifact a build team can act on without ambiguity.",
               },
-              { 
-                icon: Heart, 
-                title: 'Human-Centric AI', 
-                desc: 'Technology should empower people, not replace them. I build tools that make work feel less like work.' 
+              {
+                num: '02',
+                title: 'I treat reporting as the product.',
+                desc: "Dashboards aren’t the by-product of the project; they’re the system of record once it ships. I build the KPI and governance layer that outlives the rollout.",
               },
-              { 
-                icon: Rocket, 
-                title: 'Radical Execution', 
-                desc: 'Speed is a feature. I believe in shipping MVPs quickly, learning from real usage, and iterating fast.' 
-              }
-            ].map((principle, idx) => (
-              <div key={idx} className="p-10 bg-white/5 rounded-[2.5rem] border border-white/10 hover:bg-white/10 transition-colors">
-                <principle.icon className="h-10 w-10 text-primary-400 mb-6" />
-                <h3 className="text-xl font-bold mb-4">{principle.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{principle.desc}</p>
-              </div>
+              {
+                num: '03',
+                title: 'I build what I keep being asked to build.',
+                desc: "ConvertX, the ATS platform and CreationX all started as bespoke client work. Productizing them is how I make sure each pattern is hardened, not just shipped once.",
+              },
+            ].map((lens, i) => (
+              <motion.div key={lens.num} {...inView(i * 0.1)} className="p-10">
+                <span className="font-serif text-sm" style={{ color: 'rgba(15,93,74,0.55)' }}>
+                  {lens.num}
+                </span>
+                <h3 className="font-serif text-xl font-medium text-ink mt-3 mb-4 leading-snug">{lens.title}</h3>
+                <p className="text-sm text-ink/60 leading-relaxed">{lens.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Now Section - What I'm doing lately */}
-      <section className="container-custom py-32">
-        <div className="bg-primary-50 rounded-[3rem] p-12 lg:p-20 flex flex-col lg:flex-row gap-16 items-center">
-          <div className="flex-1 space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full border border-primary-100 shadow-sm">
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-primary-500"></span>
-              </span>
-              <span className="text-xs font-bold text-primary-700 uppercase tracking-widest">What I'm doing now</span>
-            </div>
-            <h2 className="text-4xl font-bold text-gray-900 leading-tight">Currently building, reading, and exploring.</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-600">
-               <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary-600 shadow-sm flex-shrink-0">
-                    <Rocket className="h-5 w-5" />
-                  </div>
-                  <p>Building an AI-first CRM for specialized consulting firms.</p>
-               </div>
-               <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary-600 shadow-sm flex-shrink-0">
-                    <BookOpen className="h-5 w-5" />
-                  </div>
-                  <p>Reading "The Coming Wave" by Mustafa Suleyman.</p>
-               </div>
-               <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary-600 shadow-sm flex-shrink-0">
-                    <Globe className="h-5 w-5" />
-                  </div>
-                  <p>Exploring the potential of agentic workflows in supply chain.</p>
-               </div>
-               <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-primary-600 shadow-sm flex-shrink-0">
-                    <Coffee className="h-5 w-5" />
-                  </div>
-                  <p>Mastering the art of pour-over coffee (current bean: Ethiopian Yirgacheffe).</p>
-               </div>
-            </div>
+      {/* ─── Experience timeline ─────────────────────────────────────── */}
+      <section id="experience" className="border-b border-ink/10 scroll-mt-20">
+        <div className="container-wide py-20">
+          <div className="mb-14 max-w-2xl">
+            <p className="eyebrow mb-3">Experience</p>
+            <h2 className="display-lg">Twelve years, eight organizations.</h2>
+            <p className="lead mt-5">
+              A progression through technical analyst, integration specialist, BI
+              developer, business analyst, project manager and senior decision
+              analyst — across utilities, aerospace, telecom, retail and energy.
+            </p>
           </div>
-          <div className="flex-1 w-full max-w-sm">
-             <div className="aspect-square bg-white rounded-[3rem] shadow-2xl shadow-primary-200 overflow-hidden p-8 flex items-center justify-center">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="relative w-full h-full border-4 border-dashed border-primary-100 rounded-full flex items-center justify-center"
-                >
-                  <Rocket className="h-20 w-20 text-primary-600" />
-                  {/* Decorative orbital elements */}
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-primary-400 rounded-full"></div>
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-6 h-6 bg-primary-200 rounded-full"></div>
-                </motion.div>
-             </div>
+
+          <div className="flex flex-col">
+            {workExperience.map((role, i) => (
+              <motion.article
+                key={`${role.org}-${role.period}`}
+                {...inView(i * 0.05)}
+                className="grid grid-cols-12 gap-6 border-t border-ink/10 py-10 last:border-b"
+              >
+                <div className="col-span-12 md:col-span-3">
+                  <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-semibold">
+                    {role.period}
+                  </p>
+                  <p className="mt-2 text-[13px] text-ink/55">{role.org}</p>
+                </div>
+                <div className="col-span-12 md:col-span-9">
+                  <h3 className="font-serif text-2xl font-medium text-ink leading-snug">{role.title}</h3>
+                  <p className="mt-3 text-[15px] text-ink/65 leading-relaxed max-w-3xl">
+                    {role.summary}
+                  </p>
+                  {role.highlights && (
+                    <ul className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 max-w-3xl">
+                      {role.highlights.map((h) => (
+                        <li key={h} className="flex items-start gap-3 text-sm text-ink/65 leading-relaxed">
+                          <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0 mt-2" />
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Social Proof CTA */}
-      <section className="container-custom py-12 text-center">
-        <h2 className="text-3xl font-bold mb-8 text-gray-900">Want to be part of the next phase?</h2>
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-           <a href="/portfolio" className="btn-primary px-10 py-4">View My Work</a>
-           <a href="/contact" className="btn-secondary px-10 py-4">Start a Project</a>
+      {/* ─── Education + Contact strip ───────────────────────────────── */}
+      <section className="border-b border-ink/10 bg-sand">
+        <div className="container-wide py-20 grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="md:col-span-6">
+            <p className="eyebrow mb-5">Education</p>
+            {education.map((e) => (
+              <div key={e.credential} className="card p-6">
+                <p className="font-serif text-xl font-medium text-ink">{e.credential}</p>
+                <p className="mt-1 text-sm text-ink/55">{e.school}</p>
+                <p className="mt-3 text-[11px] uppercase tracking-[0.22em] text-accent font-semibold">{e.period}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="md:col-span-6">
+            <p className="eyebrow mb-5">Direct contact</p>
+            <div className="card divide-y divide-ink/8">
+              {[
+                { icon: Mail,  label: 'Email',    value: 'Noopur.trivedi@hotmail.com', href: 'mailto:Noopur.trivedi@hotmail.com' },
+                { icon: Phone, label: 'Phone',    value: '+1 (306) 471-1222',          href: 'tel:+13064711222' },
+                { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/noopur-trivedi', href: 'https://linkedin.com/in/noopur-trivedi' },
+                { icon: MapPin, label: 'Based in', value: 'Canada · Remote-first',     href: null },
+              ].map((row) => {
+                const Inner = (
+                  <div className="flex items-center gap-4 p-5">
+                    <div className="w-9 h-9 border border-ink/15 flex items-center justify-center">
+                      <row.icon className="w-4 h-4 text-accent" strokeWidth={1.5} />
+                    </div>
+                    <div className="flex-1">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-ink/45 mb-0.5">{row.label}</p>
+                      <p className="text-sm text-ink/80">{row.value}</p>
+                    </div>
+                    {row.href && <ArrowUpRight className="w-4 h-4 text-ink/35" />}
+                  </div>
+                )
+                return row.href ? (
+                  <a
+                    key={row.label}
+                    href={row.href}
+                    target={row.href.startsWith('http') ? '_blank' : undefined}
+                    rel="noopener noreferrer"
+                    className="block hover:bg-sand transition-colors"
+                  >
+                    {Inner}
+                  </a>
+                ) : (
+                  <div key={row.label}>{Inner}</div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA ─────────────────────────────────────────────────────── */}
+      <section className="container-wide py-24 text-center">
+        <h2 className="display-md mb-3">Ready to bring me onto your team?</h2>
+        <p className="text-ink/55 text-sm mb-8 max-w-md mx-auto">
+          If you’re hiring for a senior BSA, BI lead or integration analyst — or
+          you want to discuss product work — let’s talk.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link to="/contact" className="btn-primary px-8 py-4 text-[13px]">
+            Get in Touch <ArrowRight className="ml-2 w-4 h-4" />
+          </Link>
+          <Link to="/portfolio" className="btn-outline px-8 py-4 text-[13px]">
+            See the Work
+          </Link>
         </div>
       </section>
     </div>
@@ -202,4 +249,3 @@ const About: React.FC = () => {
 }
 
 export default About
-

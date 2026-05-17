@@ -1,271 +1,473 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Coffee, Rocket, Target, Zap, Brain, Code, BarChart3, ChevronRight } from 'lucide-react'
-import { projects } from '../data/projects'
 import { motion } from 'framer-motion'
+import { ArrowRight, ArrowUpRight, Linkedin } from 'lucide-react'
+import { clientProjects, sideProjects, skills } from '../data/projects'
+
+const fadeUp = (delay = 0) => ({
+  initial:    { opacity: 0, y: 24 },
+  animate:    { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+})
+
+const inView = (delay = 0) => ({
+  initial:     { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport:    { once: true },
+  transition:  { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+})
+
+const marqueeItems = [
+  'SAP Decision Analytics',
+  'Microsoft 365 Modernization',
+  'ETL & BI Pipelines',
+  'POS · Payments · ERP Integration',
+  'Agile / Scrum Delivery',
+  'GPT-4 Workflow Design',
+  'Founder · CreationX',
+]
 
 const Home: React.FC = () => {
-  const featuredProjects = projects.filter(p => p.featured)
+  const featured = clientProjects.slice(0, 4)
 
   return (
-    <div className="space-y-24 pb-20">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center bg-white overflow-hidden">
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-primary-50 rounded-full blur-3xl opacity-50"></div>
-        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-primary-100 rounded-full blur-3xl opacity-30"></div>
-        
-        <div className="container-custom relative z-10">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
+    <div className="bg-canvas">
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          HERO
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section className="relative min-h-[92vh] flex flex-col justify-end pb-20 overflow-hidden">
+
+        {/* Soft accent wash */}
+        <div
+          className="absolute top-0 right-0 w-[700px] h-[700px] pointer-events-none"
+          style={{ background: 'radial-gradient(circle at top right, rgba(15,93,74,0.07) 0%, transparent 65%)' }}
+        />
+
+        <div className="container-wide relative z-10 pt-36">
+
+          {/* Availability badge */}
+          <motion.div {...fadeUp(0)} className="mb-10">
+            <span className="tag-accent">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent mr-2 animate-pulse" />
+              Open to senior BSA, BI &amp; integration engagements
+            </span>
+          </motion.div>
+
+          {/* Eyebrow */}
+          <motion.p {...fadeUp(0.05)} className="eyebrow mb-6">
+            Noopur Trivedi  ·  Eleven Years in Enterprise IT
+          </motion.p>
+
+          {/* Headline */}
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ opacity: 0, y: 44 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+              className="display-xl"
             >
-              <span className="inline-block px-4 py-2 bg-primary-50 text-primary-700 text-sm font-bold rounded-full mb-6 tracking-wide uppercase">
-                Available for Strategic Projects
-              </span>
-              <h1 className="text-6xl font-extrabold tracking-tight text-gray-900 sm:text-7xl md:text-8xl leading-[1.1]">
-                I bridge the gap between <span className="text-primary-600">Business</span> and <span className="text-primary-600">AI</span>.
-              </h1>
-              <p className="mt-8 max-w-2xl text-xl text-gray-500 sm:text-2xl leading-relaxed">
-                Hi, I'm <span className="font-semibold text-gray-900">Noopur Trivedi</span>. I help ambitious companies automate complexity, build intelligent products, and scale through data-driven strategy.
-              </p>
-              <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Link to="/portfolio" className="btn-primary px-8 py-4 text-lg shadow-lg shadow-primary-200">
-                  View Case Studies <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-                <Link to="/network" className="btn-secondary px-8 py-4 text-lg hover:bg-gray-50">
-                  Book a Coffee Chat <Coffee className="ml-2 h-5 w-5" />
-                </Link>
-              </div>
+              Senior Business
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ opacity: 0, y: 44 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="display-xl"
+            >
+              Systems Analyst
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden">
+            <motion.h1
+              initial={{ opacity: 0, y: 44 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+              className="display-xl italic font-light"
+              style={{ color: '#0f5d4a' }}
+            >
+              &amp; AI Systems Builder.
+            </motion.h1>
+          </div>
+
+          {/* Sub + CTAs */}
+          <div className="mt-14 flex flex-col lg:flex-row lg:items-end gap-10 lg:gap-20">
+            <motion.p
+              {...fadeUp(0.45)}
+              className="lead max-w-xl"
+            >
+              I lead end-to-end IT delivery in regulated enterprises — SAP, BI,
+              retail systems integration — and build AI products on the side
+              that bring the same discipline to modern workflows.
+            </motion.p>
+
+            <motion.div {...fadeUp(0.55)} className="flex flex-col sm:flex-row gap-4 shrink-0">
+              <Link to="/portfolio" className="btn-primary px-8 py-4 text-[13px]">
+                View Case Studies <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+              <Link to="/contact" className="btn-outline px-8 py-4 text-[13px]">
+                Get in Touch
+              </Link>
             </motion.div>
           </div>
-        </div>
-        
-        {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block"
-        >
-          <div className="w-6 h-10 border-2 border-gray-200 rounded-full flex justify-center p-1">
-            <motion.div 
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5 }}
-              className="w-1 h-2 bg-primary-600 rounded-full"
-            />
-          </div>
-        </motion.div>
-      </section>
 
-      {/* Trust Bar / Metrics */}
-      <section className="py-12 border-y border-gray-100 bg-gray-50/50">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          {/* Tag strip */}
+          <motion.div {...fadeUp(0.65)} className="flex flex-wrap gap-3 mt-14">
             {[
-              { label: 'Efficiency Increase', value: '40%+', icon: Zap },
-              { label: 'Costs Saved', value: '$100k+', icon: BarChart3 },
-              { label: 'Products Launched', value: '10+', icon: Rocket },
-              { label: 'Strategic Chats', value: '100+', icon: Coffee },
-            ].map((stat, idx) => (
-              <div key={idx} className="flex items-center space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center text-primary-600">
-                  <stat.icon className="h-6 w-6" />
-                </div>
-                <div>
-                  <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                  <div className="text-xs font-medium text-gray-400 uppercase tracking-wider">{stat.label}</div>
-                </div>
-              </div>
+              'BC Hydro · SAP',
+              'MTU · M365 Modernization',
+              'Bell · BI & ETL',
+              'NRI · POS Integration',
+              'Founder · CreationX',
+            ].map((t) => (
+              <span key={t} className="tag-ink">{t}</span>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="container-custom py-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-          <div className="max-w-2xl">
-            <h2 className="section-title">Selected Work</h2>
-            <p className="section-subtitle">Real-world impact through AI integration and business transformation.</p>
-          </div>
-          <Link to="/portfolio" className="group flex items-center text-primary-600 font-bold hover:text-primary-700 transition-colors">
-            Explore All Projects <ChevronRight className="ml-1 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
+      {/* ═══════════════════════════════════════════════════════════════════
+          MARQUEE
+      ═══════════════════════════════════════════════════════════════════ */}
+      <div className="border-y border-ink/10 py-4 overflow-hidden bg-sand">
+        <div className="marquee-track select-none">
+          {[...marqueeItems, ...marqueeItems].map((item, i) => (
+            <span key={i} className="flex items-center gap-5 px-5">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/55 whitespace-nowrap">
+                {item}
+              </span>
+              <span className="text-accent text-sm">✦</span>
+            </span>
+          ))}
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {featuredProjects.slice(0, 2).map((project, idx) => (
+      </div>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          METRICS
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section className="container-wide py-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-y border-ink/10">
+          {[
+            { value: '11+',   label: 'Years Enterprise IT' },
+            { value: '1,000+',label: 'Person Org · BC Hydro' },
+            { value: '31%',   label: 'Defect Reduction · X360' },
+            { value: '30%',   label: 'Decision Speed Lift · Bell' },
+          ].map((s, i) => (
             <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="group cursor-pointer"
+              key={s.label}
+              {...inView(i * 0.07)}
+              className={`p-10 flex flex-col gap-2 ${i !== 0 ? 'md:border-l border-ink/10' : ''} ${i === 2 ? 'border-t md:border-t-0' : ''} ${i === 3 ? 'border-t md:border-t-0 border-l' : ''} ${i === 1 ? 'border-l' : ''}`}
             >
-              <Link to={`/portfolio/${project.slug}`} className="block space-y-6">
-                <div className="aspect-[16/10] bg-gray-100 rounded-3xl overflow-hidden relative border border-gray-100">
-                  {/* Placeholder for project image */}
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-300">
-                    <Rocket className="h-20 w-20 opacity-20" />
-                  </div>
-                  <div className="absolute inset-0 bg-primary-900/0 group-hover:bg-primary-900/5 transition-colors duration-500"></div>
-                </div>
-                <div className="space-y-3">
-                  <div className="flex gap-3">
-                    {project.category.map(cat => (
-                      <span key={cat} className="text-[10px] font-bold uppercase tracking-widest text-primary-600">
-                        {cat}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="text-3xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-lg text-gray-500 leading-relaxed line-clamp-2">
-                    {project.description}
-                  </p>
-                  <div className="pt-2 flex items-center text-sm font-bold text-gray-900 group-hover:underline underline-offset-4 decoration-primary-600">
-                    Read Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                  </div>
-                </div>
-              </Link>
+              <span className="font-serif text-5xl font-medium text-ink leading-none">{s.value}</span>
+              <span className="text-[11px] text-ink/45 uppercase tracking-[0.22em] font-semibold">{s.label}</span>
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* The Mindset / Principles */}
-      <section className="bg-primary-950 py-32 text-white overflow-hidden relative">
-        <div className="container-custom relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      {/* ═══════════════════════════════════════════════════════════════════
+          FEATURED — CLIENT CASE STUDIES
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section className="border-t border-ink/10">
+        <div className="container-wide py-24">
+
+          <div className="flex items-end justify-between mb-16">
             <div>
-              <h2 className="text-4xl sm:text-5xl font-extrabold mb-8 leading-tight">
-                How I help companies <br />
-                <span className="text-primary-400 italic">build for the future</span>.
+              <p className="eyebrow mb-3">Selected Engagements</p>
+              <h2 className="display-lg">
+                Enterprise case studies.
               </h2>
-              <div className="space-y-12">
-                {[
-                  { 
-                    icon: Brain, 
-                    title: 'Strategic Analysis', 
-                    desc: 'I don\'t just look at data; I look at the narrative behind the numbers to find the "why" before the "how".' 
-                  },
-                  { 
-                    icon: Code, 
-                    title: 'Intelligent Implementation', 
-                    desc: 'I build MVPs and automation workflows that aren\'t just functional, but scalable and future-proof.' 
-                  },
-                  { 
-                    icon: Target, 
-                    title: 'Impact-First Design', 
-                    desc: 'Every feature and line of code must map back to a business outcome or efficiency metric.' 
-                  }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex gap-6">
-                    <div className="flex-shrink-0 w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center text-primary-400 border border-white/10">
-                      <item.icon className="h-7 w-7" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-primary-100/70 leading-relaxed">{item.desc}</p>
+            </div>
+            <Link
+              to="/portfolio"
+              className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-ink/55 hover:text-accent transition-colors group"
+            >
+              All Work
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-0 border border-ink/10 bg-surface">
+            {featured.map((project, i) => (
+              <motion.div key={project.id} {...inView(i * 0.06)}>
+                <Link
+                  to={`/portfolio/${project.slug}`}
+                  className="group grid grid-cols-12 gap-6 border-b border-ink/8 last:border-b-0 p-8 md:p-10 hover:bg-sand transition-colors"
+                >
+                  {/* Index */}
+                  <div className="col-span-12 md:col-span-1">
+                    <span
+                      className="font-serif text-4xl font-light"
+                      style={{ color: 'rgba(15,93,74,0.40)', lineHeight: 1 }}
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+
+                  {/* Client + period */}
+                  <div className="col-span-12 md:col-span-3">
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-ink/40 font-semibold">
+                      {project.client}
+                    </p>
+                    <p className="mt-1 text-[11px] text-ink/40">{project.period}</p>
+                  </div>
+
+                  {/* Title + tagline */}
+                  <div className="col-span-12 md:col-span-7">
+                    <h3 className="font-serif text-2xl sm:text-[28px] font-medium text-ink leading-tight group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="mt-3 text-sm text-ink/60 max-w-2xl leading-relaxed">
+                      {project.tagline}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.category.slice(0, 3).map((c) => (
+                        <span key={c} className="tag-ink">{c}</span>
+                      ))}
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square bg-primary-800/30 rounded-full border border-primary-700/50 flex items-center justify-center p-12">
-                <div className="aspect-square bg-primary-700/50 rounded-full border border-primary-600/50 w-full flex items-center justify-center p-12">
-                   <div className="aspect-square bg-primary-600 rounded-3xl rotate-12 flex items-center justify-center w-3/4 shadow-2xl">
-                     <Brain className="h-32 w-32 text-white -rotate-12" />
-                   </div>
-                </div>
-              </div>
-              {/* Floating badges */}
-              <div className="absolute top-0 right-0 bg-white text-gray-900 px-6 py-4 rounded-2xl shadow-2xl -rotate-6 font-bold">
-                AI Native
-              </div>
-              <div className="absolute bottom-10 left-0 bg-primary-500 text-white px-6 py-4 rounded-2xl shadow-2xl rotate-3 font-bold">
-                Strategy Driven
-              </div>
-            </div>
+
+                  {/* Arrow */}
+                  <div className="col-span-12 md:col-span-1 flex md:justify-end md:items-start">
+                    <div className="w-11 h-11 border border-ink/15 flex items-center justify-center group-hover:border-accent group-hover:bg-accent transition-all duration-300">
+                      <ArrowUpRight className="w-5 h-5 text-ink/55 group-hover:text-canvas transition-colors" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
           </div>
-        </div>
-        
-        {/* Decorative background text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20rem] font-black text-white/[0.02] select-none pointer-events-none whitespace-nowrap">
-          INNOVATE SCALE BUILD
         </div>
       </section>
 
-      {/* Mini About Section */}
-      <section className="container-custom py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1">
-            <div className="relative">
-              <div className="aspect-[4/5] bg-gray-100 rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                {/* Photo placeholder */}
-                <div className="absolute inset-0 flex items-center justify-center text-gray-300">
-                  <Users className="h-32 w-32 opacity-20" />
+      {/* ═══════════════════════════════════════════════════════════════════
+          EXPERTISE PILLARS
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section className="border-t border-ink/10 bg-sand">
+        <div className="container-wide py-24">
+          <div className="mb-16">
+            <p className="eyebrow mb-3">Practice Areas</p>
+            <h2 className="display-lg">Three disciplines, one delivery style.</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-ink/10 divide-y md:divide-y-0 md:divide-x divide-ink/10 bg-surface">
+            {[
+              {
+                num: '01',
+                title: 'Enterprise BSA',
+                items: ['Requirements & technical specifications', 'SAP / M365 / SharePoint', 'Stakeholder & governance leadership', 'Agile / Scrum delivery'],
+                note: 'I’ve translated complex business needs into the kind of specs engineering can actually build against — at BC Hydro, MTU and Syncrude.',
+              },
+              {
+                num: '02',
+                title: 'Data, BI & Integration',
+                items: ['ETL pipelines (Pentaho, ctools)', 'Power BI · Tableau · Power Query', 'POS · ERP · Payment Gateway APIs', 'Audit-grade documentation'],
+                note: 'From Bell Canada’s executive dashboards to NRI’s POS/payment integrations — making data trustworthy and interfaces clean.',
+              },
+              {
+                num: '03',
+                title: 'AI & Automation',
+                items: ['GPT-4 agents · vector embeddings', 'Zapier · Make · Python workflows', 'LinkedIn / outbound automation', 'Founder of CreationX'],
+                note: 'I build production AI products on the side — ConvertX, the ATS platform, CreationX — applying enterprise rigor to modern stacks.',
+              },
+            ].map((pillar, i) => (
+              <motion.div
+                key={pillar.num}
+                {...inView(i * 0.1)}
+                className="p-10 flex flex-col gap-8"
+              >
+                <div>
+                  <span className="font-serif text-sm" style={{ color: 'rgba(15,93,74,0.55)' }}>
+                    {pillar.num}
+                  </span>
+                  <h3 className="font-serif text-2xl font-medium text-ink mt-2">{pillar.title}</h3>
                 </div>
-              </div>
-              <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-xl border border-gray-100 max-w-xs hidden sm:block">
-                <p className="text-gray-600 italic leading-relaxed">
-                  "Noopur has a rare ability to translate complex AI concepts into actionable business strategies."
+
+                <ul className="flex flex-col gap-3">
+                  {pillar.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm text-ink/65">
+                      <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0 mt-2" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="text-sm text-ink/50 leading-relaxed border-t border-ink/10 pt-6 italic font-serif">
+                  {pillar.note}
                 </p>
-                <div className="mt-4 font-bold text-gray-900">— Strategic Partner</div>
-              </div>
-            </div>
-          </div>
-          <div className="order-1 lg:order-2 space-y-8">
-            <h2 className="section-title">Beyond the Analyst.</h2>
-            <p className="text-xl text-gray-500 leading-relaxed">
-              I'm not your typical Business Analyst. I'm a builder who understands the "why" and an entrepreneur who knows how to execute. My background in both tech and strategy allows me to speak both languages fluently.
-            </p>
-            <p className="text-xl text-gray-500 leading-relaxed">
-              Whether I'm designing a new AI workflow or mapping out a market entry strategy, my focus is always on creating tangible, measurable value.
-            </p>
-            <div className="pt-4 flex space-x-6">
-              <Link to="/about" className="group flex items-center text-gray-900 font-bold">
-                My Full Story <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-              <Link to="/contact" className="group flex items-center text-primary-600 font-bold">
-                Let's Collaborate <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="container-custom pb-24">
-        <div className="bg-primary-600 rounded-[3rem] p-12 sm:p-24 text-center text-white relative overflow-hidden shadow-2xl shadow-primary-200">
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <h2 className="text-4xl sm:text-6xl font-extrabold mb-8">Ready to build something <span className="underline decoration-white/30">extraordinary</span>?</h2>
-            <p className="text-xl text-primary-50 px-6 mb-12">
-              I'm currently accepting new projects and consulting engagements. If you have a challenge that needs a mix of AI and strategy, let's talk.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-              <Link to="/contact" className="bg-white text-primary-600 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-primary-50 transition-colors shadow-xl">
-                Get in Touch
-              </Link>
-              <Link to="/network" className="bg-primary-700 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-primary-800 transition-colors">
-                Book a Chat
-              </Link>
-            </div>
+      {/* ═══════════════════════════════════════════════════════════════════
+          SIDE BUILDS
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section className="border-t border-ink/10">
+        <div className="container-wide py-24">
+          <div className="mb-16 max-w-2xl">
+            <p className="eyebrow mb-3">Building on the Side</p>
+            <h2 className="display-lg">Products born from the patterns I keep being asked to build.</h2>
           </div>
-          {/* Decorative shapes */}
-          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl"></div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border border-ink/10 bg-surface divide-y sm:divide-y-0 sm:divide-x divide-ink/10">
+            {sideProjects.map((proj, i) => (
+              <motion.div
+                key={proj.id}
+                {...inView(i * 0.08)}
+                className="p-8 flex flex-col gap-5 group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="font-serif text-sm" style={{ color: 'rgba(15,93,74,0.55)' }}>
+                    0{i + 1}
+                  </span>
+                  <span className="tag-gold">Founder Build</span>
+                </div>
+                <h3 className="font-serif text-2xl font-medium text-ink">{proj.title.split(' — ')[0]}</h3>
+                <p className="text-[11px] text-ink/40 uppercase tracking-[0.20em] font-semibold">{proj.tagline}</p>
+                <p className="text-sm text-ink/65 leading-relaxed">{proj.description}</p>
+                <Link
+                  to={`/portfolio/${proj.slug}`}
+                  className="mt-auto pt-5 border-t border-ink/10 inline-flex items-center gap-2 text-[12px] font-semibold text-accent hover:text-accent-dark transition-colors"
+                >
+                  Read the build <ArrowUpRight className="w-3.5 h-3.5" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          CAPABILITIES MATRIX
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section className="border-t border-ink/10 bg-sand">
+        <div className="container-wide py-24">
+          <div className="mb-16">
+            <p className="eyebrow mb-3">Capabilities</p>
+            <h2 className="display-lg">Toolkit.</h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border border-ink/10 bg-surface divide-y lg:divide-y-0 lg:divide-x divide-ink/10">
+            {[
+              { label: 'Delivery',         items: skills.delivery },
+              { label: 'Data & BI',        items: skills.data     },
+              { label: 'Systems',          items: skills.systems  },
+              { label: 'AI & Automation',  items: skills.ai       },
+            ].map((group, i) => (
+              <motion.div key={group.label} {...inView(i * 0.06)} className="p-8">
+                <div className="flex items-center gap-2 mb-6">
+                  <span className="w-1.5 h-1.5 bg-accent" />
+                  <h3 className="text-[11px] font-semibold text-ink uppercase tracking-[0.22em]">
+                    {group.label}
+                  </h3>
+                </div>
+                <div className="flex flex-col gap-2">
+                  {group.items.map((skill) => (
+                    <span key={skill} className="text-sm text-ink/65">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          MORE THAN THE RESUME
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section className="border-t border-ink/10">
+        <div className="container-wide py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-14">
+            <div className="lg:col-span-7">
+              <p className="eyebrow mb-3">More than the resume</p>
+              <h2 className="display-lg">
+                The wider address —
+                <span className="italic font-light" style={{ color: '#0f5d4a' }}> founder story, mountains, art, animals.</span>
+              </h2>
+            </div>
+            <p className="lg:col-span-5 text-[15px] text-ink/65 leading-relaxed">
+              This site is meant to be a real place to know me, not a PDF that
+              opens once. Wander through the chapters that don't fit on a job
+              description.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-ink/10 bg-surface divide-y md:divide-y-0 md:divide-x divide-ink/10">
+            {[
+              {
+                to:    '/journey',
+                label: 'The Journey',
+                sub:   'How the BSA work and the founder builds became one career.',
+              },
+              {
+                to:    '/life',
+                label: 'Life Beyond Work',
+                sub:   'Photography, painting, animal advocacy, mountains, haul-truck stories.',
+              },
+              {
+                to:    '/certifications',
+                label: 'Certifications',
+                sub:   'Formal credentials behind the case studies.',
+              },
+            ].map((c, i) => (
+              <motion.div key={c.to} {...inView(i * 0.06)}>
+                <Link to={c.to} className="group block p-10 h-full hover:bg-sand transition-colors">
+                  <p className="font-serif text-xs uppercase tracking-[0.22em] text-ink/35">
+                    0{i + 1}
+                  </p>
+                  <h3 className="display-md mt-2 group-hover:text-accent transition-colors">
+                    {c.label}
+                  </h3>
+                  <p className="mt-4 text-[15px] text-ink/65 leading-relaxed">{c.sub}</p>
+                  <div className="mt-8 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.22em] font-semibold text-accent">
+                    Enter <ArrowUpRight className="w-3.5 h-3.5" />
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          CTA
+      ═══════════════════════════════════════════════════════════════════ */}
+      <section className="border-t border-ink/10">
+        <div className="container-wide py-32 text-center">
+          <motion.div {...inView(0)} className="max-w-2xl mx-auto">
+            <p className="eyebrow mb-8">Currently open to work</p>
+            <h2 className="display-lg mb-4">
+              Let’s talk about what you’re building.
+            </h2>
+            <p className="lead mt-6 mb-12">
+              Senior BSA contracts, BI / integration programs, or an AI product
+              that needs disciplined delivery — I bring both halves.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link to="/contact" className="btn-primary px-10 py-4 text-[13px]">
+                Start a Conversation <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+              <a
+                href="https://linkedin.com/in/noopur-trivedi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline px-10 py-4 text-[13px]"
+              >
+                <Linkedin className="mr-2 w-4 h-4" /> Connect on LinkedIn
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
     </div>
   )
 }
 
 export default Home
-

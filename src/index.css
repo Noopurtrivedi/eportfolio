@@ -2,30 +2,145 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─── Base ──────────────────────────────────────────────────────────────────── */
 @layer base {
+  html { scroll-behavior: smooth; }
+
   body {
-    @apply bg-white text-gray-900 font-sans antialiased;
+    @apply font-sans antialiased;
+    background-color: #faf8f3;
+    color: #0f1311;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background-color: rgba(15, 93, 74, 0.18);
+    color: #0f1311;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+    font-feature-settings: "ss01", "ss02";
+    color: #0f1311;
   }
 }
 
+/* ─── Components ────────────────────────────────────────────────────────────── */
 @layer components {
+
   .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl mx-auto px-6 sm:px-10 lg:px-12;
   }
 
+  .container-wide {
+    @apply max-w-7xl mx-auto px-6 sm:px-10 lg:px-12;
+  }
+
+  /* ── Buttons ── */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 transition-colors;
+    @apply inline-flex items-center justify-center font-semibold rounded-none
+           bg-accent text-canvas
+           hover:bg-accent-dark
+           transition-all duration-200;
+    letter-spacing: 0.01em;
   }
 
-  .btn-secondary {
-    @apply inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors;
+  .btn-outline {
+    @apply inline-flex items-center justify-center font-semibold rounded-none
+           bg-transparent text-ink border border-ink/20
+           hover:border-accent hover:text-accent
+           transition-all duration-200;
+    letter-spacing: 0.01em;
   }
 
-  .section-title {
-    @apply text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl;
+  .btn-ghost {
+    @apply inline-flex items-center justify-center font-semibold
+           text-ink/55 hover:text-accent
+           transition-colors duration-200;
   }
 
-  .section-subtitle {
-    @apply mt-4 max-w-2xl text-xl text-gray-500;
+  /* ── Typography ── */
+  .display-xl {
+    @apply font-serif font-medium leading-[1.02] tracking-[-0.02em];
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    color: #0f1311;
   }
+
+  .display-lg {
+    @apply font-serif font-medium leading-[1.05] tracking-[-0.015em];
+    font-size: clamp(2.25rem, 5.5vw, 4.25rem);
+    color: #0f1311;
+  }
+
+  .display-md {
+    @apply font-serif font-medium leading-tight tracking-[-0.01em];
+    font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+    color: #0f1311;
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-sans font-semibold uppercase tracking-[0.22em] text-accent;
+  }
+
+  .section-label {
+    @apply text-[11px] font-sans font-semibold uppercase tracking-[0.22em] text-ink/45;
+  }
+
+  .lead {
+    @apply text-lg leading-relaxed text-ink/65;
+  }
+
+  /* ── Surfaces ── */
+  .card {
+    @apply border border-ink/8 bg-surface;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    border-color: rgba(15, 93, 74, 0.40);
+    box-shadow: 0 1px 0 rgba(15,19,17,0.04), 0 12px 28px -20px rgba(15,93,74,0.18);
+  }
+
+  /* ── Tags ── */
+  .tag {
+    @apply inline-flex items-center text-[10px] font-sans font-semibold uppercase tracking-[0.16em] px-2.5 py-1;
+  }
+  .tag-accent {
+    @apply tag;
+    background: rgba(15, 93, 74, 0.08);
+    color: #0a4538;
+    border: 1px solid rgba(15, 93, 74, 0.18);
+  }
+  .tag-ink {
+    @apply tag;
+    background: rgba(15, 19, 17, 0.04);
+    color: rgba(15, 19, 17, 0.62);
+    border: 1px solid rgba(15, 19, 17, 0.10);
+  }
+  .tag-gold {
+    @apply tag;
+    background: rgba(169, 133, 50, 0.10);
+    color: #7c5f1f;
+    border: 1px solid rgba(169, 133, 50, 0.25);
+  }
+
+  /* ── Dividers / rules ── */
+  .hr     { border-color: rgba(15,19,17,0.10); @apply border-t; }
+  .hr-soft{ border-color: rgba(15,19,17,0.06); @apply border-t; }
+
+  /* ── Marquee ── */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
 }
+
+/* ─── Scrollbar ────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #faf8f3; }
+::-webkit-scrollbar-thumb { background: rgba(15,93,74,0.30); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0f5d4a; }

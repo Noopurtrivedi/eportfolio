@@ -1,39 +1,83 @@
 import React from 'react'
-import { Linkedin, Mail, Twitter } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { Linkedin, Mail, Phone, ArrowUpRight } from 'lucide-react'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white border-t border-gray-100 py-12">
-      <div className="container-custom">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0 text-center md:text-left">
-            <h2 className="text-xl font-bold tracking-tight text-gray-900">
-              Noopur<span className="text-primary-600">.</span>
-            </h2>
-            <p className="mt-2 text-sm text-gray-500">
-              Business Analyst + AI Builder + Entrepreneur
+    <footer className="border-t border-ink/10 bg-sand">
+      <div className="container-wide py-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-14">
+
+          {/* Brand */}
+          <div className="md:col-span-5">
+            <p className="font-serif text-2xl font-medium text-ink tracking-tight">
+              Noopur Trivedi
+            </p>
+            <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold">
+              Senior Business Systems Analyst · AI Systems Builder
+            </p>
+            <p className="mt-5 text-sm text-ink/60 leading-relaxed max-w-md">
+              Eleven years delivering enterprise IT change — SAP, BI, retail systems
+              integration. Building AI products on the side that bring the same
+              discipline to modern workflows.
             </p>
           </div>
-          
-          <div className="flex space-x-6">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-600 transition-colors">
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary-600 transition-colors">
-              <Twitter className="h-6 w-6" />
-            </a>
-            <a href="mailto:noopur@example.com" className="text-gray-400 hover:text-primary-600 transition-colors">
-              <Mail className="h-6 w-6" />
-            </a>
+
+          {/* Navigate */}
+          <div className="md:col-span-3">
+            <p className="section-label mb-5">Navigate</p>
+            <div className="flex flex-col gap-2.5">
+              {[
+                { label: 'Work',           href: '/portfolio'      },
+                { label: 'Journey',        href: '/journey'        },
+                { label: 'Life',           href: '/life'           },
+                { label: 'Certifications', href: '/certifications' },
+                { label: 'About',          href: '/about'          },
+                { label: 'Contact',        href: '/contact'        },
+              ].map((l) => (
+                <Link
+                  key={l.label}
+                  to={l.href}
+                  className="text-sm text-ink/60 hover:text-accent transition-colors"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Connect */}
+          <div className="md:col-span-4">
+            <p className="section-label mb-5">Connect</p>
+            <div className="flex flex-col gap-3">
+              {[
+                { icon: Mail,     label: 'Noopur.trivedi@hotmail.com', href: 'mailto:Noopur.trivedi@hotmail.com' },
+                { icon: Phone,    label: '+1 (306) 471-1222',          href: 'tel:+13064711222' },
+                { icon: Linkedin, label: 'linkedin.com/in/noopur-trivedi', href: 'https://linkedin.com/in/noopur-trivedi' },
+              ].map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target={s.href.startsWith('http') ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2.5 text-sm text-ink/60 hover:text-accent transition-colors group"
+                >
+                  <s.icon className="w-3.5 h-3.5" strokeWidth={1.5} />
+                  {s.label}
+                  <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-        
-        <div className="mt-8 border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <p>© {new Date().getFullYear()} Noopur Trivedi. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 flex space-x-6">
-            <a href="#" className="hover:text-gray-600">Privacy Policy</a>
-            <a href="#" className="hover:text-gray-600">Terms of Service</a>
-          </div>
+
+        <div className="hr pt-7 flex flex-col sm:flex-row justify-between items-center gap-3">
+          <p className="text-xs text-ink/40">
+            © {new Date().getFullYear()} Noopur Trivedi. All rights reserved.
+          </p>
+          <p className="text-xs text-ink/40 italic font-serif">
+            Designed with restraint. Built with intent.
+          </p>
         </div>
       </div>
     </footer>

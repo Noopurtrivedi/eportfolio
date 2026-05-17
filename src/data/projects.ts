@@ -1,9 +1,22 @@
+export type ProjectCategory =
+  | 'Enterprise'
+  | 'BSA'
+  | 'Data & BI'
+  | 'Integration'
+  | 'Retail / POS'
+  | 'Automation'
+  | 'AI'
+  | 'Founder'
+
 export interface Project {
   id: string
   slug: string
   title: string
+  client: string
+  period: string
+  tagline: string
   description: string
-  category: ('AI' | 'BA' | 'Automation' | 'Startup' | 'Data')[]
+  category: ProjectCategory[]
   role: string
   tools: string[]
   problem: string
@@ -13,67 +26,382 @@ export interface Project {
   metrics?: string[]
   image?: string
   featured?: boolean
+  kind: 'client' | 'side'
+  accentColor?: string
 }
 
 export const projects: Project[] = [
+  /* ─── Client / Enterprise case studies ─────────────────────────────────── */
   {
     id: '1',
-    slug: 'ai-powered-resume-analyzer',
-    title: 'AI-Powered Resume Analyzer',
-    description: 'An intelligent platform that optimizes resumes for ATS compatibility using LLMs.',
-    category: ['AI', 'Automation', 'Startup'],
-    role: 'Lead Product Builder',
-    tools: ['React', 'Python', 'FastAPI', 'OpenAI', 'Tailwind CSS'],
-    problem: 'Job seekers struggle to understand why their resumes are rejected by automated systems (ATS).',
-    approach: 'Developed a semantic analysis engine that compares resumes against job descriptions using vector embeddings.',
-    execution: 'Built a responsive frontend for resume uploading and a robust backend for AI processing and feedback generation.',
-    outcome: 'Helping users achieve 40% higher match scores on average.',
-    metrics: ['500+ active users', '4.8/5 user rating', 'Reduced manual review time by 70%'],
-    featured: true
+    slug: 'bc-hydro-sap-decision-analyst',
+    title: 'SAP Decision Analytics & Reporting Modernization',
+    client: 'BC Hydro',
+    period: 'Nov 2024 – Oct 2025',
+    tagline: 'Translating cross-functional needs into reliable SAP delivery for a Crown utility.',
+    description:
+      'Embedded as SAP Business Decision Analyst on a regulated, multi-year enterprise program. Owned requirements, integration coordination, and reporting hygiene across SAP and adjacent SaaS systems for a 1,000+ employee organization.',
+    category: ['Enterprise', 'BSA', 'Data & BI'],
+    role: 'SAP Business Decision Analyst',
+    tools: ['SAP', 'Agile / Scrum', 'ServiceNow', 'Jira', 'Confluence', 'Advanced Excel', 'Power BI'],
+    problem:
+      'Cross-functional teams needed dependable SAP operations, accurate financial reporting, and visibility into integration health — while running an enterprise change program with strict regulatory and audit obligations.',
+    approach:
+      'Mapped end-to-end business processes, translated complex needs into clear technical specifications, and aligned development, UX, and training teams behind a single shared definition of done. Established performance and exception dashboards as the operational source of truth.',
+    execution:
+      'Coordinated data migration and API-based interfaces between SAP and other SaaS applications. Authored test plans, ran issue triage with engineering, and built monitoring dashboards in Excel, ServiceNow and Jira. Drove backlog grooming and sprint demos inside the Agile delivery cadence.',
+    outcome:
+      'Delivered reliable SAP operations and accurate financial reporting, with fewer downstream defects and faster issue resolution. Cross-functional teams shipped against a stable, well-documented backlog.',
+    metrics: [
+      'Enterprise scale — 1,000+ employees served',
+      'Reliable SAP + SaaS integration coordination',
+      'Faster issue triage via dashboards',
+      'Clean audit-ready specifications',
+    ],
+    featured: true,
+    kind: 'client',
+    accentColor: '#0f5d4a',
   },
   {
     id: '2',
-    slug: 'ecommerce-automation-workflow',
-    title: 'E-commerce Operations Automation',
-    description: 'Streamlining order fulfillment and inventory management for a growing D2C brand.',
-    category: ['BA', 'Automation'],
-    role: 'Business Analyst',
-    tools: ['Zapier', 'Airtable', 'Shopify API', 'Google Apps Script'],
-    problem: 'Manual data entry between Shopify and inventory systems was causing 15% error rate in shipments.',
-    approach: 'Mapped the entire order-to-delivery process and identified bottlenecks in manual synchronization.',
-    execution: 'Implemented automated triggers between Shopify and Airtable to centralize logistics and inventory tracking.',
-    outcome: 'Reduced shipping errors to <1% and saved 20+ hours of manual work per week.',
-    metrics: ['99% shipping accuracy', '20+ hours saved/week', '$5k+ monthly cost savings'],
-    featured: true
+    slug: 'mtu-microsoft365-modernization',
+    title: 'Microsoft 365 & SharePoint Analytics Modernization',
+    client: 'MTU Canada',
+    period: 'Apr 2023 – Present',
+    tagline: 'Standing up KPIs, governance and Tableau dashboards across a global aerospace organization.',
+    description:
+      'Leading the analytics workstream of a Microsoft 365 / SharePoint modernization inside a Scrum team. Defined KPIs and governance, then partnered with global cross-functional teams to model data and ship cross-department dashboards.',
+    category: ['Enterprise', 'BSA', 'Data & BI'],
+    role: 'Business Analyst & Project Manager',
+    tools: ['Microsoft 365', 'SharePoint', 'Tableau', 'Power BI', 'Power Query', 'Jira', 'Confluence'],
+    problem:
+      'Departments were operating on inconsistent data and ad-hoc reporting. Modernization required not only migrating to M365 but also establishing the analytical layer, governance, and KPIs that would survive after the project ended.',
+    approach:
+      'Ran stakeholder interviews across departments to surface real reporting needs and define metadata, then converted those into analytical specifications. Designed governance and a KPI framework that gave each function a consistent reporting language.',
+    execution:
+      'Modeled and visualized performance data for advanced time intelligence and comparative reporting. Built Tableau dashboards for cross-department visibility. Drove sprint planning, backlog grooming and stakeholder demos as PM/BA.',
+    outcome:
+      'Enhanced data transparency across the business, gave leadership trustworthy comparative reporting, and put a durable governance and KPI foundation in place.',
+    metrics: [
+      'Cross-department KPI framework live',
+      'Tableau dashboards in production',
+      'Stakeholder-validated metadata model',
+      'Scrum-aligned delivery cadence',
+    ],
+    featured: true,
+    kind: 'client',
+    accentColor: '#155e4f',
   },
   {
     id: '3',
-    slug: 'market-entry-strategy-fintech',
-    title: 'Fintech Market Entry Strategy',
-    description: 'Comprehensive market analysis and product roadmap for a fintech startup expanding into SE Asia.',
-    category: ['BA', 'Startup', 'Data'],
-    role: 'Strategy Consultant',
-    tools: ['Tableau', 'Excel', 'Python', 'Market Research Frameworks'],
-    problem: 'The startup lacked a data-driven approach to prioritize geographic expansion and product localization.',
-    approach: 'Analyzed regional regulatory landscapes, competitor offerings, and consumer spending patterns using public and proprietary data.',
-    execution: 'Created a weighted scoring model to rank target markets and developed a phased 18-month roadmap.',
-    outcome: 'Successfully launched in two target markets with 25% faster user acquisition than previous launches.',
-    metrics: ['25% faster acquisition', '2 new market launches', 'Board-approved 3-year roadmap'],
-    featured: true
+    slug: 'bell-canada-bi-pentaho-pipelines',
+    title: 'BI Infrastructure, ETL Pipelines & Executive Dashboards',
+    client: 'Bell Canada',
+    period: 'Nov 2022 – Nov 2024',
+    tagline: 'Unifying data across domains to make decisions visibly faster.',
+    description:
+      'Owned BI infrastructure, ETL pipelines and analytical reporting using Pentaho and ctools. Combined raw data from multiple domains into unified dashboards and predictive reports for management.',
+    category: ['Data & BI', 'Enterprise'],
+    role: 'BI Developer',
+    tools: ['Pentaho', 'ctools', 'SQL', 'ETL', 'Tableau', 'Power BI', 'Python'],
+    problem:
+      'Management lacked a unified, decision-ready view of performance. Data lived in different domains in different shapes, and reporting was reactive rather than predictive.',
+    approach:
+      'Built and maintained a consolidated BI layer with reusable ETL pipelines. Designed story-driven visualizations and executive dashboards so the narrative — not the spreadsheet — was the deliverable.',
+    execution:
+      'Engineered Pentaho/ctools pipelines, modeled domain data, ran trend analysis and forecasting on large datasets, and trained business users on data literacy and self-service analytics.',
+    outcome:
+      'Improved decision-making efficiency by ~30%. Trend and forecast analysis directly informed marketing and operational strategy, and business users were enabled to self-serve from the new BI layer.',
+    metrics: [
+      '30% lift in decision-making efficiency',
+      'Unified multi-domain dashboards',
+      'Forecasting models in production',
+      'Business-user enablement & training',
+    ],
+    featured: true,
+    kind: 'client',
+    accentColor: '#1f5f8a',
   },
   {
     id: '4',
-    slug: 'custom-crm-for-real-estate',
-    title: 'Custom CRM for Real Estate Teams',
-    description: 'A tailored lead management system focused on conversion and follow-up automation.',
-    category: ['Automation', 'BA'],
-    role: 'Product Manager',
-    tools: ['No-code', 'SQL', 'Bubble', 'Make.com'],
-    problem: 'Real estate agents were losing 30% of leads due to inconsistent follow-up and fragmented data.',
-    approach: 'Designed a unified lead dashboard with automated SMS and email sequences based on user behavior.',
-    execution: 'Built a custom web application with real-time notifications and task management for agents.',
-    outcome: 'Lead conversion rate increased by 22% within the first three months of implementation.',
-    metrics: ['22% conversion increase', '100% lead capture rate', 'Average response time < 5 mins'],
-    featured: false
-  }
+    slug: 'nri-pos-payment-integrations',
+    title: 'POS, ERP & Payment Gateway Integrations',
+    client: 'NRI Distributions',
+    period: 'Aug 2021 – Feb 2023',
+    tagline: 'Lead BA on the data-integration backbone connecting client retail systems.',
+    description:
+      'Led 2+ end-to-end data integration projects, connecting client ERPs and retail systems with the internal database via APIs and file transfers. Lead BA for a major POS integration spanning inventory, payments and e-commerce.',
+    category: ['Integration', 'Retail / POS', 'BSA', 'Enterprise'],
+    role: 'Systems Integration Specialist',
+    tools: ['REST APIs', 'SFTP / File Transfers', 'POS Systems', 'Payment Gateways', 'ERP', 'SQL', 'Jira'],
+    problem:
+      'Client ERPs, point-of-sale systems and payment processors were exchanging data through brittle, undocumented paths, putting inventory accuracy, reconciliation and audit posture at risk.',
+    approach:
+      'Acted as the lead BA on the POS integration — mapping cross-functional data flows between the POS, inventory management and payment gateways. Analyzed functional flows in client SaaS apps (including e-commerce platforms) to design clean, auditable interfaces.',
+    execution:
+      'Defined technical specifications and detailed integration documentation for each project. Coordinated API and file-transfer contracts with client teams, and worked closely with engineering to validate end-to-end data exchange and reconciliation.',
+    outcome:
+      'Delivered seamless data exchange across multiple client integrations, with audit-ready documentation that supported reporting and compliance reviews.',
+    metrics: [
+      '2+ end-to-end integrations delivered',
+      'POS · inventory · payments interconnected',
+      'Audit-grade technical specifications',
+      'Seamless e-commerce data exchange',
+    ],
+    featured: true,
+    kind: 'client',
+    accentColor: '#7c5f1f',
+  },
+  {
+    id: '5',
+    slug: 'x360-qa-data-pipelines',
+    title: 'QA Automation & Product Quality Analytics',
+    client: 'X360 Digital',
+    period: 'Mar 2019 – Dec 2021',
+    tagline: 'Built reporting around quality so release cycles stopped depending on heroics.',
+    description:
+      'Built and automated QA & data reporting pipelines with SQL and Excel, executed 200+ functional and regression tests, and made product-quality KPIs visible to the whole delivery team.',
+    category: ['Data & BI', 'Automation', 'BSA'],
+    role: 'Quality Analyst',
+    tools: ['SQL', 'Excel', 'Regression Testing', 'KPI Reporting'],
+    problem:
+      'Product quality was being measured anecdotally, and defect rates were eating into release cycles. There was no shared visibility into what was actually breaking or how often.',
+    approach:
+      'Designed a lightweight reporting stack on SQL + Excel to capture defects, test outcomes and release-cycle metrics. Made the KPIs the artifact, not the spreadsheet.',
+    execution:
+      'Built and maintained QA reporting pipelines, executed 200+ functional and regression tests, and surfaced quality KPIs to engineering and product stakeholders for every release.',
+    outcome:
+      'Reduced defect rates by 31% and optimized release cycle time. Quality became a managed variable instead of a recurring fire.',
+    metrics: [
+      '31% reduction in defect rate',
+      '200+ functional / regression tests',
+      'Automated QA reporting pipeline',
+      'Optimized release cycle time',
+    ],
+    featured: false,
+    kind: 'client',
+    accentColor: '#5a3a82',
+  },
+
+  /* ─── Side builds — AI & product work ──────────────────────────────────── */
+  {
+    id: '6',
+    slug: 'convertx-ai-lead-automation',
+    title: 'ConvertX — AI Lead Automation Engine',
+    client: 'Independent / CreationX',
+    period: '2023 – Present',
+    tagline: 'GPT-driven outbound that personalizes at scale and sequences itself.',
+    description:
+      'An AI-powered lead generation and nurturing system combining LinkedIn automation, GPT-driven personalization, and CRM orchestration to run outbound sales on autopilot.',
+    category: ['AI', 'Automation', 'Founder'],
+    role: 'Founder & Lead Builder',
+    tools: ['OpenAI GPT-4', 'Zapier', 'Make.com', 'Python', 'Airtable', 'LinkedIn API', 'Webhooks'],
+    problem:
+      'Outbound sales is high-effort, low-consistency. Most teams send generic messages at scale and wonder why no one replies. True personalization at scale was considered impossible — until LLMs made it tractable.',
+    approach:
+      'Designed an orchestration layer that pulls and enriches lead data, generates uniquely personalized outreach with GPT-4, sequences follow-ups based on engagement signals, and logs everything to CRM automatically.',
+    execution:
+      'Built multi-step Zapier and Make.com workflows alongside custom Python middleware for enrichment, generation and sequencing. Added rate-limiting, A/B variants and feedback loops so the system learns what converts.',
+    outcome:
+      'Clients running ConvertX saw 3–5× reply-rate lift versus manual outreach, with no additional headcount. The system runs 24/7 and produces qualified conversations while operators sleep.',
+    metrics: [
+      '3–5× reply-rate improvement',
+      '80% reduction in manual outreach time',
+      '500+ leads/month handled per client',
+      'Runs 24/7 without human intervention',
+    ],
+    featured: false,
+    kind: 'side',
+    accentColor: '#7a5fc7',
+  },
+  {
+    id: '7',
+    slug: 'ai-resume-ats-automation',
+    title: 'AI Resume & ATS Intelligence Platform',
+    client: 'Independent build',
+    period: '2024 – Present',
+    tagline: 'Semantic resume matching that replaces keyword bingo.',
+    description:
+      'An AI-powered ATS that analyzes resumes semantically, scores them against job descriptions with vector embeddings, and automates the hiring pipeline from application to interview scheduling.',
+    category: ['AI', 'Automation', 'Founder'],
+    role: 'Lead Product Builder',
+    tools: ['OpenAI', 'Python', 'FastAPI', 'React', 'Pinecone', 'PostgreSQL', 'Tailwind CSS'],
+    problem:
+      'Companies reject ~75% of resumes before a human reads them, using rigid keyword matching that misses strong candidates. Candidates get ghosted, hiring managers drown in noise.',
+    approach:
+      'Built a semantic analysis engine that understands intent rather than keywords. Vector embeddings score candidates against role requirements holistically, with explainable rationale and integrated scheduling.',
+    execution:
+      'Full-stack product — React frontend with drag-and-drop resume parsing, FastAPI backend for AI processing, Pinecone vector store, Postgres for pipeline data. Workflow automation triggers emails, calendar links and Slack notifications at each stage.',
+    outcome:
+      'Reduced time-to-first-interview by 60%. Hiring managers spend time only on candidates who fit, and candidates get clear, actionable feedback instead of silence.',
+    metrics: [
+      '60% reduction in time-to-first-interview',
+      '40% match-score accuracy improvement',
+      '500+ beta users · 4.8/5 satisfaction',
+      '70% less manual review time',
+    ],
+    featured: false,
+    kind: 'side',
+    accentColor: '#b88a2c',
+  },
+  {
+    id: '8',
+    slug: 'creationx-ai-agent-marketplace',
+    title: 'CreationX — AI Agent Platform for Operators',
+    client: 'Founder',
+    period: '2024 – Present',
+    tagline: 'A productized layer over the AI work I keep being asked to build.',
+    description:
+      'A platform where non-technical founders plug in pre-built AI agents for sales, ops and growth — the productized layer on top of the bespoke AI systems I’ve built for clients.',
+    category: ['Founder', 'AI', 'Automation'],
+    role: 'Founder',
+    tools: ['React', 'TypeScript', 'Supabase', 'OpenAI', 'Stripe', 'Vercel'],
+    problem:
+      'Operators see what AI can do but can’t hire a team to build it. Off-the-shelf tools are too generic; bespoke builds are too expensive. There is a missing middle layer.',
+    approach:
+      'Package the most-requested agent patterns into a small, opinionated catalog with sane defaults. Lower the activation energy from “hire a builder” to “turn it on and connect a few accounts.”',
+    execution:
+      'Designing the MVP, the agent catalog, and the onboarding experience. Drawing on patterns I’ve built repeatedly inside ConvertX and the ATS work.',
+    outcome:
+      'Currently in build. Treating it like an enterprise rollout — clear specs, instrumented from day one, with a real user feedback loop.',
+    metrics: [
+      'MVP in active build',
+      'Agent catalog scoped',
+      'Productizing proven client patterns',
+    ],
+    featured: false,
+    kind: 'side',
+    accentColor: '#0f5d4a',
+  },
 ]
+
+/* ─── Featured selection helpers ────────────────────────────────────────── */
+export const clientProjects = projects.filter((p) => p.kind === 'client')
+export const sideProjects   = projects.filter((p) => p.kind === 'side')
+
+/* ─── Work experience timeline (resume-aligned) ─────────────────────────── */
+export interface Role {
+  title: string
+  org: string
+  period: string
+  location?: string
+  summary: string
+  highlights?: string[]
+}
+
+export const workExperience: Role[] = [
+  {
+    title: 'SAP Business Decision Analyst',
+    org:   'BC Hydro',
+    period:'Nov 2024 – Oct 2025',
+    summary:
+      'Drove SAP-centric IT delivery in a 1,000+ employee Crown utility — translating business needs into clear specifications, coordinating SAP/SaaS integrations and standing up monitoring dashboards.',
+    highlights: [
+      'Translated complex needs into technical specifications inside an Agile delivery cadence',
+      'Coordinated data migration and API-based interfaces between SAP and other SaaS apps',
+      'Built test plans and ran issue clarification with development, UX and training teams',
+      'Streamlined reporting via Excel, ServiceNow and Jira dashboards',
+    ],
+  },
+  {
+    title: 'Business Analyst & Project Manager',
+    org:   'MTU Canada',
+    period:'Apr 2023 – Present',
+    summary:
+      'Leading analytics for a Microsoft 365 / SharePoint modernization. Defined KPIs, governance and Tableau dashboards. Partnered with global cross-functional teams on metadata, modeling and reporting.',
+    highlights: [
+      'Established KPIs, governance and Tableau dashboards across departments',
+      'Translated business needs into analytical specifications for cross-department reporting',
+      'Conducted stakeholder interviews to define metadata and reporting requirements',
+      'Modeled and visualized performance data for advanced time intelligence',
+    ],
+  },
+  {
+    title: 'BI Developer',
+    org:   'Bell Canada',
+    period:'Nov 2022 – Nov 2024',
+    summary:
+      'Owned BI infrastructure, ETL pipelines and analytical reporting in Pentaho and ctools. Combined raw data from multiple domains into unified dashboards and predictive reports.',
+    highlights: [
+      'Built and maintained Pentaho/ctools ETL pipelines and reporting models',
+      'Created story-driven visualizations and executive dashboards — ~30% decision-speed lift',
+      'Ran trend analysis and forecasting on large datasets to inform strategy',
+      'Trained business users on data literacy and self-service analytics',
+    ],
+  },
+  {
+    title: 'Systems Integration Specialist',
+    org:   'NRI Distributions',
+    period:'Aug 2021 – Feb 2023',
+    summary:
+      'Led 2+ end-to-end data integration projects connecting client ERPs and retail systems with the internal database via APIs and file transfers. Lead BA on a major POS integration.',
+    highlights: [
+      'Lead BA on POS integration spanning inventory and payment gateways',
+      'Mapped cross-functional flows across POS, ERP and e-commerce SaaS apps',
+      'Authored detailed technical specifications for every integration',
+      'Supported audit compliance and reporting efficiency through documentation',
+    ],
+  },
+  {
+    title: 'Quality Analyst',
+    org:   'X360 Digital',
+    period:'Mar 2019 – Dec 2021',
+    summary:
+      'Built and automated QA and data reporting pipelines with SQL + Excel. Executed 200+ functional and regression tests and made product-quality KPIs visible to engineering and product.',
+    highlights: [
+      'Reduced defect rates by 31%',
+      'Optimized release cycle time through quality KPI visibility',
+      'Automated QA reporting pipelines using SQL and Excel',
+    ],
+  },
+  {
+    title: 'Planning & Cost Analyst · Sr Admin · CDMS Admin',
+    org:   'Syncrude Canada Ltd',
+    period:'Nov 2013 – Nov 2018',
+    summary:
+      'Held progressively senior planning, cost analysis and document/data management roles supporting major capital and operations programs at a large industrial operator.',
+  },
+  {
+    title: 'Project Coordinator',
+    org:   'Opal Marketing Group',
+    period:'Aug 2013 – Dec 2013',
+    summary:
+      'Coordinated project delivery and client-facing operations across the agency’s marketing engagements.',
+  },
+  {
+    title: 'Technical Analyst',
+    org:   'Acrodex (Imperial Oil)',
+    period:'Aug 2012 – Jul 2013',
+    summary:
+      'Early-career technical analyst role supporting Imperial Oil through Acrodex — building the operational and analytical foundations carried into every role since.',
+  },
+]
+
+export const education = [
+  {
+    credential: 'BBA, Marketing',
+    school:     'Thompson Rivers University',
+    period:     '2009 – 2013',
+  },
+]
+
+/* ─── Capability matrix ────────────────────────────────────────────────── */
+export const skills = {
+  delivery: [
+    'Business Analysis', 'Requirements Engineering', 'Technical Specifications',
+    'Agile / Scrum', 'Stakeholder Management', 'User Story Creation',
+    'Process Mapping', 'Change Management', 'Risk Management',
+  ],
+  data: [
+    'SQL', 'Power BI', 'Tableau', 'Power Query', 'Advanced Excel',
+    'Pentaho / ctools', 'ETL Pipelines', 'Data Modelling', 'Azure Data Services',
+  ],
+  systems: [
+    'SAP', 'Microsoft 365', 'SharePoint', 'ServiceNow', 'Jira', 'Confluence',
+    'POS Systems', 'Payment Gateways', 'ERP Integration', 'REST APIs',
+  ],
+  ai: [
+    'GPT-4 / OpenAI API', 'Vector Embeddings', 'Pinecone',
+    'Zapier · Make.com', 'AI Workflow Design', 'Python', 'CI/CD',
+  ],
+}

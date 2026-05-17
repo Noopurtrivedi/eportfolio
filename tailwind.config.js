@@ -7,22 +7,77 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9', // Primary accent color
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
-          950: '#082f49',
+        canvas:  '#faf8f3',
+        surface: '#ffffff',
+        sand:    '#f3efe7',
+        ink: {
+          DEFAULT: '#0f1311',
+          900: '#16191a',
+          800: '#1f2422',
+          700: '#2a302d',
+          600: '#3b423f',
+          500: '#525953',
+          400: '#6b716a',
+          300: '#8a8f87',
+          200: '#b3b6ad',
+          100: '#d8d8d0',
+           50: '#ecebe2',
+        },
+        accent: {
+          DEFAULT: '#0f5d4a',
+          dark:    '#0a4538',
+          deep:    '#073226',
+          muted:   '#3a8473',
+          soft:    '#d9e7e2',
+        },
+        gold: {
+          DEFAULT: '#a98532',
+          muted:   '#c8a558',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans:    ['Inter', 'system-ui', 'sans-serif'],
+        serif:   ['Fraunces', 'Cormorant Garamond', 'Georgia', 'serif'],
+      },
+      opacity: {
+        '4':  '0.04',
+        '6':  '0.06',
+        '8':  '0.08',
+        '12': '0.12',
+        '15': '0.15',
+        '18': '0.18',
+        '22': '0.22',
+      },
+      borderOpacity: {
+        '4':  '0.04',
+        '6':  '0.06',
+        '8':  '0.08',
+      },
+      backgroundOpacity: {
+        '4': '0.04',
+        '6': '0.06',
+        '8': '0.08',
+      },
+      divideOpacity: {
+        '8': '0.08',
+      },
+      textOpacity: {
+        '8':  '0.08',
+        '12': '0.12',
+      },
+      animation: {
+        'marquee':  'marquee 40s linear infinite',
+        'fade-up':  'fadeUp 0.6s ease forwards',
+      },
+      keyframes: {
+        marquee: {
+          '0%':   { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        fadeUp: {
+          from: { opacity: '0', transform: 'translateY(20px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
+        },
       },
     },
   },

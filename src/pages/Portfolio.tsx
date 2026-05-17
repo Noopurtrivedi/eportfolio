@@ -1,174 +1,173 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { projects } from '../data/projects'
-import { ArrowRight, Filter, Target, Zap, Rocket } from 'lucide-react'
+import { projects, type ProjectCategory } from '../data/projects'
+import { ArrowRight, ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { clsx } from 'clsx'
 
-const categories = ['All', 'AI', 'BA', 'Automation', 'Startup', 'Data']
+type Filter = 'All' | 'Client' | 'Side Builds' | ProjectCategory
+
+const filters: Filter[] = [
+  'All',
+  'Client',
+  'Side Builds',
+  'Enterprise',
+  'BSA',
+  'Data & BI',
+  'Integration',
+  'Retail / POS',
+  'AI',
+  'Founder',
+]
+
+const inView = (delay = 0) => ({
+  initial:     { opacity: 0, y: 18 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport:    { once: true },
+  transition:  { duration: 0.5, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+})
 
 const Portfolio: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState('All')
+  const [active, setActive] = useState<Filter>('All')
 
-  const filteredProjects = activeFilter === 'All'
-    ? projects
-    : projects.filter(p => p.category.includes(activeFilter as any))
+  const filtered = projects.filter((p) => {
+    if (active === 'All')         return true
+    if (active === 'Client')      return p.kind === 'client'
+    if (active === 'Side Builds') return p.kind === 'side'
+    return p.category.includes(active as ProjectCategory)
+  })
 
   return (
-    <div className="pb-20">
-      <section className="bg-white py-20 lg:py-32">
-        <div className="container-custom">
-          <div className="max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 mb-8">
-                The <span className="text-primary-600">Proof</span> of Concept.
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-500 leading-relaxed max-w-3xl">
-                A showcase of strategic problem-solving. From optimizing supply chains with AI to designing market entry strategies for startups.
-              </p>
-            </motion.div>
-          </div>
+    <div className="bg-canvas">
+      {/* Header */}
+      <section className="border-b border-ink/10 pt-36 pb-16">
+        <div className="container-wide">
+          <p className="eyebrow mb-4">Selected Work</p>
+          <h1 className="display-xl mb-6 max-w-4xl">
+            Case studies from regulated enterprises
+            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and the side builds they inspire.</span>
+          </h1>
+          <p className="lead max-w-2xl">
+            Each engagement is documented end-to-end: the problem, the approach,
+            the execution, and what actually changed. Filter by discipline or by
+            client vs. founder work.
+          </p>
         </div>
       </section>
 
-      <section className="container-custom">
-        {/* Advanced Filters */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-16 gap-8">
-          <div className="flex items-center space-x-2 text-gray-400">
-            <Filter className="h-4 w-4" />
-            <span className="text-xs font-bold uppercase tracking-[0.2em]">Filter Capability</span>
-          </div>
-          <div className="flex flex-wrap gap-3">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setActiveFilter(cat)}
-                className={clsx(
-                  'px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 border-2',
-                  activeFilter === cat
-                    ? 'bg-primary-600 border-primary-600 text-white shadow-lg shadow-primary-200'
-                    : 'bg-white border-gray-100 text-gray-500 hover:border-primary-200 hover:text-primary-600'
-                )}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+      {/* Filters */}
+      <section className="border-b border-ink/10 sticky top-16 z-30 bg-canvas/90 backdrop-blur-sm">
+        <div className="container-wide py-4 flex items-center gap-2 overflow-x-auto">
+          {filters.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setActive(cat)}
+              className={clsx(
+                'flex-shrink-0 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-200 border',
+                active === cat
+                  ? 'bg-accent text-canvas border-accent'
+                  : 'text-ink/55 hover:text-ink border-ink/15 hover:border-ink/35 bg-surface',
+              )}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
+      </section>
 
-        {/* Dynamic Project Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      {/* Project list */}
+      <section className="container-wide py-16">
+        <div className="flex flex-col gap-0 border border-ink/10 bg-surface">
           <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, idx) => (
+            {filtered.map((project, i) => (
               <motion.div
                 key={project.id}
                 layout
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
-                className="group"
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.35, delay: i * 0.04 }}
               >
-                <Link to={`/portfolio/${project.slug}`} className="block space-y-8">
-                  <div className="aspect-[16/10] bg-gray-50 rounded-[2.5rem] overflow-hidden relative border border-gray-100 group-hover:border-primary-100 transition-colors">
-                     {/* Floating Insight Badge */}
-                     <div className="absolute top-6 left-6 z-10">
-                        <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-sm border border-gray-100 flex items-center gap-2">
-                           <Zap className="h-3 w-3 text-primary-600" />
-                           <span className="text-[10px] font-black uppercase tracking-widest text-gray-900">Key Outcome</span>
-                        </div>
-                     </div>
-                     
-                     {/* Main Category Badge */}
-                     <div className="absolute top-6 right-6 z-10 flex gap-2">
-                        {project.category.slice(0, 2).map(cat => (
-                          <span key={cat} className="bg-primary-600 text-white px-3 py-1 rounded-lg text-[10px] font-bold uppercase tracking-wider">
-                            {cat}
-                          </span>
-                        ))}
-                     </div>
-
-                     {/* Placeholder / Visual */}
-                     <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100">
-                        <Rocket className="h-24 w-24 text-primary-200 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-700" />
-                     </div>
-
-                     {/* Hover Overlay with Result */}
-                     <div className="absolute inset-0 bg-primary-950/90 flex flex-col justify-center items-center p-12 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                        <Target className="h-12 w-12 text-primary-400 mb-6" />
-                        <h4 className="text-white text-2xl font-bold mb-4">{project.outcome}</h4>
-                        <span className="text-primary-300 font-medium flex items-center">
-                           Read Full Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                        </span>
-                     </div>
+                <Link
+                  to={`/portfolio/${project.slug}`}
+                  className="group grid grid-cols-12 gap-6 border-b border-ink/8 last:border-b-0 p-8 md:p-10 hover:bg-sand transition-colors"
+                >
+                  {/* Number */}
+                  <div className="col-span-12 md:col-span-1">
+                    <span
+                      className="font-serif text-4xl font-light"
+                      style={{ color: 'rgba(15,93,74,0.40)', lineHeight: 1 }}
+                    >
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                   </div>
 
-                  <div className="space-y-4 px-2">
-                    <div className="flex items-center gap-4 text-xs font-bold text-gray-400 uppercase tracking-widest">
-                       <span>{project.role}</span>
-                       <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
-                       <div className="flex gap-2">
-                          {project.tools.slice(0, 3).map(tool => (
-                            <span key={tool}>{tool}</span>
-                          ))}
-                       </div>
-                    </div>
-                    <h3 className="text-3xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors leading-tight">
+                  {/* Client + period */}
+                  <div className="col-span-12 md:col-span-3">
+                    <p className="text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold">
+                      {project.client}
+                    </p>
+                    <p className="mt-1 text-[11px] text-ink/45">{project.period}</p>
+                    <p className="mt-3 text-[11px] uppercase tracking-[0.20em] font-semibold"
+                       style={{ color: project.kind === 'side' ? '#7c5f1f' : '#0f5d4a' }}>
+                      {project.kind === 'side' ? 'Side Build' : 'Client Engagement'}
+                    </p>
+                  </div>
+
+                  {/* Title + description */}
+                  <div className="col-span-12 md:col-span-7">
+                    <h3 className="font-serif text-2xl sm:text-[26px] font-medium text-ink leading-tight group-hover:text-accent transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-lg text-gray-500 leading-relaxed line-clamp-2">
-                      {project.description}
+                    <p className="mt-3 text-sm text-ink/60 max-w-2xl leading-relaxed">
+                      {project.tagline}
                     </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {project.category.slice(0, 4).map((c) => (
+                        <span key={c} className="tag-ink">{c}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="col-span-12 md:col-span-1 flex md:justify-end md:items-start">
+                    <div className="w-11 h-11 border border-ink/15 flex items-center justify-center group-hover:border-accent group-hover:bg-accent transition-all duration-300">
+                      <ArrowUpRight className="w-5 h-5 text-ink/55 group-hover:text-canvas transition-colors" />
+                    </div>
                   </div>
                 </Link>
               </motion.div>
             ))}
           </AnimatePresence>
-        </div>
-      </section>
 
-      {/* Philosophy Callout */}
-      <section className="container-custom py-32 mt-20">
-        <div className="bg-gray-50 rounded-[3rem] p-12 lg:p-24 border border-gray-100 text-center max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Quality over Quantity.</h2>
-          <p className="text-xl text-gray-500 leading-relaxed mb-10 max-w-2xl mx-auto">
-            I don't list every task I've ever done. I highlight the moments where I significantly moved the needle for a business.
-          </p>
-          <div className="flex flex-wrap justify-center gap-8">
-             <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary-600 shadow-sm">
-                   <Zap className="h-5 w-5" />
-                </div>
-                <span className="font-bold text-gray-900 tracking-tight">Rapid Execution</span>
-             </div>
-             <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary-600 shadow-sm">
-                   <Target className="h-5 w-5" />
-                </div>
-                <span className="font-bold text-gray-900 tracking-tight">Strategic Intent</span>
-             </div>
-             <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-primary-600 shadow-sm">
-                   <Rocket className="h-5 w-5" />
-                </div>
-                <span className="font-bold text-gray-900 tracking-tight">Measurable Scale</span>
-             </div>
-          </div>
+          {filtered.length === 0 && (
+            <div className="p-16 text-center text-ink/50 text-sm">
+              No case studies in this category yet.
+            </div>
+          )}
         </div>
+
+        {/* Counter */}
+        <motion.p {...inView(0.1)} className="mt-6 text-[11px] uppercase tracking-[0.22em] text-ink/40 font-semibold">
+          Showing {filtered.length} of {projects.length} engagements
+        </motion.p>
       </section>
 
       {/* CTA */}
-      <section className="container-custom py-24 text-center">
-         <h2 className="text-4xl font-extrabold text-gray-900 mb-8">Have a challenge for me?</h2>
-         <Link to="/contact" className="btn-primary px-12 py-5 text-xl">Let's Discuss Your Project</Link>
+      <section className="border-t border-ink/10 bg-sand">
+        <div className="container-wide py-24 text-center">
+          <h2 className="display-md mb-3">Have a brief I should look at?</h2>
+          <p className="text-ink/55 mb-8 text-sm max-w-md mx-auto">
+            Senior BSA contracts, BI/integration programs, or product partnerships
+            — send the context, I’ll respond within a day.
+          </p>
+          <Link to="/contact" className="btn-primary px-10 py-4 text-[13px]">
+            Start a Conversation <ArrowRight className="ml-2 w-4 h-4" />
+          </Link>
+        </div>
       </section>
     </div>
   )
 }
 
 export default Portfolio
-
