@@ -35,7 +35,7 @@ const About: React.FC = () => {
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="eyebrow mb-5"
           >
-            Noopur Trivedi · Senior Business Analyst · Enterprise Transformation · AI Product Strategist
+            Noopur Trivedi, Senior Business Analyst, Enterprise Transformation, AI Product Strategist
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 26 }}

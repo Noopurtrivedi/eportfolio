@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               Noopur Trivedi
             </p>
             <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold">
-              Senior Business Analyst · Enterprise Transformation · AI Product Strategist
+              Senior Business Analyst, Enterprise Transformation, AI Product Strategist
             </p>
             <p className="mt-5 text-sm text-ink/60 leading-relaxed max-w-md">
               13+ years delivering technology, data, and digital-modernization
