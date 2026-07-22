@@ -58,17 +58,30 @@ const Adventures: React.FC = () => {
       {/* Header */}
       <section className="border-b border-ink/10 pt-36 pb-16">
         <div className="container-wide">
-          <Link to="/life" className="inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
-            <ArrowLeft className="w-4 h-4" /> Back to Life
+          <Link to="/life" className="group inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
+            <ArrowLeft className="w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:-translate-x-1" />
+            <span className="link-underline">Back to Life</span>
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8">
-              <p className="eyebrow mb-4 inline-flex items-center gap-2"><Mountain className="w-3.5 h-3.5" /> Adventures</p>
-              <h1 className="display-xl">
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="eyebrow mb-4 inline-flex items-center gap-2"
+              >
+                <Mountain className="w-3.5 h-3.5 animate-float-y" /> Adventures
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.85, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className="display-xl"
+              >
                 Mountains, haul trucks, and the
                 <span className="italic font-light" style={{ color: '#0f5d4a' }}> long way around.</span>
-              </h1>
+              </motion.h1>
             </div>
             <div className="lg:col-span-4">
               <p className="text-[15px] text-ink/65 leading-relaxed">

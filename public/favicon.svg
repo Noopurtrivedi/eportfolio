@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Noopur Trivedi">
+  <rect width="64" height="64" rx="12" fill="#0f5d4a"/>
+  <text
+    x="32"
+    y="44"
+    text-anchor="middle"
+    font-family="Fraunces, 'Cormorant Garamond', Georgia, 'Times New Roman', serif"
+    font-weight="600"
+    font-size="34"
+    letter-spacing="-1.2"
+    fill="#faf8f3"
+  >NT</text>
+</svg>

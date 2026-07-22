@@ -3,7 +3,6 @@ import Layout from './layouts/Layout'
 import About from './pages/About'
 import Portfolio from './pages/Portfolio'
 import Contact from './pages/Contact'
-import CaseStudy from './pages/CaseStudy'
 import Journey from './pages/Journey'
 import Life from './pages/Life'
 import Certifications from './pages/Certifications'
@@ -20,7 +19,7 @@ function App() {
         <Route path="/"                  element={<About />} />
         <Route path="/about"             element={<Navigate to="/" replace />} />
         <Route path="/portfolio"         element={<Portfolio />} />
-        <Route path="/portfolio/:slug"   element={<CaseStudy />} />
+        <Route path="/portfolio/:slug"   element={<Navigate to="/portfolio" replace />} />
         <Route path="/journey"           element={<Journey />} />
         <Route path="/life"              element={<Life />} />
         <Route path="/life/photography"  element={<Photography />} />
