@@ -24,7 +24,7 @@ const entries = [
     period: '2013 – 2018',
     title: 'Driving haul trucks at Syncrude',
     body:
-      'Operated heavy haul equipment on the oil sands. Twelve-hour shifts, frozen mornings, an industrial ballet conducted by radio. It is one of the most physical, disciplined, and oddly meditative jobs I have done — and the foundation for how I think about operations.',
+      'Operated heavy haul equipment on the oil sands. Twelve-hour shifts, frozen mornings, an industrial ballet conducted by radio. It is one of the most physical, disciplined, and oddly meditative jobs I have done, and the foundation for how I think about operations.',
     tags: ['Heavy equipment', 'Shift work', 'Industrial operations'],
   },
   {

@@ -34,7 +34,7 @@ const certifications: Cert[] = [
     category: 'AI & Cloud',
   },
   {
-    name:         'Certified International Software Testing — CTFL',
+    name:         'Certified International Software Testing (CTFL)',
     issuer:       'ATSQ / ASTQB · ISTQB Certification in the U.S.',
     year:         '2021',
     credentialId: '21-CTFL-01364-USA',
@@ -95,7 +95,7 @@ const Certifications: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="lead mt-8 max-w-2xl"
           >
-            A short, real list — Scrum, Azure AI, software testing, product
+            A short, real list: Scrum, Azure AI, software testing, product
             management, and full-stack development. Credential IDs and
             verification links available where the issuing body provides them.
           </motion.p>
@@ -173,8 +173,8 @@ const Certifications: React.FC = () => {
             <p className="eyebrow mb-3">Verification</p>
             <p className="text-[15px] text-ink/65 leading-relaxed max-w-2xl">
               Happy to share underlying certificates, transcripts, and
-              credential IDs for any role or engagement that requires them —
-              reach out and I’ll send what’s relevant.
+              credential IDs for any role or engagement that requires them.
+              Reach out and I will send what is relevant.
             </p>
             <Link
               to="/contact"
@@ -192,7 +192,7 @@ const Certifications: React.FC = () => {
         <div className="container-wide py-20 text-center">
           <h2 className="display-md mb-3">Need a specific credential verified?</h2>
           <p className="text-ink/55 text-sm mb-8 max-w-md mx-auto">
-            Happy to share IDs or verification links on request — and to send
+            Happy to share IDs or verification links on request, and to send
             the underlying transcripts for any role that needs them.
           </p>
           <Link to="/contact" className="btn-primary px-8 py-4 text-[13px]">

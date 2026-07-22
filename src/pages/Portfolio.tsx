@@ -59,7 +59,7 @@ const Portfolio: React.FC = () => {
           >
             I design and build proprietary AI technologies in model verification,
             decision governance, AI orchestration, career intelligence, and agent
-            marketplaces — grounded by 13+ years of enterprise transformation
+            marketplaces, grounded by 13+ years of enterprise transformation
             delivery across utilities, aerospace, telecommunications, logistics,
             and oil &amp; gas.
           </motion.p>
@@ -77,7 +77,7 @@ const Portfolio: React.FC = () => {
               <h2 className="display-lg">What I’m building.</h2>
             </div>
             <p className="text-sm text-ink/50 italic font-serif max-w-xs md:text-right">
-              Presented at the level I share publicly ahead of launch — the full
+              Presented at the level I share publicly ahead of launch. The full
               picture is a conversation.
             </p>
           </div>
@@ -161,7 +161,7 @@ const Portfolio: React.FC = () => {
             <p className="eyebrow mb-3">Enterprise Delivery</p>
             <h2 className="display-lg">Programs I’ve led and delivered.</h2>
             <p className="lead mt-5">
-              The enterprise track record that grounds the product work —
+              The enterprise track record that grounds the product work:
               modernization, migration, governance, and analytics programs
               inside regulated, high-visibility environments.
             </p>
@@ -200,8 +200,8 @@ const Portfolio: React.FC = () => {
         <div className="container-wide py-24 text-center">
           <h2 className="display-md mb-3">Want the story behind any of this?</h2>
           <p className="text-ink/55 mb-8 text-sm max-w-md mx-auto">
-            Coffee chats, collaborations, investment conversations, or roles —
-            I’d rather talk than write another paragraph.
+            For coffee chats, collaborations, investment conversations, or
+            roles, I would rather have the conversation directly.
           </p>
           <Link to="/contact" className="group btn-primary px-10 py-4 text-[13px]">
             Schedule a Conversation

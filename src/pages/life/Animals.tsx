@@ -14,7 +14,7 @@ const pillars = [
   {
     icon: PawPrint,
     title: 'Rescue & care',
-    body:  'Hands-on time with local rescues — fostering, transport runs, fundraising days. The unglamorous, ongoing kind of help.',
+    body:  'Hands-on time with local rescues: fostering, transport runs, and fundraising days. The unglamorous, ongoing kind of help.',
   },
   {
     icon: Megaphone,
@@ -24,7 +24,7 @@ const pillars = [
   {
     icon: HandHeart,
     title: 'Giving & support',
-    body:  'Recurring support for sanctuaries and shelter networks that do the work day-in, day-out — and the volunteers behind them.',
+    body:  'Recurring support for sanctuaries and shelter networks that do the work every day, and for the volunteers behind them.',
   },
 ]
 
@@ -64,14 +64,14 @@ const Animals: React.FC = () => {
                 transition={{ duration: 0.85, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
                 className="display-xl"
               >
-                Quietly, persistently —
+                Quietly and persistently,
                 <span className="italic font-light" style={{ color: '#0f5d4a' }}> the cause that has stayed with me longest.</span>
               </motion.h1>
             </div>
             <div className="lg:col-span-4">
               <p className="text-[15px] text-ink/65 leading-relaxed">
                 Long before the career and the side builds, this was the thing I
-                kept showing up for. Not as a campaign — as a way of moving
+                kept showing up for. Not as a campaign, but as a way of moving
                 through the world.
               </p>
             </div>
@@ -87,7 +87,7 @@ const Animals: React.FC = () => {
               I've spent enough hours inside rescues, transport runs and shelter
               fundraisers to be allergic to performative advocacy. The work that
               actually changes outcomes for animals is mostly boring and mostly
-              repeated — the foster home that opens up again, the volunteer who
+              repeated: the foster home that opens up again, the volunteer who
               shows up another Saturday, the cheque that goes out every month.
             </p>
             <p>
@@ -95,7 +95,7 @@ const Animals: React.FC = () => {
               relational. The same operating principle as the rest of my work,
               applied to the part of the world I care about most.
             </p>
-            <p className="font-serif italic text-ink/55">— Noopur</p>
+            <p className="font-serif italic text-ink/55">Noopur</p>
           </div>
         </div>
       </section>
@@ -159,7 +159,7 @@ const Animals: React.FC = () => {
             <h2 className="display-md mb-5">If you run a rescue or sanctuary, I want to hear from you.</h2>
             <p className="lead">
               Foster networks, transport coordinators, sanctuary operators,
-              vet-access funds — write to me. I’m always looking for the kind of
+              vet-access funds, write to me. I am always looking for the kind of
               ongoing, relational work that actually changes outcomes.
             </p>
             <a

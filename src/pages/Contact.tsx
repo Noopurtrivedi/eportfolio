@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
 
     const payload = {
       access_key: WEB3FORMS_KEY,
-      subject:    `[noopurtrivedi.com] ${form.context || 'New inquiry'} — from ${form.name}`,
+      subject:    `[noopurtrivedi.com] ${form.context || 'New inquiry'} from ${form.name}`,
       from_name:  `${form.name} · via noopurtrivedi.com`,
       replyto:    form.email,
       name:       form.name,
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
       }
     } catch {
       setStatus('error')
-      setErrorMsg('Network issue — please try again, or email me directly.')
+      setErrorMsg('Network issue. Please try again, or email me directly.')
     }
   }
 
@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
             className="display-xl mb-6 max-w-3xl"
           >
             Let’s find a time
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> — for a coffee chat, a collaboration, or a role.</span>
+            <span className="italic font-light" style={{ color: '#0f5d4a' }}> for a coffee chat, a collaboration, or a role.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -105,7 +105,7 @@ const Contact: React.FC = () => {
             className="lead max-w-xl"
           >
             Hiring and interview conversations, collaborations, investor and
-            partner introductions, advisory — or simply comparing notes on
+            partner introductions, advisory, or simply comparing notes on
             enterprise transformation and AI. I read every message and respond
             within one business day.
           </motion.p>
@@ -133,7 +133,7 @@ const Contact: React.FC = () => {
                 >✦</motion.div>
                 <h3 className="font-serif text-2xl font-medium text-ink mb-2">Message sent.</h3>
                 <p className="text-ink/65 text-sm max-w-md mx-auto">
-                  Thank you — it’s landed in my inbox. I’ll be in touch within
+                  Thank you, it has landed in my inbox. I will be in touch within
                   one business day. If something’s urgent, you can also reach
                   me directly at{' '}
                   <a className="underline text-accent" href="mailto:noopur.trivedi@hotmail.com">
@@ -325,7 +325,7 @@ const Contact: React.FC = () => {
                   'Coffee chats & collaborations',
                   'Hiring & interview conversations',
                   'Investor & partner introductions',
-                  'Advisory — AI adoption & governance',
+                  'Advisory on AI adoption and governance',
                   'Senior BA / transformation-lead roles',
                   'Enterprise programs (SAP, M365, data)',
                 ].map((item) => (

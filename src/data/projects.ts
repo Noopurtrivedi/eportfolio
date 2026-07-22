@@ -53,7 +53,7 @@ export const aiProducts: AiProduct[] = [
     status: 'Active research',
     domain: 'Decision governance',
     oneLiner:
-      'Determines how an AI application should respond before it generates an answer — weighing risk, reversibility, uncertainty, verification needs, and the safeguards a response deserves.',
+      'Determines how an AI application should respond before it generates an answer, weighing risk, reversibility, uncertainty, verification needs, and the safeguards a response deserves.',
     highlights: [
       'Designed the decision-metadata schema and policy architecture',
       '100% exact-match and 100% danger recall on the initial clean evaluation set',
@@ -70,7 +70,7 @@ export const aiProducts: AiProduct[] = [
     status: 'Architecture stage',
     domain: 'AI orchestration',
     oneLiner:
-      'A reusable intelligence layer designed to power multiple AI applications from one architecture — orchestration, memory, context, routing, and persistent execution.',
+      'A reusable intelligence layer designed to power multiple AI applications from one architecture: orchestration, memory, context, routing, and persistent execution.',
     highlights: [
       'Agent orchestrator, skill registry, memory graph, context service, model router, scheduler, and RAG designed as shared services',
       'Persistent execution records built into the architecture from the start',
@@ -85,7 +85,7 @@ export const aiProducts: AiProduct[] = [
     status: 'Active development',
     domain: 'Intelligent work',
     oneLiner:
-      'A local-first AI work environment for intelligent assistance, task execution, memory, and automation — built for privacy-conscious operation.',
+      'A local-first AI work environment for intelligent assistance, task execution, memory, and automation, built for privacy-conscious operation.',
     highlights: [
       'Local-first architecture with privacy-conscious operations as a founding constraint',
       'Delegate: an asynchronous, resumable task-execution capability at the platform’s core',
@@ -109,7 +109,7 @@ export const aiProducts: AiProduct[] = [
   {
     id: 'creationx',
     name: 'CreationX',
-    descriptor: 'Venture — Product Vision & Commercialization',
+    descriptor: 'Venture, Product Vision & Commercialization',
     role: 'Co-Founder',
     status: 'Active venture',
     domain: 'Venture building',
@@ -169,7 +169,7 @@ export const enterprisePrograms: EnterpriseProgram[] = [
     org: 'MTU Maintenance Canada',
     period: 'Apr 2023 – Present',
     summary:
-      'Led the Canadian workstream of a global enterprise data migration and Microsoft 365 modernization program — SharePoint Online, Teams, OneDrive, and Azure-aligned services — end to end: discovery, migration and cutover planning, pilots, validation, and stabilization, with documented performance gains. Established governance for metadata, classification, retention, permissions, auditability, and controlled-goods / export-compliance handling.',
+      'Led the Canadian workstream of a global enterprise data migration and Microsoft 365 modernization program covering SharePoint Online, Teams, OneDrive, and Azure-aligned services, delivered end to end: discovery, migration and cutover planning, pilots, validation, and stabilization, with documented performance gains. Established governance for metadata, classification, retention, permissions, auditability, and controlled-goods / export-compliance handling.',
     tags: ['Microsoft 365', 'SharePoint Online', 'Azure', 'Data Migration', 'Governance'],
   },
   {
@@ -178,7 +178,7 @@ export const enterprisePrograms: EnterpriseProgram[] = [
     org: 'MTU Maintenance Canada',
     period: 'Apr 2023 – Present',
     summary:
-      'Led requirements for an enterprise learning-management-system replacement — 160+ documented requirements spanning business, compliance, and technical needs.',
+      'Led requirements for an enterprise learning-management-system replacement, with 160+ documented requirements spanning business, compliance, and technical needs.',
     tags: ['Requirements Definition', 'Stakeholder Engagement'],
   },
   {
@@ -187,7 +187,7 @@ export const enterprisePrograms: EnterpriseProgram[] = [
     org: 'MTU Maintenance Canada',
     period: 'Apr 2023 – Present',
     summary:
-      'Helped establish the Canadian robotic-process-automation capability on UiPath — from candidate processes to a working automation practice.',
+      'Helped establish the Canadian robotic-process-automation capability on UiPath, from candidate processes to a working automation practice.',
     tags: ['RPA', 'UiPath', 'Process Improvement'],
   },
   {
@@ -214,7 +214,7 @@ export const enterprisePrograms: EnterpriseProgram[] = [
     org: 'BC Hydro',
     period: 'Oct 2022 – Oct 2023',
     summary:
-      'Supported SAP EAM and CCS operations — requirements, data migration, interfaces, reporting dependencies, and issue resolution. Developed test strategies, traceability, and acceptance criteria, and standardized requirements and governance practices.',
+      'Supported SAP EAM and CCS operations across requirements, data migration, interfaces, reporting dependencies, and issue resolution. Developed test strategies, traceability, and acceptance criteria, and standardized requirements and governance practices.',
     tags: ['SAP EAM', 'SAP CCS', 'Test Strategy', 'Governance'],
   },
 ]
@@ -239,9 +239,9 @@ export const workExperience: Role[] = [
     summary:
       'Lead business analysis and project delivery for enterprise modernization in a global aerospace MRO environment, managing multiple concurrent high-visibility initiatives.',
     highlights: [
-      'Led the Canadian workstream of a global enterprise data migration and Microsoft 365 modernization program end to end — discovery through stabilization — with documented performance gains',
+      'Led the Canadian workstream of a global enterprise data migration and Microsoft 365 modernization program end to end, from discovery through stabilization, with documented performance gains',
       'Established governance for metadata, classification, retention, permissions, auditability, and controlled-goods / export-compliance handling',
-      'Led requirements for an enterprise LMS replacement — 160+ documented requirements',
+      'Led requirements for an enterprise LMS replacement with 160+ documented requirements',
       'Helped establish the Canadian RPA capability on UiPath',
       'Drive modernization of legacy Microsoft Access applications toward web-based, Kubernetes/AKS-aligned solutions',
       'Coordinate SAP finance, banking, and access requirements globally; manage the IT operational budget (Cplace)',
@@ -256,7 +256,7 @@ export const workExperience: Role[] = [
     summary:
       'Translated complex business, operational, financial, and technology needs into structured requirements, governance artifacts, and implementation recommendations for a major Crown utility.',
     highlights: [
-      'Supported SAP EAM and CCS operations — requirements, data migration, interfaces, reporting dependencies, issue resolution',
+      'Supported SAP EAM and CCS operations: requirements, data migration, interfaces, reporting dependencies, issue resolution',
       'Developed test strategies, traceability, and acceptance criteria',
       'Standardized requirements and governance practices',
       'Improved reporting visibility with advanced Excel, Access, ServiceNow, and Jira',

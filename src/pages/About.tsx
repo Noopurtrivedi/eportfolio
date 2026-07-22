@@ -44,7 +44,7 @@ const About: React.FC = () => {
             transition={{ duration: 0.85, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
             className="display-xl max-w-4xl"
           >
-            I modernize complex enterprises —
+            I modernize complex enterprises
             <span className="italic font-light" style={{ color: '#0f5d4a' }}> and build the AI products that come next.</span>
           </motion.h1>
           <motion.p
@@ -92,7 +92,7 @@ const About: React.FC = () => {
               <div>
                 <p className="eyebrow mb-3">Two threads, one standard</p>
                 <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
-                  An enterprise operator who builds — and a builder who delivers
+                  An enterprise operator who builds, and a builder who delivers
                   like an enterprise operator.
                 </h2>
                 <p>
@@ -100,12 +100,12 @@ const About: React.FC = () => {
                   first is an enterprise track record: thirteen-plus years
                   translating complex operational and strategic challenges into
                   structured requirements, roadmaps, governance frameworks, and
-                  analytical solutions — and then leading the cross-functional
+                  analytical solutions, then leading the cross-functional
                   delivery that makes them real.
                 </p>
                 <p className="mt-4">
                   The second is product creation. I actively design and develop
-                  proprietary AI technologies — in model verification, decision
+                  proprietary AI technologies in model verification, decision
                   governance, AI orchestration, career intelligence, and agent
                   marketplaces. That isn’t a hobby line on a resume; it’s a
                   disciplined product practice with its own architecture,
@@ -121,8 +121,8 @@ const About: React.FC = () => {
                 </h2>
                 <p>
                   As Business Analyst &amp; Project Lead at
-                  <strong className="text-ink"> MTU Maintenance Canada</strong> —
-                  a global aerospace MRO — I lead enterprise modernization across
+                  <strong className="text-ink"> MTU Maintenance Canada</strong>,
+                  a global aerospace MRO, I lead enterprise modernization across
                   multiple concurrent, high-visibility initiatives: the Canadian
                   workstream of a global data migration and Microsoft 365
                   modernization program, an enterprise LMS replacement with 160+
@@ -151,7 +151,7 @@ const About: React.FC = () => {
                 <p>
                   I build AI the way regulated industries ship systems: verified
                   before trusted, governed before scaled. That conviction runs
-                  through the portfolio — a verification layer that makes AI
+                  through the portfolio: a verification layer that makes AI
                   models measurably more faithful, a governance layer that
                   decides how an AI application should respond before it
                   answers, an orchestration architecture that lets many products
@@ -161,8 +161,8 @@ const About: React.FC = () => {
                 <p className="mt-4">
                   The products are pre-launch, and I keep their inner workings
                   deliberately private until each goes live. What I can say
-                  publicly is on the <Link to="/portfolio" className="text-accent underline">portfolio page</Link> —
-                  the rest is a conversation I’m glad to have.
+                  publicly is on the <Link to="/portfolio" className="text-accent underline">portfolio page</Link>;
+                  the rest is a conversation I am glad to have.
                 </p>
               </div>
 
@@ -174,7 +174,7 @@ const About: React.FC = () => {
                 <p>
                   I take pride in work that is both rigorous and beautiful. The
                   same eye that composes a photograph or a painting shapes how I
-                  design a governance framework or a product experience — with
+                  design a governance framework or a product experience: with
                   restraint, intention, and respect for the person on the other
                   side. If you want to know why I am the way I am about the
                   work, the <Link to="/life" className="text-accent underline">Life</Link> section
@@ -217,7 +217,7 @@ const About: React.FC = () => {
                   {[
                     { k: 'Current role', v: 'Business Analyst & Project Lead · MTU Maintenance Canada' },
                     { k: 'Experience',   v: '13+ years · Enterprise transformation & delivery' },
-                    { k: 'Building',     v: 'Proprietary AI — verification, governance, orchestration' },
+                    { k: 'Building',     v: 'Proprietary AI in verification, governance, and orchestration' },
                     { k: 'Venture',      v: 'Co-Founder · CreationX' },
                     { k: 'Industries',   v: 'Utilities · Aerospace · Telecom · Logistics · Oil & Gas' },
                     { k: 'Specialty',    v: 'SAP · M365 / Azure · Data migration · BI · RPA · LLM evaluation' },
@@ -281,22 +281,22 @@ const About: React.FC = () => {
               {
                 icon: Anchor,
                 title: 'Transformation delivered end to end.',
-                desc: 'Discovery, planning, pilots, validation, stabilization — I’ve led the full arc of modernization programs in regulated environments where the audit trail matters as much as the outcome.',
+                desc: 'From discovery and planning through pilots, validation, and stabilization, I have led the full arc of modernization programs in regulated environments where the audit trail matters as much as the outcome.',
               },
               {
                 icon: Layers,
                 title: 'Requirements and governance as craft.',
-                desc: 'Structured requirements, traceability, governance frameworks, and acceptance criteria that teams can actually build against — from 160+ requirement LMS programs to global SAP coordination.',
+                desc: 'Structured requirements, traceability, governance frameworks, and acceptance criteria that teams can build against, from an LMS program with 160+ documented requirements to global SAP coordination.',
               },
               {
                 icon: Compass,
                 title: 'Analytics executives can act on.',
-                desc: 'KPI frameworks, dashboards, and adoption metrics built for decision-making — not decoration. Reporting that becomes the system of record once the project ends.',
+                desc: 'KPI frameworks, dashboards, and adoption metrics built for decision-making rather than decoration. Reporting that becomes the system of record once the project ends.',
               },
               {
                 icon: Sparkles,
                 title: 'An active AI product practice.',
-                desc: 'Hands-on design and development of proprietary AI in model verification, decision governance, and orchestration — including local LLMs, fine-tuning, and evaluation frameworks.',
+                desc: 'Hands-on design and development of proprietary AI in model verification, decision governance, and orchestration, including local LLMs, fine-tuning, and evaluation frameworks.',
               },
             ].map((item, i) => (
               <motion.div
@@ -327,7 +327,7 @@ const About: React.FC = () => {
               {
                 num: '01',
                 title: 'I write the spec before the slide.',
-                desc: 'The deliverable I’m proudest of is rarely a deck. It’s the requirements document, the data flow, the test plan — the artifact a team can act on without ambiguity.',
+                desc: 'The deliverable I am proudest of is rarely a deck. It is the requirements document, the data flow, and the test plan: the artifacts a team can act on without ambiguity.',
               },
               {
                 num: '02',
@@ -337,7 +337,7 @@ const About: React.FC = () => {
               {
                 num: '03',
                 title: 'Governance is how trust scales.',
-                desc: 'Metadata, classification, retention, permissions, auditability — the unglamorous layer that lets a global organization move fast without losing control. I build it in from day one.',
+                desc: 'Metadata, classification, retention, permissions, and auditability form the quiet layer that lets a global organization move fast without losing control. I build it in from day one.',
               },
               {
                 num: '04',
@@ -370,11 +370,11 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5">
               <p className="eyebrow mb-3">What I’m open to</p>
-              <h2 className="display-lg">Pull up a chair — literally.</h2>
+              <h2 className="display-lg">Open to the right conversations.</h2>
               <p className="lead mt-6">
                 This site exists so the right people can find me and start a
-                conversation — over coffee, a call, or a well-written email.
-                If any of these fit, reach out.
+                conversation, whether over coffee, a call, or a well-written
+                email. If any of these fit, reach out.
               </p>
               <Link to="/contact" className="group mt-8 btn-primary px-7 py-3.5 text-[13px] inline-flex">
                 <Coffee className="mr-2 w-4 h-4" />
@@ -386,11 +386,11 @@ const About: React.FC = () => {
               {[
                 {
                   k: 'Coffee chats & collaborations',
-                  d: 'Directors, founders, and builders who want to compare notes on enterprise transformation or AI products — or explore working together.',
+                  d: 'Directors, founders, and builders who want to compare notes on enterprise transformation or AI products, or explore working together.',
                 },
                 {
                   k: 'Senior & lead roles',
-                  d: 'Senior BA, transformation lead, and product-strategy roles inside complex enterprises — SAP, M365, data, and modernization programs.',
+                  d: 'Senior BA, transformation lead, and product-strategy roles inside complex enterprises, spanning SAP, M365, data, and modernization programs.',
                 },
                 {
                   k: 'Investor & partner conversations',
@@ -398,7 +398,7 @@ const About: React.FC = () => {
                 },
                 {
                   k: 'Advisory & speaking',
-                  d: 'Advisory on AI adoption, decision governance, and modernization — and speaking on how enterprises can trust AI responsibly.',
+                  d: 'Advisory on AI adoption, decision governance, and modernization, along with speaking on how enterprises can trust AI responsibly.',
                 },
               ].map((row, i) => (
                 <motion.div
@@ -423,7 +423,7 @@ const About: React.FC = () => {
               <p className="eyebrow mb-3 inline-flex items-center gap-2">
                 <Sparkles className="w-3.5 h-3.5 animate-pulse-soft" /> Currently
               </p>
-              <h2 className="display-lg">A "now" page, for the people who like those.</h2>
+              <h2 className="display-lg">What has my attention right now.</h2>
             </div>
             <p className="hidden sm:block text-sm text-ink/45 italic font-serif max-w-xs text-right">
               Updated when something meaningful changes.
@@ -435,16 +435,16 @@ const About: React.FC = () => {
               {
                 head: 'Building',
                 items: [
-                  'AdaptIQ — AI verification & model improvement',
-                  'Kestra DML — decision governance for AI',
-                  'Artha, Trinity Talent, OwlNest & more — moving toward launch',
+                  'AdaptIQ: AI verification and model improvement',
+                  'Kestra DML: decision governance for AI',
+                  'Artha, Trinity Talent, and OwlNest, moving toward launch',
                 ],
               },
               {
                 head: 'Delivering',
                 items: [
-                  'MTU Maintenance Canada — enterprise modernization portfolio',
-                  'Global M365 & data-migration program, Canadian workstream',
+                  'MTU Maintenance Canada: enterprise modernization portfolio',
+                  'Global M365 and data-migration program, Canadian workstream',
                   'KPI frameworks and adoption metrics for executive decisions',
                 ],
               },
@@ -453,7 +453,7 @@ const About: React.FC = () => {
                 items: [
                   'Based in Chestermere, Alberta',
                   'Photography, painting, animals, and long trails',
-                  'Learning German — langsam, aber sicher',
+                  'Learning German',
                 ],
               },
             ].map((col, i) => (
@@ -479,7 +479,7 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-10">
             <div className="lg:col-span-7">
               <p className="eyebrow mb-3">Beyond the work</p>
-              <h2 className="display-lg">There’s a wider address — wander through it.</h2>
+              <h2 className="display-lg">The interests that shape how I work.</h2>
             </div>
             <p className="lg:col-span-5 text-[15px] text-ink/65 leading-relaxed">
               The career sections explain what I do for a living. These are the
@@ -522,8 +522,8 @@ const About: React.FC = () => {
             <h2 className="display-lg">Thirteen-plus years, five industries.</h2>
             <p className="lead mt-5">
               A progression through technical analysis, planning, quality,
-              integration, business intelligence, and senior business analysis —
-              across utilities, aerospace, telecommunications, logistics, and
+              integration, business intelligence, and senior business analysis,
+              spanning utilities, aerospace, telecommunications, logistics, and
               oil &amp; gas.
             </p>
           </div>
@@ -690,7 +690,7 @@ const About: React.FC = () => {
         <motion.h2 {...inView(0)} className="display-md mb-3">The best conversations start over coffee.</motion.h2>
         <motion.p {...inView(0.05)} className="text-ink/55 text-sm mb-8 max-w-md mx-auto">
           Hiring conversations, collaborations, investor and partner intros,
-          advisory — or simply comparing notes on where enterprise and AI meet.
+          advisory, or simply comparing notes on where enterprise and AI meet.
         </motion.p>
         <motion.div {...inView(0.1)} className="flex flex-col sm:flex-row justify-center gap-4">
           <Link to="/contact" className="group btn-primary px-8 py-4 text-[13px]">

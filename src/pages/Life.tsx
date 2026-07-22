@@ -21,14 +21,14 @@ const sections = [
   {
     to:    '/life/art',
     label: 'Painting & Art',
-    sub:   'Paint as a quieter language — for the things specs can\'t hold.',
+    sub:   'Paint as a quieter language, for the things specifications cannot hold.',
     icon:  Brush,
     meta:  'Originals · prints',
   },
   {
     to:    '/life/animals',
     label: 'Animal Advocacy',
-    sub:   'Quietly, persistently — the cause that has stayed with me longest.',
+    sub:   'Quietly and persistently, the cause that has stayed with me longest.',
     icon:  Heart,
     meta:  'Volunteer · advocate',
   },
@@ -82,7 +82,7 @@ const Life: React.FC = () => {
                 className="lead mt-8 max-w-2xl"
               >
                 The career sections explain what I do for a living. These are
-                the places that explain why I am the way I am about it — the
+                the places that explain why I am the way I am about it, the
                 cameras, the canvas, the causes, and the long roads. Wander as
                 you like.
               </motion.p>
@@ -148,11 +148,11 @@ const Life: React.FC = () => {
         <div className="container-wide py-24 text-center">
           <motion.blockquote {...inView(0)} className="max-w-3xl mx-auto">
             <p className="font-serif text-3xl sm:text-4xl italic font-light text-ink leading-snug">
-              "A useful life and a wide one — the two turn out to need
+              "A useful life and a wide one. The two turn out to need
               each other."
             </p>
             <footer className="mt-8 text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold">
-              — Noopur
+              Noopur
             </footer>
           </motion.blockquote>
         </div>

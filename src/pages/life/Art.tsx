@@ -44,7 +44,7 @@ const Art: React.FC = () => {
             <div className="lg:col-span-4">
               <p className="text-[15px] text-ink/65 leading-relaxed">
                 Specifications are precise. Paint is honest about what it can’t
-                say. I work in small, deliberate series — colour studies,
+                say. I work in small, deliberate series: colour studies,
                 portraits, and the occasional landscape I’ve actually walked.
               </p>
             </div>
@@ -62,17 +62,17 @@ const Art: React.FC = () => {
             </div>
             <div className="lg:col-span-8 space-y-5 text-[17px] text-ink/70 leading-relaxed">
               <p>
-                I spend most of my workday turning ambiguity into precision —
+                I spend most of my workday turning ambiguity into precision;
                 specifications, dashboards, integration contracts. Paint is the
                 opposite practice. It lets the ambiguity stay.
               </p>
               <p>
                 I work small and slow. A study at a time, mostly in series, mostly
                 from memory rather than reference. The work isn’t a commercial
-                practice — but the catalog is real and I’m happy to share
+                practice, but the catalog is real and I am happy to share
                 originals or scans by request.
               </p>
-              <p className="font-serif italic text-ink/55">— Noopur</p>
+              <p className="font-serif italic text-ink/55">Noopur</p>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ const Art: React.FC = () => {
             </div>
             <h2 className="display-md mb-5">The studio gallery is being assembled.</h2>
             <p className="lead">
-              Scans of the current series are coming up here — colour studies,
+              Scans of the current series are coming up here: colour studies,
               charcoal, gouache and a small body of oil work. If you’d like to
               see a piece in person, or you’re curious about something specific,
               write to me.

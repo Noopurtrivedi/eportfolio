@@ -11,10 +11,10 @@ const inView = (delay = 0) => ({
 })
 
 const series = [
-  { title: 'Coast Series',     note: 'Long-form work along the Pacific coastline — light, water and weather.' },
+  { title: 'Coast Series',     note: 'Long-form work along the Pacific coastline: light, water, and weather.' },
   { title: 'BC Wild',          note: 'Quiet frames from the rainforests, mountains and waterways of British Columbia.' },
   { title: 'High Country',     note: 'Alpine and backcountry photography from multi-day approaches.' },
-  { title: 'Quiet Objects',    note: 'Studio still lifes — the small, deliberate frames that ask for a second look.' },
+  { title: 'Quiet Objects',    note: 'Studio still lifes, the small, deliberate frames that ask for a second look.' },
   { title: 'Companions',       note: 'A long-running record of the animals who have shared this life.' },
   { title: 'Working Land',     note: 'Industrial and rural landscapes from years on field sites.' },
 ]
@@ -53,7 +53,7 @@ const Photography: React.FC = () => {
             <div className="lg:col-span-4">
               <p className="text-[15px] text-ink/65 leading-relaxed">
                 Mostly natural light, mostly Pacific Northwest. I shoot for the
-                quiet frames — the ones that don’t ask anything of the viewer
+                quiet frames, the ones that do not ask anything of the viewer
                 except a second look.
               </p>
             </div>
@@ -94,8 +94,8 @@ const Photography: React.FC = () => {
             <h2 className="display-md mb-5">The gallery is being curated.</h2>
             <p className="lead">
               Full prints, sequencing, and titles are coming together for each
-              series above. If you’d like an early look — or you’re interested in
-              a print of something specific — write to me.
+              series above. If you would like an early look, or you are interested
+              in a print of something specific, write to me.
             </p>
             <a
               href="mailto:Noopur.trivedi@hotmail.com?subject=Photography%20%E2%80%94%20early%20look"

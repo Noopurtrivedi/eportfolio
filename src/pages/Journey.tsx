@@ -13,43 +13,43 @@ const inView = (delay = 0) => ({
 const chapters = [
   {
     year:  '2012',
-    title: 'Fort McMurray — where the discipline started.',
-    body:  'My first analyst role: technical analysis supporting Imperial Oil through Acrodex, in an industry where systems fail loudly and documentation is not optional. It set the tone for everything after — respect the operational reality before proposing the change.',
+    title: 'Fort McMurray, where the discipline started.',
+    body:  'My first analyst role: technical analysis supporting Imperial Oil through Acrodex, in an industry where systems fail loudly and documentation is not optional. It set the tone for everything after: respect the operational reality before proposing the change.',
   },
   {
     year:  '2013',
     title: 'A degree, an agency, and a five-year apprenticeship in rigor.',
-    body:  'I finished my BBA in Marketing at Thompson Rivers University, coordinated projects at a Vancouver agency, and then joined Syncrude — where I spent five years in planning, cost analysis, and data management. Oil sands operations taught me what a well-run system actually looks like: audit trails, disciplined change control, and the way a single missed spec ripples for months.',
+    body:  'I finished my BBA in Marketing at Thompson Rivers University, coordinated projects at a Vancouver agency, and then joined Syncrude, where I spent five years in planning, cost analysis, and data management. Oil sands operations taught me what a well-run system actually looks like: audit trails, disciplined change control, and the way a single missed spec ripples for months.',
   },
   {
     year:  '2019',
     title: 'Quality as a craft, not a checklist.',
-    body:  'At X360 Digital I built automated QA and data-reporting pipelines and executed hundreds of functional and regression tests. Defect rates dropped 31% — but the lesson that stuck was different: when the metric is visible, the team starts owning it. Visibility is leverage.',
+    body:  'At X360 Digital I built automated QA and data-reporting pipelines and executed hundreds of functional and regression tests. Defect rates dropped 31%, but the lesson that stuck was different: when the metric is visible, the team starts owning it. Visibility is leverage.',
   },
   {
     year:  '2021',
     title: 'Two consultant hats: integration and intelligence.',
-    body:  'At NRI Distribution I designed integrations between the company database and customer ERPs — the unforgiving world of cross-system mapping and audit compliance. In parallel, at Bell Canada / Bell Media, I built BI infrastructure, ETL workflows, and executive reporting for a marketplace serving vendors, contractors, and internal stakeholders. Different domains, one lesson: the seams between systems are where programs live or die.',
+    body:  'At NRI Distribution I designed integrations between the company database and customer ERPs, the unforgiving world of cross-system mapping and audit compliance. In parallel, at Bell Canada / Bell Media, I built BI infrastructure, ETL workflows, and executive reporting for a marketplace serving vendors, contractors, and internal stakeholders. Different domains, one lesson: the seams between systems are where programs live or die.',
   },
   {
     year:  '2022',
-    title: 'BC Hydro — enterprise delivery at utility scale.',
-    body:  'As SAP Business Decision Analyst at BC Hydro, I translated complex business, operational, financial, and technology needs into structured requirements and governance artifacts — supporting SAP EAM and CCS operations, test strategies, traceability, and acceptance criteria for a Crown utility where rigor is non-negotiable.',
+    title: 'BC Hydro and enterprise delivery at utility scale.',
+    body:  'As SAP Business Decision Analyst at BC Hydro, I translated complex business, operational, financial, and technology needs into structured requirements and governance artifacts, supporting SAP EAM and CCS operations, test strategies, traceability, and acceptance criteria for a Crown utility where rigor is non-negotiable.',
   },
   {
     year:  '2023',
-    title: 'MTU Maintenance Canada — leading modernization in aerospace.',
+    title: 'MTU Maintenance Canada, leading modernization in aerospace.',
     body:  'I joined MTU Maintenance Canada as Business Analyst & Project Lead, and the role became a portfolio: the Canadian workstream of a global data migration and Microsoft 365 modernization program, an enterprise LMS replacement with 160+ documented requirements, a new RPA capability on UiPath, legacy application modernization toward Kubernetes/AKS, and global SAP finance and banking coordination. Enterprise transformation, end to end.',
   },
   {
     year:  'Now',
-    title: 'The product chapter — building proprietary AI.',
-    body:  'Alongside the enterprise work, I design and develop proprietary AI technologies: AdaptIQ for model verification, Kestra DML for decision governance, an orchestration layer that lets many products share one intelligence architecture, Artha for local-first intelligent work, Trinity Talent for career intelligence, OwlNest for AI agent marketplaces — and CreationX, the venture I co-founded. Each is pre-launch by design; each is built with the discipline the last thirteen years taught me.',
+    title: 'The product chapter: building proprietary AI.',
+    body:  'Alongside the enterprise work, I design and develop proprietary AI technologies: AdaptIQ for model verification, Kestra DML for decision governance, an orchestration layer that lets many products share one intelligence architecture, Artha for local-first intelligent work, Trinity Talent for career intelligence, OwlNest for AI agent marketplaces, and CreationX, the venture I co-founded. Each is pre-launch by design; each is built with the discipline the last thirteen years taught me.',
   },
   {
     year:  'Next',
     title: 'The bet I’m making.',
-    body:  'AI will flood every product surface in the next few years. The differentiator won’t be the model — it will be whether the system around it can be verified, governed, and trusted with real work. That is exactly the seam my career has prepared me to own, and it’s where my products are aimed.',
+    body:  'AI will flood every product surface in the next few years. The differentiator will not be the model. It will be whether the system around it can be verified, governed, and trusted with real work. That is exactly the seam my career has prepared me to own, and it’s where my products are aimed.',
   },
 ]
 
@@ -67,7 +67,7 @@ const lessons = [
   {
     n: '03',
     t: 'Build the boring layer first.',
-    d: 'Governance, auditability, error handling — the parts no one screenshots. They\'re what determine whether v2 is possible.',
+    d: 'Governance, auditability, and error handling are the parts no one screenshots. They determine whether v2 is possible.',
   },
   {
     n: '04',
@@ -107,7 +107,7 @@ const Journey: React.FC = () => {
                 transition={{ duration: 0.85, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
                 className="display-xl"
               >
-                From the oil sands to AI products —
+                From the oil sands to AI products,
                 <span className="italic font-light" style={{ color: '#0f5d4a' }}> one standard, carried the whole way.</span>
               </motion.h1>
               <motion.p
@@ -116,8 +116,8 @@ const Journey: React.FC = () => {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="lead mt-8 max-w-2xl"
               >
-                Thirteen-plus years inside regulated enterprises — utilities,
-                aerospace, telecommunications, logistics, and oil &amp; gas —
+                Thirteen-plus years inside regulated enterprises in utilities,
+                aerospace, telecommunications, logistics, and oil &amp; gas,
                 learning how systems are actually delivered. Now an active
                 product practice applying that rigor to proprietary AI. This is
                 how the two threads ran together, and where they’re heading.
@@ -234,7 +234,7 @@ const Journey: React.FC = () => {
               <h2 className="display-lg">What I'm building right now.</h2>
               <p className="lead mt-6">
                 The public version. The full architectures stay private until
-                each product goes live — by design.
+                each product goes live, by design.
               </p>
               <Link to="/portfolio" className="group mt-8 btn-primary px-7 py-3.5 text-[13px] inline-flex">
                 See the full portfolio
@@ -251,12 +251,12 @@ const Journey: React.FC = () => {
                 {
                   name:  'Artha · Trinity Talent · OwlNest',
                   stage: 'Platforms in motion',
-                  desc:  'A local-first intelligent work platform, an AI career-intelligence platform, and a multi-tenant AI agent marketplace — each at a different stage between architecture and active development.',
+                  desc:  'A local-first intelligent work platform, an AI career-intelligence platform, and a multi-tenant AI agent marketplace, each at a different stage between architecture and active development.',
                 },
                 {
                   name:  'MTU Maintenance Canada',
                   stage: 'Current role',
-                  desc:  'Business Analyst & Project Lead at a global aerospace MRO — leading enterprise data migration, Microsoft 365 modernization, and a portfolio of transformation initiatives. The enterprise discipline that keeps the product work honest.',
+                  desc:  'Business Analyst & Project Lead at a global aerospace MRO, leading enterprise data migration, Microsoft 365 modernization, and a portfolio of transformation initiatives. The enterprise discipline that keeps the product work honest.',
                 },
               ].map((b, i) => (
                 <motion.div

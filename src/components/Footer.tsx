@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
             <p className="mt-5 text-sm text-ink/60 leading-relaxed max-w-md">
               13+ years delivering technology, data, and digital-modernization
               initiatives across utilities, aerospace, telecommunications,
-              logistics, and oil &amp; gas — with an active practice building
+              logistics, and oil &amp; gas, with an active practice building
               proprietary AI in model verification, decision governance, and
               AI orchestration.
             </p>
