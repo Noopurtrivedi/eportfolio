@@ -21,8 +21,7 @@ const Footer: React.FC = () => {
             <p className="font-serif text-2xl font-medium text-ink tracking-tight">
               Noopur Trivedi
             </p>
-            <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold inline-flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-soft" />
+            <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-ink/45 font-semibold">
               Senior Business Analyst · Enterprise Transformation · AI Product Strategist
             </p>
             <p className="mt-5 text-sm text-ink/60 leading-relaxed max-w-md">

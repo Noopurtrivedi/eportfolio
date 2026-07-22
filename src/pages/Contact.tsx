@@ -84,9 +84,8 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="eyebrow mb-4 inline-flex items-center gap-2"
+            className="eyebrow mb-4"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-soft" />
             Contact
           </motion.p>
           <motion.h1

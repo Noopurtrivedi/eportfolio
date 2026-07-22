@@ -33,9 +33,8 @@ const About: React.FC = () => {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="eyebrow mb-5 inline-flex items-center gap-2"
+            className="eyebrow mb-5"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse-soft" />
             Noopur Trivedi · Senior Business Analyst · Enterprise Transformation · AI Product Strategist
           </motion.p>
           <motion.h1
