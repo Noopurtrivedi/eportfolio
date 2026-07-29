@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Linkedin, Mail, ArrowUpRight } from 'lucide-react'
+import Logo from './Logo'
 
 const fadeUp = (delay = 0) => ({
   initial:     { opacity: 0, y: 18 },
@@ -18,6 +19,7 @@ const Footer: React.FC = () => {
 
           {/* Brand */}
           <motion.div {...fadeUp(0)} className="md:col-span-5">
+            <Logo size={30} className="mb-5 text-ink/30" />
             <p className="font-serif text-2xl font-medium text-ink tracking-tight">
               Noopur Trivedi
             </p>
@@ -83,7 +85,7 @@ const Footer: React.FC = () => {
 
         <motion.div {...fadeUp(0.15)} className="hr pt-7 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-xs text-ink/40">
-            © {new Date().getFullYear()} Noopur Trivedi. All rights reserved.
+            © 2021–{new Date().getFullYear()} Noopur Trivedi. All rights reserved.
           </p>
           <p className="text-xs text-ink/40 italic font-serif">
             Designed with restraint. Built with intent.
