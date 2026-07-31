@@ -16,22 +16,35 @@ const Art: React.FC = () => {
       {/* Header */}
       <section className="border-b border-ink/10 pt-36 pb-16">
         <div className="container-wide">
-          <Link to="/life" className="inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
-            <ArrowLeft className="w-4 h-4" /> Back to Life
+          <Link to="/who-i-am" className="group inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
+            <ArrowLeft className="w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:-translate-x-1" />
+            <span className="link-underline">Back to Who I Am</span>
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8">
-              <p className="eyebrow mb-4 inline-flex items-center gap-2"><Brush className="w-3.5 h-3.5" /> Painting &amp; Art</p>
-              <h1 className="display-xl">
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="eyebrow mb-4 inline-flex items-center gap-2"
+              >
+                <Brush className="w-3.5 h-3.5 animate-float-y" /> Painting &amp; Art
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.85, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className="display-xl"
+              >
                 Paint as a quieter
                 <span className="italic font-light" style={{ color: '#0f5d4a' }}> language.</span>
-              </h1>
+              </motion.h1>
             </div>
             <div className="lg:col-span-4">
               <p className="text-[15px] text-ink/65 leading-relaxed">
                 Specifications are precise. Paint is honest about what it can’t
-                say. I work in small, deliberate series — colour studies,
+                say. I work in small, deliberate series: colour studies,
                 portraits, and the occasional landscape I’ve actually walked.
               </p>
             </div>
@@ -49,17 +62,17 @@ const Art: React.FC = () => {
             </div>
             <div className="lg:col-span-8 space-y-5 text-[17px] text-ink/70 leading-relaxed">
               <p>
-                I spend most of my workday turning ambiguity into precision —
+                I spend most of my workday turning ambiguity into precision;
                 specifications, dashboards, integration contracts. Paint is the
                 opposite practice. It lets the ambiguity stay.
               </p>
               <p>
                 I work small and slow. A study at a time, mostly in series, mostly
                 from memory rather than reference. The work isn’t a commercial
-                practice — but the catalog is real and I’m happy to share
+                practice, but the catalog is real and I am happy to share
                 originals or scans by request.
               </p>
-              <p className="font-serif italic text-ink/55">— Noopur</p>
+              <p className="font-serif italic text-ink/55">Noopur</p>
             </div>
           </div>
         </div>
@@ -74,7 +87,7 @@ const Art: React.FC = () => {
             </div>
             <h2 className="display-md mb-5">The studio gallery is being assembled.</h2>
             <p className="lead">
-              Scans of the current series are coming up here — colour studies,
+              Scans of the current series are coming up here: colour studies,
               charcoal, gouache and a small body of oil work. If you’d like to
               see a piece in person, or you’re curious about something specific,
               write to me.

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Noopur Trivedi">
+  <!-- Maskable PWA icon: full-bleed ink, mark held inside the 80% safe zone so
+       Android can crop it to any shape without clipping the lobes. -->
+  <rect width="64" height="64" fill="#0f1311" />
+  <g
+    transform="translate(32 32) scale(0.72) translate(-32 -32)"
+    stroke="#c8a558"
+    stroke-width="3.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M29.6 33.4 L23.92 24.57 A11.4 11.4 0 1 1 38.86 28.46 Z" />
+    <path d="M45.75 31.37 A16.1 16.1 0 1 1 18.45 31.37" />
+    <path d="M22.2 28.6 L35.2 48.8 L35.2 30.6" />
+  </g>
+</svg>

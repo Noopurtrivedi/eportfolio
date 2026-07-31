@@ -14,7 +14,7 @@ const pillars = [
   {
     icon: PawPrint,
     title: 'Rescue & care',
-    body:  'Hands-on time with local rescues — fostering, transport runs, fundraising days. The unglamorous, ongoing kind of help.',
+    body:  'Hands-on time with local rescues: fostering, transport runs, and fundraising days. The unglamorous, ongoing kind of help.',
   },
   {
     icon: Megaphone,
@@ -24,7 +24,7 @@ const pillars = [
   {
     icon: HandHeart,
     title: 'Giving & support',
-    body:  'Recurring support for sanctuaries and shelter networks that do the work day-in, day-out — and the volunteers behind them.',
+    body:  'Recurring support for sanctuaries and shelter networks that do the work every day, and for the volunteers behind them.',
   },
 ]
 
@@ -43,22 +43,35 @@ const Animals: React.FC = () => {
       {/* Header */}
       <section className="border-b border-ink/10 pt-36 pb-16">
         <div className="container-wide">
-          <Link to="/life" className="inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
-            <ArrowLeft className="w-4 h-4" /> Back to Life
+          <Link to="/who-i-am" className="group inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
+            <ArrowLeft className="w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:-translate-x-1" />
+            <span className="link-underline">Back to Who I Am</span>
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-8">
-              <p className="eyebrow mb-4 inline-flex items-center gap-2"><Heart className="w-3.5 h-3.5" /> Animal Advocacy</p>
-              <h1 className="display-xl">
-                Quietly, persistently —
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="eyebrow mb-4 inline-flex items-center gap-2"
+              >
+                <Heart className="w-3.5 h-3.5 animate-pulse-soft" /> Animal Advocacy
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.85, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className="display-xl"
+              >
+                Quietly and persistently,
                 <span className="italic font-light" style={{ color: '#0f5d4a' }}> the cause that has stayed with me longest.</span>
-              </h1>
+              </motion.h1>
             </div>
             <div className="lg:col-span-4">
               <p className="text-[15px] text-ink/65 leading-relaxed">
                 Long before the career and the side builds, this was the thing I
-                kept showing up for. Not as a campaign — as a way of moving
+                kept showing up for. Not as a campaign, but as a way of moving
                 through the world.
               </p>
             </div>
@@ -74,7 +87,7 @@ const Animals: React.FC = () => {
               I've spent enough hours inside rescues, transport runs and shelter
               fundraisers to be allergic to performative advocacy. The work that
               actually changes outcomes for animals is mostly boring and mostly
-              repeated — the foster home that opens up again, the volunteer who
+              repeated: the foster home that opens up again, the volunteer who
               shows up another Saturday, the cheque that goes out every month.
             </p>
             <p>
@@ -82,7 +95,7 @@ const Animals: React.FC = () => {
               relational. The same operating principle as the rest of my work,
               applied to the part of the world I care about most.
             </p>
-            <p className="font-serif italic text-ink/55">— Noopur</p>
+            <p className="font-serif italic text-ink/55">Noopur</p>
           </div>
         </div>
       </section>
@@ -146,7 +159,7 @@ const Animals: React.FC = () => {
             <h2 className="display-md mb-5">If you run a rescue or sanctuary, I want to hear from you.</h2>
             <p className="lead">
               Foster networks, transport coordinators, sanctuary operators,
-              vet-access funds — write to me. I’m always looking for the kind of
+              vet-access funds, write to me. I am always looking for the kind of
               ongoing, relational work that actually changes outcomes.
             </p>
             <a
