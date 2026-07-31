@@ -40,12 +40,13 @@ const Footer: React.FC = () => {
             <p className="section-label mb-5">Navigate</p>
             <div className="flex flex-col gap-2.5">
               {[
-                { label: 'Work',           href: '/portfolio'      },
-                { label: 'Journey',        href: '/journey'        },
-                { label: 'Life',           href: '/life'           },
-                { label: 'Certifications', href: '/certifications' },
-                { label: 'About',          href: '/'               },
-                { label: 'Contact',        href: '/contact'        },
+                { label: 'Profile',         href: '/'               },
+                { label: 'Enterprise Work', href: '/work'           },
+                { label: 'AI Projects',     href: '/ai'             },
+                { label: 'Founder Journey', href: '/founder'        },
+                { label: 'Who I Am',        href: '/who-i-am'       },
+                { label: 'Certifications',  href: '/certifications' },
+                { label: 'Contact',         href: '/contact'        },
               ].map((l) => (
                 <Link
                   key={l.label}

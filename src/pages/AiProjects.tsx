@@ -2,7 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Lock, Sparkles } from 'lucide-react'
-import { aiProducts, enterprisePrograms } from '../data/projects'
+import { aiProducts } from '../data/projects'
+import PageNav from '../components/PageNav'
 
 const inView = (delay = 0) => ({
   initial:     { opacity: 0, y: 18 },
@@ -16,7 +17,7 @@ const statusTone = (status: string) =>
     ? 'tag-accent'
     : 'tag-ink'
 
-const Portfolio: React.FC = () => {
+const AiProjects: React.FC = () => {
   const featured = aiProducts.filter((p) => p.featured)
   const rest     = aiProducts.filter((p) => !p.featured)
 
@@ -38,9 +39,9 @@ const Portfolio: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="eyebrow mb-4"
+            className="eyebrow mb-4 inline-flex items-center gap-2"
           >
-            The Work
+            <Sparkles className="w-3.5 h-3.5 animate-pulse-soft" /> AI Projects
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
@@ -48,8 +49,8 @@ const Portfolio: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
             className="display-xl mb-6 max-w-4xl"
           >
-            A portfolio of AI products
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and the enterprise programs behind them.</span>
+            A portfolio of proprietary AI,
+            <span className="italic font-light" style={{ color: '#0f5d4a' }}> built with enterprise discipline.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -57,11 +58,11 @@ const Portfolio: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.18 }}
             className="lead max-w-2xl"
           >
-            I design and build proprietary AI technologies in model verification,
-            decision governance, AI orchestration, career intelligence, and agent
-            marketplaces, grounded by 13+ years of enterprise transformation
-            delivery across utilities, aerospace, telecommunications, logistics,
-            and oil &amp; gas.
+            I design and build proprietary AI technologies in model
+            verification, decision governance, AI orchestration, career
+            intelligence, and agent marketplaces. Kept deliberately separate
+            from my <Link to="/work" className="text-accent underline">enterprise work</Link>,
+            and held to the same standard.
           </motion.p>
         </div>
       </section>
@@ -71,9 +72,7 @@ const Portfolio: React.FC = () => {
         <div className="container-wide py-20">
           <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="eyebrow mb-3 inline-flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 animate-pulse-soft" /> AI &amp; Digital Products
-              </p>
+              <p className="eyebrow mb-3">The Portfolio</p>
               <h2 className="display-lg">What I’m building.</h2>
             </div>
             <p className="text-sm text-ink/50 italic font-serif max-w-xs md:text-right">
@@ -154,63 +153,29 @@ const Portfolio: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── Enterprise program highlights ────────────────────────────── */}
-      <section className="border-b border-ink/10 bg-sand">
-        <div className="container-wide py-20">
-          <div className="mb-12 max-w-2xl">
-            <p className="eyebrow mb-3">Enterprise Delivery</p>
-            <h2 className="display-lg">Programs I’ve led and delivered.</h2>
-            <p className="lead mt-5">
-              The enterprise track record that grounds the product work:
-              modernization, migration, governance, and analytics programs
-              inside regulated, high-visibility environments.
-            </p>
-          </div>
-
-          <div className="flex flex-col border border-ink/10 bg-surface">
-            {enterprisePrograms.map((prog, i) => (
-              <motion.article
-                key={prog.id}
-                {...inView(i * 0.04)}
-                className="group grid grid-cols-12 gap-6 border-b border-ink/8 last:border-b-0 p-8 md:p-10 transition-colors duration-300 hover:bg-sand/60"
-              >
-                <div className="col-span-12 md:col-span-3">
-                  <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-semibold">{prog.org}</p>
-                  <p className="mt-1 text-[11px] text-ink/45">{prog.period}</p>
-                </div>
-                <div className="col-span-12 md:col-span-9">
-                  <h3 className="font-serif text-2xl font-medium text-ink leading-snug transition-colors duration-300 group-hover:text-accent">
-                    {prog.title}
-                  </h3>
-                  <p className="mt-3 text-[15px] text-ink/65 leading-relaxed max-w-3xl">{prog.summary}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {prog.tags.map((t) => (
-                      <span key={t} className="tag-ink">{t}</span>
-                    ))}
-                  </div>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ─── CTA ──────────────────────────────────────────────────────── */}
       <section className="bg-canvas">
         <div className="container-wide py-24 text-center">
-          <h2 className="display-md mb-3">Want the story behind any of this?</h2>
+          <h2 className="display-md mb-3">Why do I build? That story has its own page.</h2>
           <p className="text-ink/55 mb-8 text-sm max-w-md mx-auto">
-            For coffee chats, collaborations, investment conversations, or
-            roles, I would rather have the conversation directly.
+            The founder journey covers where the product practice came from and
+            the bet behind it.
           </p>
-          <Link to="/contact" className="group btn-primary px-10 py-4 text-[13px]">
-            Schedule a Conversation
-            <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
-          </Link>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link to="/founder" className="group btn-primary px-8 py-4 text-[13px]">
+              Read the Founder Journey
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
+            </Link>
+            <Link to="/contact" className="btn-outline px-8 py-4 text-[13px]">
+              Start a Conversation
+            </Link>
+          </div>
         </div>
       </section>
+
+      <PageNav current="/ai" />
     </div>
   )
 }
 
-export default Portfolio
+export default AiProjects

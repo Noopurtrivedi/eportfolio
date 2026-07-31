@@ -6,11 +6,12 @@ import { clsx } from 'clsx'
 import Logo from './Logo'
 
 const nav = [
-  { name: 'About',   href: '/'          },
-  { name: 'Work',    href: '/portfolio' },
-  { name: 'Journey', href: '/journey'   },
-  { name: 'Life',    href: '/life'      },
-  { name: 'Contact', href: '/contact'   },
+  { name: 'Profile',     href: '/'          },
+  { name: 'Work',        href: '/work'      },
+  { name: 'AI Projects', href: '/ai'        },
+  { name: 'Founder',     href: '/founder'   },
+  { name: 'Who I Am',    href: '/who-i-am'  },
+  { name: 'Contact',     href: '/contact'   },
 ]
 
 const Navbar: React.FC = () => {
@@ -62,7 +63,7 @@ const Navbar: React.FC = () => {
               <span className="pointer-events-none absolute left-0 -bottom-1 h-px w-full origin-right scale-x-0 bg-accent transition-transform duration-500 ease-out-soft group-hover:origin-left group-hover:scale-x-100" />
             </span>
             <span className="hidden sm:inline text-[10px] uppercase tracking-[0.22em] text-ink/40 font-semibold transition-colors duration-300 group-hover:text-ink/65">
-              <span className="text-accent">Founder</span>
+              <span className="text-accent">Enterprise Transformation</span>
             </span>
           </Link>
 

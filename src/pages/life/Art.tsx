@@ -16,9 +16,9 @@ const Art: React.FC = () => {
       {/* Header */}
       <section className="border-b border-ink/10 pt-36 pb-16">
         <div className="container-wide">
-          <Link to="/life" className="group inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
+          <Link to="/who-i-am" className="group inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
             <ArrowLeft className="w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:-translate-x-1" />
-            <span className="link-underline">Back to Life</span>
+            <span className="link-underline">Back to Who I Am</span>
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">

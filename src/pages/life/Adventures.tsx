@@ -58,9 +58,9 @@ const Adventures: React.FC = () => {
       {/* Header */}
       <section className="border-b border-ink/10 pt-36 pb-16">
         <div className="container-wide">
-          <Link to="/life" className="group inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
+          <Link to="/who-i-am" className="group inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
             <ArrowLeft className="w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:-translate-x-1" />
-            <span className="link-underline">Back to Life</span>
+            <span className="link-underline">Back to Who I Am</span>
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
@@ -153,10 +153,10 @@ const Adventures: React.FC = () => {
         <div className="container-wide py-16 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
           <div>
             <p className="eyebrow mb-2">Wander further</p>
-            <h2 className="font-serif text-2xl font-medium text-ink">Back to the Life hub →</h2>
+            <h2 className="font-serif text-2xl font-medium text-ink">More of the person behind the work →</h2>
           </div>
-          <Link to="/life" className="btn-outline px-7 py-3.5 text-[13px]">
-            Back to Life
+          <Link to="/who-i-am" className="btn-outline px-7 py-3.5 text-[13px]">
+            Back to Who I Am
           </Link>
         </div>
       </section>

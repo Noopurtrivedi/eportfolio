@@ -3,9 +3,10 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, ArrowUpRight, Linkedin, Mail, MapPin, FileText, Coffee,
-  Compass, Layers, Anchor, Sparkles, Camera, Brush, Heart, Mountain,
+  Compass, Layers, Anchor, Sparkles, Briefcase, Rocket, User,
 } from 'lucide-react'
 import { workExperience, earlierRoles, education, skills } from '../data/projects'
+import PageNav from '../components/PageNav'
 
 const inView = (delay = 0) => ({
   initial:     { opacity: 0, y: 20 },
@@ -14,7 +15,7 @@ const inView = (delay = 0) => ({
   transition:  { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 })
 
-const About: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <div className="bg-canvas">
 
@@ -43,8 +44,8 @@ const About: React.FC = () => {
             transition={{ duration: 0.85, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
             className="display-xl max-w-4xl"
           >
-            I modernize complex enterprises
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> and build the AI products that come next.</span>
+            I lead enterprise modernization
+            <span className="italic font-light" style={{ color: '#0f5d4a' }}> from strategy through stabilization.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 18 }}
@@ -52,12 +53,11 @@ const About: React.FC = () => {
             transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             className="lead mt-8 max-w-2xl"
           >
-            I’m a senior business analyst and enterprise transformation
-            professional with 13+ years delivering technology, data, and
+            Senior business analyst and enterprise transformation professional
+            with 13+ years delivering technology, data, and
             digital-modernization initiatives across utilities, aerospace,
-            telecommunications, logistics, and oil &amp; gas. Alongside that, I
-            run an active practice designing proprietary AI products in model
-            verification, decision governance, and AI orchestration.
+            telecommunications, logistics, and oil &amp; gas. Trusted with the
+            programs where the audit trail matters as much as the outcome.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 14 }}
@@ -70,8 +70,8 @@ const About: React.FC = () => {
               Schedule a Coffee Chat
               <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
             </Link>
-            <Link to="/portfolio" className="btn-outline px-7 py-3.5 text-[13px]">
-              See the AI Portfolio
+            <Link to="/work" className="btn-outline px-7 py-3.5 text-[13px]">
+              See the Enterprise Work
             </Link>
             <span className="inline-flex items-center gap-2 text-[13px] text-ink/50">
               <MapPin className="w-3.5 h-3.5" /> Chestermere, Canada
@@ -89,31 +89,7 @@ const About: React.FC = () => {
             <div className="lg:col-span-7 text-ink/75 leading-relaxed text-[17px] space-y-12">
 
               <div>
-                <p className="eyebrow mb-3">Two threads, one standard</p>
-                <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
-                  An enterprise operator who builds, and a builder who delivers
-                  like an enterprise operator.
-                </h2>
-                <p>
-                  My work runs on two threads that strengthen each other. The
-                  first is an enterprise track record: thirteen-plus years
-                  translating complex operational and strategic challenges into
-                  structured requirements, roadmaps, governance frameworks, and
-                  analytical solutions, then leading the cross-functional
-                  delivery that makes them real.
-                </p>
-                <p className="mt-4">
-                  The second is product creation. I actively design and develop
-                  proprietary AI technologies in model verification, decision
-                  governance, AI orchestration, career intelligence, and agent
-                  marketplaces. That isn’t a hobby line on a resume; it’s a
-                  disciplined product practice with its own architecture,
-                  evaluation rigor, and commercialization strategy.
-                </p>
-              </div>
-
-              <div>
-                <p className="eyebrow mb-3">The enterprise thread</p>
+                <p className="eyebrow mb-3">The professional record</p>
                 <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
                   Modernization delivered end to end, in environments where
                   mistakes are visible.
@@ -143,41 +119,36 @@ const About: React.FC = () => {
               </div>
 
               <div>
-                <p className="eyebrow mb-3">The builder thread</p>
+                <p className="eyebrow mb-3">How I operate</p>
                 <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
-                  AI products built with the discipline enterprises taught me.
+                  Structured requirements, governed delivery, analytics
+                  executives can act on.
                 </h2>
                 <p>
-                  I build AI the way regulated industries ship systems: verified
-                  before trusted, governed before scaled. That conviction runs
-                  through the portfolio: a verification layer that makes AI
-                  models measurably more faithful, a governance layer that
-                  decides how an AI application should respond before it
-                  answers, an orchestration architecture that lets many products
-                  share one intelligence layer, and platforms for career
-                  intelligence and AI agent marketplaces.
-                </p>
-                <p className="mt-4">
-                  The products are pre-launch, and I keep their inner workings
-                  deliberately private until each goes live. What I can say
-                  publicly is on the <Link to="/portfolio" className="text-accent underline">portfolio page</Link>;
-                  the rest is a conversation I am glad to have.
+                  My work translates complex operational and strategic
+                  challenges into structured requirements, roadmaps, governance
+                  frameworks, and analytical solutions, then leads the
+                  cross-functional delivery that makes them real. Metadata,
+                  classification, retention, permissions, and auditability are
+                  built in from day one, because governance is how trust scales
+                  in a global organization.
                 </p>
               </div>
 
               <div>
-                <p className="eyebrow mb-3">The eye behind it</p>
+                <p className="eyebrow mb-3">Beyond the day job</p>
                 <h2 className="font-serif text-3xl font-medium text-ink leading-snug mb-5">
-                  Craft and creativity aren’t separate from the work.
+                  An active AI product practice, held to the same standard.
                 </h2>
                 <p>
-                  I take pride in work that is both rigorous and beautiful. The
-                  same eye that composes a photograph or a painting shapes how I
-                  design a governance framework or a product experience: with
-                  restraint, intention, and respect for the person on the other
-                  side. If you want to know why I am the way I am about the
-                  work, the <Link to="/life" className="text-accent underline">Life</Link> section
-                  is the honest answer.
+                  Alongside the enterprise work, I run a disciplined product
+                  practice designing proprietary AI in model verification,
+                  decision governance, and AI orchestration. The full story
+                  lives on its own pages: the{' '}
+                  <Link to="/founder" className="text-accent underline">founder journey</Link>,
+                  the <Link to="/ai" className="text-accent underline">AI projects</Link>,
+                  and <Link to="/who-i-am" className="text-accent underline">who I am</Link>{' '}
+                  when I'm not working.
                 </p>
               </div>
             </div>
@@ -216,10 +187,10 @@ const About: React.FC = () => {
                   {[
                     { k: 'Current role', v: 'Business Analyst & Project Lead · MTU Maintenance Canada' },
                     { k: 'Experience',   v: '13+ years · Enterprise transformation & delivery' },
-                    { k: 'Building',     v: 'Proprietary AI in verification, governance, and orchestration' },
-                    { k: 'Venture',      v: 'Co-Founder · CreationX' },
                     { k: 'Industries',   v: 'Utilities · Aerospace · Telecom · Logistics · Oil & Gas' },
                     { k: 'Specialty',    v: 'SAP · M365 / Azure · Data migration · BI · RPA · LLM evaluation' },
+                    { k: 'Building',     v: 'Proprietary AI in verification, governance, and orchestration' },
+                    { k: 'Venture',      v: 'Co-Founder · CreationX' },
                     { k: 'Based in',     v: 'Chestermere, Alberta · Canada' },
                     { k: 'Citizenship',  v: 'Canadian Citizen' },
                     { k: 'Education',    v: 'BBA, Marketing · Thompson Rivers University' },
@@ -363,158 +334,8 @@ const About: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── What I'm open to ───────────────────────────────────────── */}
-      <section className="border-b border-ink/10 bg-sand">
-        <div className="container-wide py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5">
-              <p className="eyebrow mb-3">What I’m open to</p>
-              <h2 className="display-lg">Open to the right conversations.</h2>
-              <p className="lead mt-6">
-                This site exists so the right people can find me and start a
-                conversation, whether over coffee, a call, or a well-written
-                email. If any of these fit, reach out.
-              </p>
-              <Link to="/contact" className="group mt-8 btn-primary px-7 py-3.5 text-[13px] inline-flex">
-                <Coffee className="mr-2 w-4 h-4" />
-                Schedule a Coffee Chat
-                <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
-              </Link>
-            </div>
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-0 border border-ink/10 bg-surface divide-y sm:divide-y-0 sm:divide-x divide-ink/10">
-              {[
-                {
-                  k: 'Coffee chats & collaborations',
-                  d: 'Directors, founders, and builders who want to compare notes on enterprise transformation or AI products, or explore working together.',
-                },
-                {
-                  k: 'Senior & lead roles',
-                  d: 'Senior BA, transformation lead, and product-strategy roles inside complex enterprises, spanning SAP, M365, data, and modernization programs.',
-                },
-                {
-                  k: 'Investor & partner conversations',
-                  d: 'As my AI products approach launch, I’m selectively opening conversations with investors and strategic partners.',
-                },
-                {
-                  k: 'Advisory & speaking',
-                  d: 'Advisory on AI adoption, decision governance, and modernization, along with speaking on how enterprises can trust AI responsibly.',
-                },
-              ].map((row, i) => (
-                <motion.div
-                  key={row.k}
-                  {...inView(i * 0.05)}
-                  className={`p-7 ${i >= 2 ? 'sm:border-t sm:border-ink/10' : ''}`}
-                >
-                  <p className="font-serif text-lg font-medium text-ink">{row.k}</p>
-                  <p className="mt-2 text-sm text-ink/60 leading-relaxed">{row.d}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Currently (now strip) ──────────────────────────────────── */}
-      <section className="border-b border-ink/10">
-        <div className="container-wide py-20">
-          <div className="mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-            <div>
-              <p className="eyebrow mb-3 inline-flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 animate-pulse-soft" /> Currently
-              </p>
-              <h2 className="display-lg">What has my attention right now.</h2>
-            </div>
-            <p className="hidden sm:block text-sm text-ink/45 italic font-serif max-w-xs text-right">
-              Updated when something meaningful changes.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-ink/10 bg-surface divide-y md:divide-y-0 md:divide-x divide-ink/10">
-            {[
-              {
-                head: 'Building',
-                items: [
-                  'AdaptIQ: AI verification and model improvement',
-                  'Kestra DML: decision governance for AI',
-                  'Artha, Trinity Talent, and OwlNest, moving toward launch',
-                ],
-              },
-              {
-                head: 'Delivering',
-                items: [
-                  'MTU Maintenance Canada: enterprise modernization portfolio',
-                  'Global M365 and data-migration program, Canadian workstream',
-                  'KPI frameworks and adoption metrics for executive decisions',
-                ],
-              },
-              {
-                head: 'Living',
-                items: [
-                  'Based in Chestermere, Alberta',
-                  'Photography, painting, animals, and long trails',
-                  'Learning German',
-                ],
-              },
-            ].map((col, i) => (
-              <motion.div key={col.head} {...inView(i * 0.06)} className="p-10">
-                <h3 className="text-[11px] uppercase tracking-[0.22em] text-accent font-semibold mb-5">{col.head}</h3>
-                <ul className="flex flex-col gap-3">
-                  {col.items.map((it) => (
-                    <li key={it} className="flex items-start gap-3 text-[15px] text-ink/70 leading-relaxed">
-                      <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0 mt-2.5" />
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Beyond the work cross-link ─────────────────────────────── */}
-      <section className="border-b border-ink/10 bg-sand">
-        <div className="container-wide py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-10">
-            <div className="lg:col-span-7">
-              <p className="eyebrow mb-3">Beyond the work</p>
-              <h2 className="display-lg">The interests that shape how I work.</h2>
-            </div>
-            <p className="lg:col-span-5 text-[15px] text-ink/65 leading-relaxed">
-              The career sections explain what I do for a living. These are the
-              places that explain why I am the way I am about it.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border border-ink/10 bg-surface divide-x divide-y lg:divide-y-0 divide-ink/10">
-            {[
-              { to: '/life/photography', label: 'Photography', icon: Camera },
-              { to: '/life/art',         label: 'Painting & Art', icon: Brush },
-              { to: '/life/animals',     label: 'Animal Advocacy', icon: Heart },
-              { to: '/life/adventures',  label: 'Adventures', icon: Mountain },
-            ].map((tile, i) => (
-              <Link
-                key={tile.to}
-                to={tile.to}
-                className={`group p-8 hover:bg-sand transition-colors duration-300 flex flex-col gap-4 ${i === 0 ? 'lg:border-l-0' : ''} ${i === 1 ? 'lg:border-t-0' : ''}`}
-              >
-                <div className="w-10 h-10 border border-ink/15 flex items-center justify-center group-hover:border-accent group-hover:bg-accent transition-all duration-300">
-                  <tile.icon className="w-4 h-4 text-accent group-hover:text-canvas transition-colors duration-300 group-hover:scale-110" strokeWidth={1.5} />
-                </div>
-                <p className="font-serif text-xl font-medium text-ink group-hover:text-accent transition-colors duration-300">
-                  {tile.label}
-                </p>
-                <div className="mt-auto pt-3 inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.22em] font-semibold text-accent">
-                  Enter <ArrowUpRight className="w-3 h-3 arrow-shift" />
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ─── Experience timeline ─────────────────────────────────────── */}
-      <section id="experience" className="border-b border-ink/10 scroll-mt-20">
+      <section id="experience" className="border-b border-ink/10 bg-sand scroll-mt-20">
         <div className="container-wide py-20">
           <div className="mb-14 max-w-2xl">
             <p className="eyebrow mb-3">Experience</p>
@@ -532,7 +353,7 @@ const About: React.FC = () => {
               <motion.article
                 key={`${role.org}-${role.period}`}
                 {...inView(i * 0.05)}
-                className="group grid grid-cols-12 gap-6 border-t border-ink/10 py-10 transition-colors duration-300 hover:bg-sand/40"
+                className="group grid grid-cols-12 gap-6 border-t border-ink/10 py-10 transition-colors duration-300 hover:bg-canvas/60"
               >
                 <div className="col-span-12 md:col-span-3">
                   <p className="text-[11px] uppercase tracking-[0.22em] text-accent font-semibold">
@@ -583,7 +404,7 @@ const About: React.FC = () => {
       </section>
 
       {/* ─── Skills ──────────────────────────────────────────────────── */}
-      <section className="border-b border-ink/10 bg-sand">
+      <section className="border-b border-ink/10">
         <div className="container-wide py-20">
           <div className="mb-12 max-w-2xl">
             <p className="eyebrow mb-3">Skills</p>
@@ -603,6 +424,57 @@ const About: React.FC = () => {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── What I'm open to ───────────────────────────────────────── */}
+      <section className="border-b border-ink/10 bg-sand">
+        <div className="container-wide py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5">
+              <p className="eyebrow mb-3">What I’m open to</p>
+              <h2 className="display-lg">Open to the right conversations.</h2>
+              <p className="lead mt-6">
+                This site exists so the right people can find me and start a
+                conversation, whether over coffee, a call, or a well-written
+                email. If any of these fit, reach out.
+              </p>
+              <Link to="/contact" className="group mt-8 btn-primary px-7 py-3.5 text-[13px] inline-flex">
+                <Coffee className="mr-2 w-4 h-4" />
+                Schedule a Coffee Chat
+                <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
+              </Link>
+            </div>
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-0 border border-ink/10 bg-surface divide-y sm:divide-y-0 sm:divide-x divide-ink/10">
+              {[
+                {
+                  k: 'Senior & lead roles',
+                  d: 'Senior BA, transformation lead, and product-strategy roles inside complex enterprises, spanning SAP, M365, data, and modernization programs.',
+                },
+                {
+                  k: 'Coffee chats & collaborations',
+                  d: 'Directors, founders, and builders who want to compare notes on enterprise transformation or AI products, or explore working together.',
+                },
+                {
+                  k: 'Advisory & speaking',
+                  d: 'Advisory on AI adoption, decision governance, and modernization, along with speaking on how enterprises can trust AI responsibly.',
+                },
+                {
+                  k: 'Investor & partner conversations',
+                  d: 'As my AI products approach launch, I’m selectively opening conversations with investors and strategic partners.',
+                },
+              ].map((row, i) => (
+                <motion.div
+                  key={row.k}
+                  {...inView(i * 0.05)}
+                  className={`p-7 ${i >= 2 ? 'sm:border-t sm:border-ink/10' : ''}`}
+                >
+                  <p className="font-serif text-lg font-medium text-ink">{row.k}</p>
+                  <p className="mt-2 text-sm text-ink/60 leading-relaxed">{row.d}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -684,6 +556,50 @@ const About: React.FC = () => {
         </div>
       </section>
 
+      {/* ─── Explore the rest of the site ────────────────────────────── */}
+      <section className="border-b border-ink/10 bg-sand">
+        <div className="container-wide py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end mb-10">
+            <div className="lg:col-span-7">
+              <p className="eyebrow mb-3">Explore</p>
+              <h2 className="display-lg">The profile is the front door. There's more inside.</h2>
+            </div>
+            <p className="lg:col-span-5 text-[15px] text-ink/65 leading-relaxed">
+              The delivery record, the product practice, and the person behind
+              both, each on its own page.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border border-ink/10 bg-surface divide-x divide-y lg:divide-y-0 divide-ink/10">
+            {[
+              { to: '/work',      label: 'Enterprise Work',  sub: 'Programs led and delivered', icon: Briefcase },
+              { to: '/ai',        label: 'AI Projects',      sub: 'The product portfolio',      icon: Sparkles },
+              { to: '/founder',   label: 'Founder Journey',  sub: 'Why I build',                icon: Rocket },
+              { to: '/who-i-am',  label: 'Who I Am',         sub: 'The person behind the work', icon: User },
+            ].map((tile, i) => (
+              <Link
+                key={tile.to}
+                to={tile.to}
+                className={`group p-8 hover:bg-sand transition-colors duration-300 flex flex-col gap-4 ${i === 0 ? 'lg:border-l-0' : ''} ${i === 1 ? 'lg:border-t-0' : ''}`}
+              >
+                <div className="w-10 h-10 border border-ink/15 flex items-center justify-center group-hover:border-accent group-hover:bg-accent transition-all duration-300">
+                  <tile.icon className="w-4 h-4 text-accent group-hover:text-canvas transition-colors duration-300 group-hover:scale-110" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <p className="font-serif text-xl font-medium text-ink group-hover:text-accent transition-colors duration-300">
+                    {tile.label}
+                  </p>
+                  <p className="mt-1 text-[13px] text-ink/55">{tile.sub}</p>
+                </div>
+                <div className="mt-auto pt-3 inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.22em] font-semibold text-accent">
+                  Enter <ArrowUpRight className="w-3 h-3 arrow-shift" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ─── CTA ─────────────────────────────────────────────────────── */}
       <section className="container-wide py-24 text-center">
         <motion.h2 {...inView(0)} className="display-md mb-3">The best conversations start over coffee.</motion.h2>
@@ -697,13 +613,15 @@ const About: React.FC = () => {
             Schedule a Coffee Chat
             <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
           </Link>
-          <Link to="/portfolio" className="btn-outline px-8 py-4 text-[13px]">
+          <Link to="/work" className="btn-outline px-8 py-4 text-[13px]">
             See the Work
           </Link>
         </motion.div>
       </section>
+
+      <PageNav current="/" />
     </div>
   )
 }
 
-export default About
+export default Home
