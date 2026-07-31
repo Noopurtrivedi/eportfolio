@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Noopur Trivedi">
-  <!-- Gold on ink, matching the original artwork. Stroke is boosted and the
-       mark scaled back slightly so the counters stay open at tab sizes. -->
-  <rect width="64" height="64" rx="14" fill="#0f1311" />
+  <!-- Maskable PWA icon: full-bleed ink, mark held inside the 80% safe zone so
+       Android can crop it to any shape without clipping the lobes. -->
+  <rect width="64" height="64" fill="#0f1311" />
   <g
-    transform="translate(32 32) scale(0.9) translate(-32 -32)"
+    transform="translate(32 32) scale(0.72) translate(-32 -32)"
     stroke="#c8a558"
-    stroke-width="3.2"
+    stroke-width="3.4"
     stroke-linecap="round"
     stroke-linejoin="round"
   >

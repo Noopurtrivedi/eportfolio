@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { clsx } from 'clsx'
+import Logo from './Logo'
 
 const nav = [
   { name: 'About',   href: '/'          },
@@ -50,6 +51,10 @@ const Navbar: React.FC = () => {
 
           {/* Wordmark */}
           <Link to="/" className="flex items-baseline gap-2 group">
+            <Logo
+              size={20}
+              className="self-center mr-2.5 text-ink/70 transition-colors duration-300 group-hover:text-gold"
+            />
             <span className="relative inline-flex items-center">
               <span className="font-serif text-[22px] font-medium tracking-tight text-ink leading-none transition-colors duration-300 group-hover:text-accent">
                 Noopur Trivedi
