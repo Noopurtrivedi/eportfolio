@@ -220,10 +220,12 @@ const FounderJourney: React.FC = () => {
                 The public version. The full architectures stay private until
                 each product goes live, by design.
               </p>
+              {/* HIDDEN (temporary) — restore with the /ai page
               <Link to="/ai" className="group mt-8 btn-primary px-7 py-3.5 text-[13px] inline-flex">
                 See the AI projects
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
               </Link>
+              */}
             </div>
             <div className="lg:col-span-7 flex flex-col gap-4">
               {[

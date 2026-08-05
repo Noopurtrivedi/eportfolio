@@ -38,15 +38,20 @@ const chapters = [
     title: 'BC Hydro and enterprise delivery at utility scale.',
     body:  'As SAP Business Decision Analyst at BC Hydro, I translated complex business, operational, financial, and technology needs into structured requirements and governance artifacts, supporting SAP EAM and CCS operations, test strategies, traceability, and acceptance criteria for a Crown utility where rigor is non-negotiable.',
   },
+  /* HIDDEN (temporary) — uncomment to bring the MTU chapter back
   {
     year:  '2023',
     title: 'MTU Maintenance Canada, leading modernization in aerospace.',
     body:  'I joined MTU Maintenance Canada as Business Analyst & Project Lead, and the role became a portfolio: the Canadian workstream of a global data migration and Microsoft 365 modernization program, an enterprise LMS replacement with 160+ documented requirements, a new RPA capability on UiPath, legacy application modernization toward Kubernetes/AKS, and global SAP finance and banking coordination.',
   },
+  */
   {
     year:  'Now',
     title: 'Chestermere, Alberta, and a life built on purpose.',
-    body:  'Today I live in Chestermere, Alberta, leading enterprise modernization by day and building AI products the rest of the time. Between the two, there are cameras, canvases, animals, long trails, and a slow attempt at learning German. The wide life and the useful one turn out to need each other.',
+    /* HIDDEN (temporary) — the original body named the modernization work and
+       learning German:
+       'Today I live in Chestermere, Alberta, leading enterprise modernization by day and building AI products the rest of the time. Between the two, there are cameras, canvases, animals, long trails, and a slow attempt at learning German. The wide life and the useful one turn out to need each other.' */
+    body:  'Today I live in Chestermere, Alberta, with work that keeps me close to complex systems and a life that deliberately reaches past them. There are cameras, canvases, animals, and long roads, and time set aside for all of it. The wide life and the useful one turn out to need each other.',
   },
 ]
 
@@ -121,7 +126,7 @@ const WhoIAm: React.FC = () => {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="lead mt-8 max-w-2xl"
               >
-                The career pages explain what I do for a living. This one is
+                The profile page explains what I do for a living. This one is
                 about how I got here and what fills the hours when I'm not
                 working or coding: the cameras, the canvas, the causes, and the
                 long roads. Wander as you like.

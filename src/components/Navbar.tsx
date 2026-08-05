@@ -7,8 +7,10 @@ import Logo from './Logo'
 
 const nav = [
   { name: 'Profile',     href: '/'          },
+  /* HIDDEN (temporary) — uncomment to bring Work + AI Projects back
   { name: 'Work',        href: '/work'      },
   { name: 'AI Projects', href: '/ai'        },
+  */
   { name: 'Founder',     href: '/founder'   },
   { name: 'Who I Am',    href: '/who-i-am'  },
   { name: 'Contact',     href: '/contact'   },

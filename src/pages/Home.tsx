@@ -70,9 +70,11 @@ const Home: React.FC = () => {
               Schedule a Coffee Chat
               <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
             </Link>
+            {/* HIDDEN (temporary) — restore with the /work page
             <Link to="/work" className="btn-outline px-7 py-3.5 text-[13px]">
               See the Enterprise Work
             </Link>
+            */}
             <span className="inline-flex items-center gap-2 text-[13px] text-ink/50">
               <MapPin className="w-3.5 h-3.5" /> Chestermere, Canada
             </span>
@@ -100,8 +102,10 @@ const Home: React.FC = () => {
                   a global aerospace MRO, I lead enterprise modernization across
                   multiple concurrent, high-visibility initiatives: the Canadian
                   workstream of a global data migration and Microsoft 365
-                  modernization program, an enterprise LMS replacement with 160+
-                  documented requirements, the Canadian RPA capability on UiPath,
+                  {/* HIDDEN (temporary): the requirement count — original read
+                      "an enterprise LMS replacement with 160+ documented requirements," */}
+                  modernization program, an enterprise LMS replacement, the
+                  Canadian RPA capability on UiPath,
                   legacy application modernization toward Kubernetes/AKS-aligned
                   solutions, and global SAP finance, banking, and access
                   coordination.
@@ -145,8 +149,9 @@ const Home: React.FC = () => {
                   practice designing proprietary AI in model verification,
                   decision governance, and AI orchestration. The full story
                   lives on its own pages: the{' '}
+                  {/* HIDDEN (temporary): the AI projects link sat here —
+                      the <Link to="/ai" className="text-accent underline">AI projects</Link>, */}
                   <Link to="/founder" className="text-accent underline">founder journey</Link>,
-                  the <Link to="/ai" className="text-accent underline">AI projects</Link>,
                   and <Link to="/who-i-am" className="text-accent underline">who I am</Link>{' '}
                   when I'm not working.
                 </p>
@@ -256,7 +261,9 @@ const Home: React.FC = () => {
               {
                 icon: Layers,
                 title: 'Requirements and governance as craft.',
-                desc: 'Structured requirements, traceability, governance frameworks, and acceptance criteria that teams can build against, from an LMS program with 160+ documented requirements to global SAP coordination.',
+                /* HIDDEN (temporary): the requirement count — original ended
+                   "...from an LMS program with 160+ documented requirements to global SAP coordination." */
+                desc: 'Structured requirements, traceability, governance frameworks, and acceptance criteria that teams can build against, from enterprise LMS requirements to global SAP coordination.',
               },
               {
                 icon: Compass,
@@ -570,10 +577,13 @@ const Home: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border border-ink/10 bg-surface divide-x divide-y lg:divide-y-0 divide-ink/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 border border-ink/10 bg-surface divide-y sm:divide-y-0 sm:divide-x divide-ink/10">
             {[
+              /* HIDDEN (temporary) — restore these two tiles and switch the grid
+                 back to "grid-cols-2 lg:grid-cols-4 ... divide-x divide-y lg:divide-y-0"
               { to: '/work',      label: 'Enterprise Work',  sub: 'Programs led and delivered', icon: Briefcase },
               { to: '/ai',        label: 'AI Projects',      sub: 'The product portfolio',      icon: Sparkles },
+              */
               { to: '/founder',   label: 'Founder Journey',  sub: 'Why I build',                icon: Rocket },
               { to: '/who-i-am',  label: 'Who I Am',         sub: 'The person behind the work', icon: User },
             ].map((tile, i) => (
@@ -613,8 +623,10 @@ const Home: React.FC = () => {
             Schedule a Coffee Chat
             <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
           </Link>
-          <Link to="/work" className="btn-outline px-8 py-4 text-[13px]">
-            See the Work
+          {/* HIDDEN (temporary) — restore with the /work page:
+              <Link to="/work" className="btn-outline px-8 py-4 text-[13px]">See the Work</Link> */}
+          <Link to="/who-i-am" className="btn-outline px-8 py-4 text-[13px]">
+            More About Me
           </Link>
         </motion.div>
       </section>

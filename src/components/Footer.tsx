@@ -41,8 +41,10 @@ const Footer: React.FC = () => {
             <div className="flex flex-col gap-2.5">
               {[
                 { label: 'Profile',         href: '/'               },
+                /* HIDDEN (temporary) — uncomment to bring Work + AI Projects back
                 { label: 'Enterprise Work', href: '/work'           },
                 { label: 'AI Projects',     href: '/ai'             },
+                */
                 { label: 'Founder Journey', href: '/founder'        },
                 { label: 'Who I Am',        href: '/who-i-am'       },
                 { label: 'Certifications',  href: '/certifications' },

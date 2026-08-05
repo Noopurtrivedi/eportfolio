@@ -178,7 +178,9 @@ export const enterprisePrograms: EnterpriseProgram[] = [
     org: 'MTU Maintenance Canada',
     period: 'Apr 2023 – Present',
     summary:
-      'Led requirements for an enterprise learning-management-system replacement, with 160+ documented requirements spanning business, compliance, and technical needs.',
+      /* HIDDEN (temporary): the requirement count — original read
+         '...replacement, with 160+ documented requirements spanning business, compliance, and technical needs.' */
+      'Led requirements for an enterprise learning-management-system replacement spanning business, compliance, and technical needs.',
     tags: ['Requirements Definition', 'Stakeholder Engagement'],
   },
   {
@@ -241,7 +243,9 @@ export const workExperience: Role[] = [
     highlights: [
       'Led the Canadian workstream of a global enterprise data migration and Microsoft 365 modernization program end to end, from discovery through stabilization, with documented performance gains',
       'Established governance for metadata, classification, retention, permissions, auditability, and controlled-goods / export-compliance handling',
-      'Led requirements for an enterprise LMS replacement with 160+ documented requirements',
+      /* HIDDEN (temporary): the requirement count — original read
+         'Led requirements for an enterprise LMS replacement with 160+ documented requirements' */
+      'Led requirements for an enterprise LMS replacement',
       'Helped establish the Canadian RPA capability on UiPath',
       'Drive modernization of legacy Microsoft Access applications toward web-based, Kubernetes/AKS-aligned solutions',
       'Coordinate SAP finance, banking, and access requirements globally; manage the IT operational budget (Cplace)',

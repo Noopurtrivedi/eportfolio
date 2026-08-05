@@ -6,8 +6,10 @@ import { ArrowLeft, ArrowRight } from 'lucide-react'
 /* Site reading order — drives the prev / next pagination on every page. */
 const pageOrder = [
   { path: '/',          label: 'Profile' },
+  /* HIDDEN (temporary) — uncomment to bring Work + AI Projects back
   { path: '/work',      label: 'Enterprise Work' },
   { path: '/ai',        label: 'AI Projects' },
+  */
   { path: '/founder',   label: 'Founder Journey' },
   { path: '/who-i-am',  label: 'Who I Am' },
   { path: '/contact',   label: 'Contact' },
