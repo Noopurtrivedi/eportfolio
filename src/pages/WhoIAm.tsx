@@ -48,9 +48,9 @@ const chapters = [
   {
     year:  'Now',
     title: 'Chestermere, Alberta, and a life built on purpose.',
-    /* HIDDEN (temporary) — the original body named the modernization work and
-       learning German:
-       'Today I live in Chestermere, Alberta, leading enterprise modernization by day and building AI products the rest of the time. Between the two, there are cameras, canvases, animals, long trails, and a slow attempt at learning German. The wide life and the useful one turn out to need each other.' */
+    /* HIDDEN (temporary) — the original body named the modernization work
+       (German removed permanently — she dropped it):
+       'Today I live in Chestermere, Alberta, leading enterprise modernization by day and building AI products the rest of the time. Between the two, there are cameras, canvases, animals, and long trails. The wide life and the useful one turn out to need each other.' */
     body:  'Today I live in Chestermere, Alberta, with work that keeps me close to complex systems and a life that deliberately reaches past them. There are cameras, canvases, animals, and long roads, and time set aside for all of it. The wide life and the useful one turn out to need each other.',
   },
 ]

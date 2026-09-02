@@ -199,7 +199,7 @@ const Home: React.FC = () => {
                     { k: 'Based in',     v: 'Chestermere, Alberta · Canada' },
                     { k: 'Citizenship',  v: 'Canadian Citizen' },
                     { k: 'Education',    v: 'BBA, Marketing · Thompson Rivers University' },
-                    { k: 'Languages',    v: 'English · Hindi · Punjabi · learning German' },
+                    { k: 'Languages',    v: 'English · Hindi · Punjabi' },
                   ].map((row) => (
                     <motion.div
                       key={row.k}
