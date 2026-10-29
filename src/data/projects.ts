@@ -8,6 +8,7 @@
 /* ─── AI & digital product portfolio ────────────────────────────────────── */
 
 export type ProductStatus =
+  | 'Live · Beta'
   | 'Active development'
   | 'Active research'
   | 'Architecture stage'
@@ -24,6 +25,8 @@ export interface AiProduct {
   oneLiner: string
   highlights: string[]
   domain: string
+  /** Public site, shown as a link on the product card. */
+  url?: string
   featured?: boolean
 }
 
@@ -84,6 +87,7 @@ export const aiProducts: AiProduct[] = [
     role: 'Product Architect & Strategist',
     status: 'Active development',
     domain: 'Intelligent work',
+    url: 'https://artha.space',
     oneLiner:
       'A local-first AI work environment for intelligent assistance, task execution, memory, and automation, built for privacy-conscious operation.',
     highlights: [
@@ -96,8 +100,9 @@ export const aiProducts: AiProduct[] = [
     name: 'Trinity Talent',
     descriptor: 'AI Career Intelligence Platform',
     role: 'Product Strategist & Platform Architect',
-    status: 'Active development',
+    status: 'Live · Beta',
     domain: 'Career intelligence',
+    url: 'https://trinitytalent.ca',
     oneLiner:
       'An AI-powered career, resume, interview-preparation, coaching, and opportunity-alignment platform built on three pillars connecting talent, preparation, and opportunity.',
     highlights: [
@@ -142,6 +147,7 @@ export const aiProducts: AiProduct[] = [
     role: 'Creative Product Strategist',
     status: 'Concept stage',
     domain: 'Cultural & creative AI',
+    url: 'https://askmadhav.world',
     oneLiner:
       'An interactive spiritual AI experience inspired by Krishna and Hindu philosophical teachings.',
     highlights: [
@@ -167,7 +173,7 @@ export const enterprisePrograms: EnterpriseProgram[] = [
     id: 'mtu-m365',
     title: 'Enterprise Data Migration & Microsoft 365 Modernization',
     org: 'MTU Maintenance Canada',
-    period: 'Apr 2023 – Present',
+    period: 'Apr 2023 – Aug 2026',
     summary:
       'Led the Canadian workstream of a global enterprise data migration and Microsoft 365 modernization program covering SharePoint Online, Teams, OneDrive, and Azure-aligned services, delivered end to end: discovery, migration and cutover planning, pilots, validation, and stabilization, with documented performance gains. Established governance for metadata, classification, retention, permissions, auditability, and controlled-goods / export-compliance handling.',
     tags: ['Microsoft 365', 'SharePoint Online', 'Azure', 'Data Migration', 'Governance'],
@@ -176,18 +182,16 @@ export const enterprisePrograms: EnterpriseProgram[] = [
     id: 'mtu-lms',
     title: 'Enterprise LMS Replacement',
     org: 'MTU Maintenance Canada',
-    period: 'Apr 2023 – Present',
+    period: 'Apr 2023 – Aug 2026',
     summary:
-      /* HIDDEN (temporary): the requirement count — original read
-         '...replacement, with 160+ documented requirements spanning business, compliance, and technical needs.' */
-      'Led requirements for an enterprise learning-management-system replacement spanning business, compliance, and technical needs.',
+      'Led requirements for an enterprise learning-management-system replacement, with 160+ documented requirements spanning business, compliance, and technical needs.',
     tags: ['Requirements Definition', 'Stakeholder Engagement'],
   },
   {
     id: 'mtu-rpa',
     title: 'Canadian RPA Capability',
     org: 'MTU Maintenance Canada',
-    period: 'Apr 2023 – Present',
+    period: 'Apr 2023 – Aug 2026',
     summary:
       'Helped establish the Canadian robotic-process-automation capability on UiPath, from candidate processes to a working automation practice.',
     tags: ['RPA', 'UiPath', 'Process Improvement'],
@@ -196,25 +200,25 @@ export const enterprisePrograms: EnterpriseProgram[] = [
     id: 'mtu-access-modernization',
     title: 'Legacy Application Modernization',
     org: 'MTU Maintenance Canada',
-    period: 'Apr 2023 – Present',
+    period: 'Apr 2023 – Aug 2026',
     summary:
-      'Drive modernization of legacy Microsoft Access applications toward web-based, Kubernetes/AKS-aligned solutions.',
+      'Drove modernization of legacy Microsoft Access applications toward web-based, Kubernetes/AKS-aligned solutions.',
     tags: ['Application Modernization', 'Kubernetes / AKS'],
   },
   {
     id: 'mtu-sap',
     title: 'SAP Finance, Banking & Access Initiatives',
     org: 'MTU Maintenance Canada',
-    period: 'Apr 2023 – Present',
+    period: 'Apr 2023 – Aug 2026',
     summary:
-      'Coordinate SAP finance, banking, and access requirements globally across the MTU network.',
+      'Coordinated SAP finance, banking, and access requirements globally across the MTU network.',
     tags: ['SAP', 'Finance', 'Global Coordination'],
   },
   {
     id: 'bchydro-sap',
     title: 'SAP EAM & CCS Business Delivery',
     org: 'BC Hydro',
-    period: 'Oct 2022 – Oct 2023',
+    period: 'Jan 2022 – Feb 2023',
     summary:
       'Supported SAP EAM and CCS operations across requirements, data migration, interfaces, reporting dependencies, and issue resolution. Developed test strategies, traceability, and acceptance criteria, and standardized requirements and governance practices.',
     tags: ['SAP EAM', 'SAP CCS', 'Test Strategy', 'Governance'],
@@ -237,18 +241,16 @@ export const workExperience: Role[] = [
     title: 'Business Analyst & Project Lead',
     org: 'MTU Maintenance Canada',
     location: 'Richmond, BC',
-    period: 'Apr 2023 – Present',
+    period: 'Apr 2023 – Aug 2026',
     summary:
-      'Lead business analysis and project delivery for enterprise modernization in a global aerospace MRO environment, managing multiple concurrent high-visibility initiatives.',
+      'Led business analysis and project delivery for enterprise modernization in a global aerospace MRO environment, managing multiple concurrent high-visibility initiatives.',
     highlights: [
       'Led the Canadian workstream of a global enterprise data migration and Microsoft 365 modernization program end to end, from discovery through stabilization, with documented performance gains',
       'Established governance for metadata, classification, retention, permissions, auditability, and controlled-goods / export-compliance handling',
-      /* HIDDEN (temporary): the requirement count — original read
-         'Led requirements for an enterprise LMS replacement with 160+ documented requirements' */
-      'Led requirements for an enterprise LMS replacement',
+      'Led requirements for an enterprise LMS replacement with 160+ documented requirements',
       'Helped establish the Canadian RPA capability on UiPath',
-      'Drive modernization of legacy Microsoft Access applications toward web-based, Kubernetes/AKS-aligned solutions',
-      'Coordinate SAP finance, banking, and access requirements globally; manage the IT operational budget (Cplace)',
+      'Drove modernization of legacy Microsoft Access applications toward web-based, Kubernetes/AKS-aligned solutions',
+      'Coordinated SAP finance, banking, and access requirements globally; managed the IT operational budget (Cplace)',
       'Built KPI frameworks, dashboards, and adoption metrics for executive decision-making',
     ],
   },
@@ -256,7 +258,7 @@ export const workExperience: Role[] = [
     title: 'SAP Business Decision Analyst (Consultant)',
     org: 'BC Hydro',
     location: 'British Columbia',
-    period: 'Oct 2022 – Oct 2023',
+    period: 'Jan 2022 – Feb 2023',
     summary:
       'Translated complex business, operational, financial, and technology needs into structured requirements, governance artifacts, and implementation recommendations for a major Crown utility.',
     highlights: [
@@ -282,7 +284,7 @@ export const workExperience: Role[] = [
     title: 'Systems Integration Specialist',
     org: 'NRI Distribution',
     location: 'Calgary, AB',
-    period: 'Aug 2021 – Feb 2023',
+    period: 'Aug 2020 – Feb 2022',
     summary:
       'Designed and maintained integrations between the company database and customer ERPs, with metadata documentation and cross-system mapping for audit compliance and reporting efficiency.',
   },

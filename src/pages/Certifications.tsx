@@ -62,7 +62,7 @@ const Certifications: React.FC = () => {
   return (
     <div className="bg-canvas">
       {/* Header */}
-      <section className="relative border-b border-ink/10 pt-36 pb-20 overflow-hidden">
+      <section className="hero-dark relative border-b border-ink/10 pt-36 pb-20 overflow-hidden">
         <motion.div
           aria-hidden
           initial={{ opacity: 0 }}
@@ -87,7 +87,7 @@ const Certifications: React.FC = () => {
             className="display-xl max-w-4xl"
           >
             Formal credentials behind
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> the work.</span>
+            <span className="italic font-light accent-word"> the work.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}

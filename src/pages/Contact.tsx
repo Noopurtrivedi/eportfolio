@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
     <div className="bg-canvas">
 
       {/* Header */}
-      <section className="relative border-b border-ink/10 pt-36 pb-16 overflow-hidden">
+      <section className="hero-dark relative border-b border-ink/10 pt-36 pb-16 overflow-hidden">
         <motion.div
           aria-hidden
           initial={{ opacity: 0 }}
@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
             className="display-xl mb-6 max-w-3xl"
           >
             Let’s find a time
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> for a coffee chat, a collaboration, or a role.</span>
+            <span className="italic font-light accent-word"> for a coffee chat, a collaboration, or a role.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}

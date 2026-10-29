@@ -29,7 +29,7 @@ const chapters = [
     body:  'At X360 Digital I built automated QA and data-reporting pipelines and executed hundreds of functional and regression tests. Defect rates dropped 31%, but the lesson that stuck was different: when the metric is visible, the team starts owning it. Visibility is leverage.',
   },
   {
-    year:  '2021',
+    year:  '2020',
     title: 'Two consultant hats: integration and intelligence.',
     body:  'At NRI Distribution I designed integrations between the company database and customer ERPs, the unforgiving world of cross-system mapping and audit compliance. In parallel, at Bell Canada / Bell Media, I built BI infrastructure, ETL workflows, and executive reporting for a marketplace serving vendors, contractors, and internal stakeholders. Different domains, one lesson: the seams between systems are where programs live or die.',
   },
@@ -38,20 +38,15 @@ const chapters = [
     title: 'BC Hydro and enterprise delivery at utility scale.',
     body:  'As SAP Business Decision Analyst at BC Hydro, I translated complex business, operational, financial, and technology needs into structured requirements and governance artifacts, supporting SAP EAM and CCS operations, test strategies, traceability, and acceptance criteria for a Crown utility where rigor is non-negotiable.',
   },
-  /* HIDDEN (temporary) — uncomment to bring the MTU chapter back
   {
     year:  '2023',
     title: 'MTU Maintenance Canada, leading modernization in aerospace.',
     body:  'I joined MTU Maintenance Canada as Business Analyst & Project Lead, and the role became a portfolio: the Canadian workstream of a global data migration and Microsoft 365 modernization program, an enterprise LMS replacement with 160+ documented requirements, a new RPA capability on UiPath, legacy application modernization toward Kubernetes/AKS, and global SAP finance and banking coordination.',
   },
-  */
   {
     year:  'Now',
     title: 'Chestermere, Alberta, and a life built on purpose.',
-    /* HIDDEN (temporary) — the original body named the modernization work
-       (German removed permanently — she dropped it):
-       'Today I live in Chestermere, Alberta, leading enterprise modernization by day and building AI products the rest of the time. Between the two, there are cameras, canvases, animals, and long trails. The wide life and the useful one turn out to need each other.' */
-    body:  'Today I live in Chestermere, Alberta, with work that keeps me close to complex systems and a life that deliberately reaches past them. There are cameras, canvases, animals, and long roads, and time set aside for all of it. The wide life and the useful one turn out to need each other.',
+    body:  'Today I live in Chestermere, Alberta, and my focus is the AI products: Trinity Talent is live in beta, and the rest of the portfolio is progressing toward launch. Between the work, there are cameras, canvases, animals, and long trails. The wide life and the useful one turn out to need each other.',
   },
 ]
 
@@ -91,7 +86,7 @@ const WhoIAm: React.FC = () => {
     <div className="bg-canvas">
 
       {/* ─── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative border-b border-ink/10 pt-36 pb-20 overflow-hidden">
+      <section className="hero-dark relative border-b border-ink/10 pt-36 pb-20 overflow-hidden">
         <motion.div
           aria-hidden
           initial={{ opacity: 0 }}
@@ -118,7 +113,7 @@ const WhoIAm: React.FC = () => {
                 className="display-xl"
               >
                 The person behind
-                <span className="italic font-light" style={{ color: '#0f5d4a' }}> the profile.</span>
+                <span className="italic font-light accent-word"> the profile.</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
@@ -143,8 +138,8 @@ const WhoIAm: React.FC = () => {
                 alt="Portrait of Noopur Trivedi"
                 loading="eager"
                 decoding="async"
-                width={1280}
-                height={1280}
+                width={1180}
+                height={1180}
                 className="w-full h-auto block aspect-square object-cover img-zoom"
               />
             </motion.figure>

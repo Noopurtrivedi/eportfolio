@@ -1,81 +1,37 @@
-# Noopur Trivedi | Premium ePortfolio
+# Noopur Trivedi · ePortfolio
 
-A modern, high-impact personal website for a Business Analyst, AI Builder, and Entrepreneur.
+Executive profile site for Noopur Trivedi: Senior Business Analyst, Enterprise Transformation, AI Product Strategist. Live at [noopurtrivedi.com](https://noopurtrivedi.com).
 
-## 🚀 Features
+## Structure
 
-- **Premium UI/UX:** Clean, minimal, and professional design using Tailwind CSS.
-- **Dynamic Portfolio:** Filterable project showcase with detailed case study pages.
-- **Networking Hub:** Focused on converting visitors into meaningful conversations.
-- **Responsive Design:** Mobile-first approach for all screen sizes.
-- **Animated Transitions:** Subtle motion using Framer Motion.
-- **SEO Optimized:** Semantic HTML and meta tags included.
+| Route | Page |
+|---|---|
+| `/` | Profile (landing): hero, professional record, principles, experience timeline |
+| `/work` | Enterprise Work: program highlights and organizations |
+| `/ai` | AI Projects: the product portfolio, presented at capability level |
+| `/founder` | Founder Journey |
+| `/who-i-am` | Who I Am: personal timeline and pursuits |
+| `/life/*` | Photography, Art, Animal Advocacy, Adventures |
+| `/certifications` | Credentials with verification links |
+| `/contact` | Contact form and direct channels |
 
-## 🛠 Tech Stack
+Site content (products, programs, experience) lives in `src/data/projects.ts`. Every page is paginated by `src/components/PageNav.tsx`, whose `pageOrder` array defines the reading order.
 
-- **Framework:** [React (Vite)](https://vitejs.dev/)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Animations:** [Framer Motion](https://www.framer.com/motion/)
-- **Routing:** [React Router Dom](https://reactrouter.com/)
+## Stack
 
-## 📂 Project Structure
+React 18 + Vite + TypeScript, Tailwind CSS, Framer Motion, Lucide icons, React Router. Deployed on Vercel (`vercel.json` rewrites all routes to `index.html`).
 
-```text
-src/
-├── components/     # Reusable UI components (Navbar, Footer, etc.)
-├── data/           # Static data files (projects.ts)
-├── layouts/        # Page layouts
-├── pages/          # Individual page components
-├── App.tsx         # Main application component & routes
-└── main.tsx        # Entry point
-```
-
-## 🏁 Getting Started
-
-### 1. Install Dependencies
-
-Navigate to the project folder and install the required packages:
+## Develop
 
 ```bash
-cd eportfolio
 npm install
+npm run dev       # local dev server
+npm run build     # type-check + production build to dist/
+npm run preview   # serve the production build
 ```
 
-### 2. Run Locally
+## Content rules
 
-Start the development server:
-
-```bash
-npm run dev
-```
-
-The site will be available at `http://localhost:5173`.
-
-### 3. Build for Production
-
-Generate a production-ready build:
-
-```bash
-npm run build
-```
-
-The output will be in the `dist/` directory.
-
-## 🚀 Deployment
-
-### Deploy to Vercel
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run `vercel` in the project root.
-
-### Deploy to Netlify
-
-1. Install Netlify CLI: `npm i -g netlify-cli`
-2. Run `netlify deploy` or connect your GitHub repository to Netlify for automatic deployments.
-
-## 📝 Updating Content
-
-- **Projects:** Update `src/data/projects.ts` to add or modify portfolio items.
-- **About/Story:** Edit `src/pages/About.tsx`.
-- **Contact Info:** Update `src/pages/Contact.tsx` and `src/components/Footer.tsx`.
+- Facts mirror the resume. Do not add metrics, employers, or dates that are not in the source material.
+- AI products are pre-launch: one-liners and approved highlights only, no architectures or evaluation methodology.
+- The phone number is intentionally not published anywhere on the site.

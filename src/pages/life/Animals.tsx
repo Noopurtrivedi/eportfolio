@@ -41,7 +41,7 @@ const Animals: React.FC = () => {
   return (
     <div className="bg-canvas">
       {/* Header */}
-      <section className="border-b border-ink/10 pt-36 pb-16">
+      <section className="hero-dark relative overflow-hidden border-b border-ink/10 pt-36 pb-16">
         <div className="container-wide">
           <Link to="/who-i-am" className="group inline-flex items-center gap-2 text-sm text-ink/45 hover:text-accent transition-colors mb-10">
             <ArrowLeft className="w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:-translate-x-1" />
@@ -65,7 +65,7 @@ const Animals: React.FC = () => {
                 className="display-xl"
               >
                 Quietly and persistently,
-                <span className="italic font-light" style={{ color: '#0f5d4a' }}> the cause that has stayed with me longest.</span>
+                <span className="italic font-light accent-word"> the cause that has stayed with me longest.</span>
               </motion.h1>
             </div>
             <div className="lg:col-span-4">

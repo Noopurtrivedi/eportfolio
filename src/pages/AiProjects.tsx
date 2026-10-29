@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ArrowRight, Lock, Sparkles } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Lock, Sparkles } from 'lucide-react'
 import { aiProducts } from '../data/projects'
 import PageNav from '../components/PageNav'
 
@@ -13,7 +13,9 @@ const inView = (delay = 0) => ({
 })
 
 const statusTone = (status: string) =>
-  status === 'Active development' || status === 'Active venture' || status === 'Active research'
+  status === 'Live · Beta'
+    ? 'tag-gold'
+    : status === 'Active development' || status === 'Active venture' || status === 'Active research'
     ? 'tag-accent'
     : 'tag-ink'
 
@@ -25,7 +27,7 @@ const AiProjects: React.FC = () => {
     <div className="bg-canvas">
 
       {/* ─── Header ───────────────────────────────────────────────────── */}
-      <section className="relative border-b border-ink/10 pt-36 pb-16 overflow-hidden">
+      <section className="hero-dark relative border-b border-ink/10 pt-36 pb-16 overflow-hidden">
         <motion.div
           aria-hidden
           initial={{ opacity: 0 }}
@@ -50,7 +52,7 @@ const AiProjects: React.FC = () => {
             className="display-xl mb-6 max-w-4xl"
           >
             A portfolio of proprietary AI,
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> built with enterprise discipline.</span>
+            <span className="italic font-light accent-word"> built with enterprise discipline.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -123,6 +125,17 @@ const AiProjects: React.FC = () => {
                   {p.descriptor}
                 </p>
                 <p className="mt-2 text-[12px] text-accent font-semibold">{p.role}</p>
+                {p.url && (
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 inline-flex items-center gap-1.5 text-[12px] font-semibold text-accent hover:text-accent-dark w-fit"
+                  >
+                    <span className="link-underline">{p.url.replace('https://', '')}</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </a>
+                )}
                 <p className="mt-4 text-sm text-ink/65 leading-relaxed">{p.oneLiner}</p>
                 <ul className="mt-5 pt-5 border-t border-ink/8 flex flex-col gap-2">
                   {p.highlights.map((h) => (
@@ -142,9 +155,10 @@ const AiProjects: React.FC = () => {
               <Lock className="w-4 h-4 text-accent" strokeWidth={1.5} />
             </div>
             <p className="text-sm text-ink/60 leading-relaxed max-w-3xl">
-              These products are pre-launch, and I keep the architectures,
-              feature sets, and evaluation methodologies deliberately private
-              until each one goes live. If you’re an investor, collaborator, or
+              Trinity Talent is now live in public beta. The rest are
+              pre-launch, and I keep their architectures, feature sets, and
+              evaluation methodologies deliberately private until each one
+              goes live. If you’re an investor, collaborator, or
               potential partner and want the deeper story, I’m happy to walk
               through it directly.{' '}
               <Link to="/contact" className="text-accent underline">Start that conversation</Link>.
@@ -162,7 +176,7 @@ const AiProjects: React.FC = () => {
             the bet behind it.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link to="/founder" className="group btn-primary px-8 py-4 text-[13px]">
+            <Link to="/" className="group btn-primary px-8 py-4 text-[13px]">
               Read the Founder Journey
               <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
             </Link>

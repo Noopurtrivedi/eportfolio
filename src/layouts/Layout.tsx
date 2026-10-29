@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import ProfileGuide from '../components/ProfileGuide'
+import SignatureIntro from '../components/SignatureIntro'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -13,13 +15,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   // Scroll to top on every route change
   useEffect(() => {
+    if (location.hash) {
+      // Wait for the page transition to mount the target section.
+      const t = setTimeout(() => {
+        document.getElementById(location.hash.slice(1))?.scrollIntoView({ behavior: 'smooth' })
+      }, 420)
+      return () => clearTimeout(t)
+    }
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-  }, [location.pathname])
+  }, [location.pathname, location.hash])
 
   return (
     <div className="flex flex-col min-h-screen">
+      <SignatureIntro />
       <Navbar />
-      <main className="flex-grow pt-16">
+      <main className="flex-grow">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={location.pathname}
@@ -33,6 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </AnimatePresence>
       </main>
       <Footer />
+      <ProfileGuide />
     </div>
   )
 }

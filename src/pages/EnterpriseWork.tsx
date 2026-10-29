@@ -17,7 +17,7 @@ const EnterpriseWork: React.FC = () => {
     <div className="bg-canvas">
 
       {/* ─── Header ───────────────────────────────────────────────────── */}
-      <section className="relative border-b border-ink/10 pt-36 pb-16 overflow-hidden">
+      <section className="hero-dark relative border-b border-ink/10 pt-36 pb-16 overflow-hidden">
         <motion.div
           aria-hidden
           initial={{ opacity: 0 }}
@@ -42,7 +42,7 @@ const EnterpriseWork: React.FC = () => {
             className="display-xl mb-6 max-w-4xl"
           >
             Programs led and delivered
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> inside regulated, high-visibility environments.</span>
+            <span className="italic font-light accent-word"> inside regulated, high-visibility environments.</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
@@ -52,7 +52,7 @@ const EnterpriseWork: React.FC = () => {
           >
             Modernization, migration, governance, and analytics programs across
             utilities, aerospace, telecommunications, logistics, and oil &amp;
-            gas: 13+ years of enterprise transformation, delivered end to end.
+            gas: 14+ years of enterprise transformation, delivered end to end.
           </motion.p>
         </div>
       </section>
