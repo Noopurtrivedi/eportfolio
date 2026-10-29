@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Lock, Sparkles } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, Lock, Sparkles } from 'lucide-react'
 import PageNav from '../components/PageNav'
 
 const inView = (delay = 0) => ({
@@ -14,8 +14,8 @@ const inView = (delay = 0) => ({
 const chapters = [
   {
     tag:   'The origin',
-    title: 'Thirteen years inside the enterprise came first.',
-    body:  'Before I built anything of my own, I spent thirteen-plus years inside regulated enterprises: oil sands, utilities, aerospace, telecom, logistics. I learned how systems are actually delivered, how governance holds a global organization together, and how a single missed spec ripples for months. That apprenticeship is the foundation the product practice stands on.',
+    title: 'More than a decade inside the enterprise came first.',
+    body:  'Before I built anything of my own, I spent more than a decade inside regulated enterprises: oil sands, utilities, aerospace, telecom, logistics. I learned how systems are actually delivered, how governance holds a global organization together, and how a single missed spec ripples for months. That apprenticeship is the foundation the product practice stands on.',
   },
   {
     tag:   'The conviction',
@@ -67,7 +67,7 @@ const FounderJourney: React.FC = () => {
     <div className="bg-canvas">
 
       {/* ─── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative border-b border-ink/10 pt-36 pb-20 overflow-hidden">
+      <section className="hero-dark relative border-b border-ink/10 pt-36 pb-20 overflow-hidden">
         <motion.div
           aria-hidden
           initial={{ opacity: 0 }}
@@ -94,7 +94,7 @@ const FounderJourney: React.FC = () => {
                 className="display-xl"
               >
                 An operator by day,
-                <span className="italic font-light" style={{ color: '#0f5d4a' }}> a builder the rest of the time.</span>
+                <span className="italic font-light accent-word"> a builder the rest of the time.</span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
@@ -102,10 +102,11 @@ const FounderJourney: React.FC = () => {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="lead mt-8 max-w-2xl"
               >
-                The professional profile tells you what I deliver for
-                enterprises. This page is the other thread: why I build
-                proprietary AI products, the venture I co-founded, and the bet
-                that ties it all together.
+                Fourteen years of enterprise delivery taught me how systems
+                earn trust. This is what I build with it: proprietary AI
+                products, the venture I co-founded, and the bet that ties them
+                together. The full delivery record lives on my{' '}
+                <Link to="/profile" className="text-accent underline">profile</Link>.
               </motion.p>
             </div>
             <motion.figure
@@ -220,12 +221,10 @@ const FounderJourney: React.FC = () => {
                 The public version. The full architectures stay private until
                 each product goes live, by design.
               </p>
-              {/* HIDDEN (temporary) — restore with the /ai page
               <Link to="/ai" className="group mt-8 btn-primary px-7 py-3.5 text-[13px] inline-flex">
                 See the AI projects
                 <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
               </Link>
-              */}
             </div>
             <div className="lg:col-span-7 flex flex-col gap-4">
               {[
@@ -235,9 +234,16 @@ const FounderJourney: React.FC = () => {
                   desc:  'A verification layer that makes AI models measurably more reliable and faithful, and a governance layer that decides how an AI application should respond before it answers. Two halves of one thesis: AI must be verified before it is trusted.',
                 },
                 {
-                  name:  'Artha · Trinity Talent · OwlNest',
+                  name:  'Trinity Talent',
+                  stage: 'Live · Beta',
+                  desc:  'An AI career-intelligence platform connecting talent, preparation, and opportunity, now open in public beta.',
+                  url:   'https://trinitytalent.ca',
+                },
+                {
+                  name:  'Artha · OwlNest',
                   stage: 'Platforms in motion',
-                  desc:  'A local-first intelligent work platform, an AI career-intelligence platform, and a multi-tenant AI agent marketplace, each at a different stage between architecture and active development.',
+                  desc:  'A local-first intelligent work platform and a multi-tenant AI agent marketplace, each at a different stage between architecture and active development.',
+                  url:   'https://artha.space',
                 },
                 {
                   name:  'CreationX',
@@ -255,6 +261,17 @@ const FounderJourney: React.FC = () => {
                     <span className="tag-accent flex-shrink-0">{b.stage}</span>
                   </div>
                   <p className="text-sm text-ink/65 leading-relaxed">{b.desc}</p>
+                  {'url' in b && b.url && (
+                    <a
+                      href={b.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-1.5 text-[12px] font-semibold text-accent hover:text-accent-dark"
+                    >
+                      <span className="link-underline">{b.url.replace('https://', '')}</span>
+                      <ArrowUpRight className="w-3 h-3" />
+                    </a>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -270,8 +287,9 @@ const FounderJourney: React.FC = () => {
               <Lock className="w-4 h-4 text-accent" strokeWidth={1.5} />
             </div>
             <p className="text-sm text-ink/60 leading-relaxed">
-              Everything here is pre-launch, and the deeper architecture stays
-              private until each product is live. If you're an investor,
+              Trinity Talent is live in public beta. Everything else is
+              pre-launch, and the deeper architecture stays private until each
+              product is live. If you're an investor,
               collaborator, or potential partner, the full walkthrough is a
               conversation away.
             </p>
@@ -292,7 +310,7 @@ const FounderJourney: React.FC = () => {
         </div>
       </section>
 
-      <PageNav current="/founder" />
+      <PageNav current="/" />
     </div>
   )
 }

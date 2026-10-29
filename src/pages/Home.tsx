@@ -3,10 +3,12 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import {
   ArrowRight, ArrowUpRight, Linkedin, Mail, MapPin, FileText, Coffee,
-  Compass, Layers, Anchor, Sparkles, Briefcase, Rocket, User,
+  Compass, Layers, Anchor, Sparkles, Briefcase, Rocket, User, Check,
 } from 'lucide-react'
-import { workExperience, earlierRoles, education, skills } from '../data/projects'
+import { workExperience, earlierRoles, education, skills, aiProducts } from '../data/projects'
 import PageNav from '../components/PageNav'
+import CountUp from '../components/CountUp'
+import DeliveryArc from '../components/DeliveryArc'
 
 const inView = (delay = 0) => ({
   initial:     { opacity: 0, y: 20 },
@@ -20,65 +22,127 @@ const Home: React.FC = () => {
     <div className="bg-canvas">
 
       {/* ─── Hero ─────────────────────────────────────────────────────── */}
-      <section className="relative border-b border-ink/10 pt-36 pb-20 overflow-hidden">
-        <motion.div
-          aria-hidden
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.4, ease: 'easeOut' }}
-          className="pointer-events-none absolute -top-32 -right-24 w-[480px] h-[480px] rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(closest-side, rgba(15,93,74,0.10), transparent 70%)' }}
-        />
+      <section className="hero-dark relative border-b border-ink/10 pt-36 lg:pt-40 pb-16 overflow-hidden">
         <div className="container-wide relative">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="eyebrow mb-5"
-          >
-            Noopur Trivedi, Senior Business Analyst, Enterprise Transformation, AI Product Strategist
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 26 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-            className="display-xl max-w-4xl"
-          >
-            I lead enterprise modernization
-            <span className="italic font-light" style={{ color: '#0f5d4a' }}> from strategy through stabilization.</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="lead mt-8 max-w-2xl"
-          >
-            Senior business analyst and enterprise transformation professional
-            with 13+ years delivering technology, data, and
-            digital-modernization initiatives across utilities, aerospace,
-            telecommunications, logistics, and oil &amp; gas. Trusted with the
-            programs where the audit trail matters as much as the outcome.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-9 flex flex-wrap items-center gap-4"
-          >
-            <Link to="/contact" className="group btn-primary px-7 py-3.5 text-[13px]">
-              <Coffee className="mr-2 w-4 h-4" />
-              Schedule a Coffee Chat
-              <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
-            </Link>
-            {/* HIDDEN (temporary) — restore with the /work page
-            <Link to="/work" className="btn-outline px-7 py-3.5 text-[13px]">
-              See the Enterprise Work
-            </Link>
-            */}
-            <span className="inline-flex items-center gap-2 text-[13px] text-ink/50">
-              <MapPin className="w-3.5 h-3.5" /> Chestermere, Canada
-            </span>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
+
+            {/* Message */}
+            <div className="lg:col-span-7">
+              <motion.p
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] pl-2 pr-4 py-1.5 text-[12px] text-[#ece7da]/75 mb-7"
+              >
+                <span className="relative flex w-2 h-2 ml-1">
+                  <span className="absolute inset-0 rounded-full bg-[#3fbf8f] animate-ping opacity-60" />
+                  <span className="relative w-2 h-2 rounded-full bg-[#3fbf8f]" />
+                </span>
+                Open to senior, lead &amp; product-strategy roles
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+                className="eyebrow mb-5"
+              >
+                Enterprise Transformation · AI Product Strategy
+              </motion.p>
+              <motion.h1
+                initial={{ opacity: 0, y: 26 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.85, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="font-serif font-medium leading-[1.02] tracking-[-0.02em]"
+                style={{ fontSize: 'clamp(2.75rem, 6.2vw, 5.4rem)' }}
+              >
+                I lead enterprise modernization
+                <span className="italic font-light accent-word"> from strategy through stabilization.</span>
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+                className="lead mt-8 max-w-xl"
+              >
+                Senior business analyst and enterprise transformation professional
+                with 14+ years delivering technology, data, and
+                digital-modernization initiatives across utilities, aerospace,
+                telecommunications, logistics, and oil &amp; gas. Trusted with the
+                programs where the audit trail matters as much as the outcome.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
+                className="mt-10 flex flex-wrap items-center gap-3"
+              >
+                <Link to="/contact" className="group btn-primary rounded-full px-7 py-3.5 text-[13px]">
+                  <Coffee className="mr-2 w-4 h-4" />
+                  Schedule a Coffee Chat
+                  <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
+                </Link>
+                <Link to="/work" className="btn-outline rounded-full px-7 py-3.5 text-[13px]">
+                  See the Enterprise Work
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+                className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[12px] text-ink/50"
+              >
+                <span className="inline-flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5" /> Chestermere, Canada</span>
+                <span className="inline-flex items-center gap-1.5"><Check className="w-3.5 h-3.5" /> Canadian Citizen</span>
+                <span className="inline-flex items-center gap-1.5"><Check className="w-3.5 h-3.5" /> CSM · ISTQB CTFL</span>
+              </motion.div>
+            </div>
+
+            {/* Portrait with floating proof chips */}
+            <div className="lg:col-span-5">
+              <motion.figure
+                initial={{ opacity: 0, y: 30, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+                className="relative mx-auto max-w-[420px] lg:ml-auto"
+              >
+                <div aria-hidden className="absolute -inset-3 rounded-[36px] border border-[#c8a558]/25" />
+                <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-[#121a16]">
+                  <img
+                    src="/noopur.jpg"
+                    alt="Portrait of Noopur Trivedi"
+                    loading="eager"
+                    decoding="async"
+                    width={848}
+                    height={1264}
+                    className="w-full h-auto block aspect-[4/5] object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b100e]/70 via-transparent to-transparent" />
+                  <figcaption className="absolute bottom-0 left-0 right-0 p-5">
+                    <p className="font-serif text-lg text-[#f5f1e8] leading-tight">Noopur Trivedi</p>
+                    <p className="text-[10px] uppercase tracking-[0.22em] text-[#ece7da]/60 font-semibold mt-1">
+                      Transformation · AI Product Strategy
+                    </p>
+                  </figcaption>
+                </div>
+
+              </motion.figure>
+            </div>
+          </div>
+
+          {/* Proof in numbers */}
+          <dl className="mt-20 pt-10 border-t border-ink/10 grid grid-cols-2 lg:grid-cols-4 gap-y-8">
+            {[
+              { n: 14,                suffix: '+', label: 'Years of enterprise delivery' },
+              { n: 5,                 suffix: '',  label: 'Industries served' },
+              { n: 160,               suffix: '+', label: 'Requirements on a single program' },
+              { n: aiProducts.length, suffix: '',  label: 'AI & venture products' },
+            ].map((stat, i) => (
+              <div key={stat.label} className={`px-0 lg:px-8 ${i % 2 === 1 ? 'pl-6 border-l border-ink/10' : ''} ${i === 2 ? 'lg:pl-8 lg:border-l lg:border-ink/10' : ''} ${i === 0 ? 'lg:pl-0' : ''}`}>
+                <dd><CountUp to={stat.n} suffix={stat.suffix} className="block font-serif text-4xl font-light text-ink tracking-tight" /></dd>
+                <dt className="mt-1.5 text-[12px] uppercase tracking-[0.16em] text-ink/50">{stat.label}</dt>
+              </div>
+            ))}
+          </dl>
         </div>
       </section>
 
@@ -97,28 +161,22 @@ const Home: React.FC = () => {
                   mistakes are visible.
                 </h2>
                 <p>
-                  As Business Analyst &amp; Project Lead at
-                  <strong className="text-ink"> MTU Maintenance Canada</strong>,
-                  a global aerospace MRO, I lead enterprise modernization across
-                  multiple concurrent, high-visibility initiatives: the Canadian
-                  workstream of a global data migration and Microsoft 365
-                  {/* HIDDEN (temporary): the requirement count — original read
-                      "an enterprise LMS replacement with 160+ documented requirements," */}
-                  modernization program, an enterprise LMS replacement, the
-                  Canadian RPA capability on UiPath,
-                  legacy application modernization toward Kubernetes/AKS-aligned
-                  solutions, and global SAP finance, banking, and access
-                  coordination.
+                  I lead modernization programs from discovery through
+                  stabilization, often several at once: enterprise data
+                  migration and Microsoft 365 modernization, system
+                  replacements defined through 160+ documented requirements,
+                  robotic process automation, legacy applications moved toward
+                  cloud-native platforms, and SAP finance and access work
+                  coordinated across global teams.
                 </p>
                 <p className="mt-4">
-                  Before that: SAP EAM and CCS delivery at
-                  <strong className="text-ink"> BC Hydro</strong>, business
-                  intelligence for a <strong className="text-ink">Bell Media</strong> marketplace,
-                  ERP integrations at NRI Distribution, quality engineering at
-                  X360 Digital, and five years of planning and cost analysis at
-                  Syncrude. Proven across SAP, Microsoft 365, Azure, data
-                  migration, business intelligence, application modernization,
-                  automation, and organizational change.
+                  The foundation is broad: SAP delivery for a utility, business
+                  intelligence and ETL for a media marketplace, ERP
+                  integrations, quality engineering, and five years of planning
+                  and cost analysis in oil sands operations. The toolkit spans
+                  SAP, Microsoft 365, Azure, data migration, business
+                  intelligence, application modernization, automation, and
+                  organizational change.
                 </p>
               </div>
 
@@ -149,9 +207,8 @@ const Home: React.FC = () => {
                   practice designing proprietary AI in model verification,
                   decision governance, and AI orchestration. The full story
                   lives on its own pages: the{' '}
-                  {/* HIDDEN (temporary): the AI projects link sat here —
-                      the <Link to="/ai" className="text-accent underline">AI projects</Link>, */}
-                  <Link to="/founder" className="text-accent underline">founder journey</Link>,
+                  <Link to="/ai" className="text-accent underline">AI projects</Link>, the{' '}
+                  <Link to="/" className="text-accent underline">founder journey</Link>,
                   and <Link to="/who-i-am" className="text-accent underline">who I am</Link>{' '}
                   when I'm not working.
                 </p>
@@ -160,38 +217,13 @@ const Home: React.FC = () => {
 
             {/* Portrait + at-a-glance */}
             <aside className="lg:col-span-5">
-              <motion.figure
-                initial={{ opacity: 0, y: 28, scale: 0.98 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="group mb-6 relative overflow-hidden border border-ink/10 bg-sand"
-              >
-                <img
-                  src="/noopur.jpg"
-                  alt="Portrait of Noopur Trivedi"
-                  loading="eager"
-                  decoding="async"
-                  width={848}
-                  height={1264}
-                  className="w-full h-auto block aspect-[2/3] object-cover img-zoom"
-                />
-                <figcaption className="absolute bottom-0 left-0 right-0 px-5 py-4 bg-gradient-to-t from-canvas/95 via-canvas/70 to-transparent">
-                  <p className="font-serif text-sm font-medium text-ink leading-tight">
-                    Noopur Trivedi
-                  </p>
-                  <p className="text-[10px] uppercase tracking-[0.22em] text-ink/55 font-semibold mt-0.5">
-                    Enterprise Transformation · AI Product Strategist
-                  </p>
-                </figcaption>
-              </motion.figure>
-
               <div className="card p-8 sticky top-24">
                 <p className="eyebrow mb-5">At a glance</p>
                 <dl className="flex flex-col gap-4 text-sm">
                   {[
-                    { k: 'Current role', v: 'Business Analyst & Project Lead · MTU Maintenance Canada' },
-                    { k: 'Experience',   v: '13+ years · Enterprise transformation & delivery' },
+                    { k: 'Focus',        v: 'Building proprietary AI products · Trinity Talent in beta' },
+                    { k: 'Most recent',  v: 'Business Analyst & Project Lead · MTU Maintenance Canada, 2023–2026' },
+                    { k: 'Experience',   v: '14+ years · Enterprise transformation & delivery' },
                     { k: 'Industries',   v: 'Utilities · Aerospace · Telecom · Logistics · Oil & Gas' },
                     { k: 'Specialty',    v: 'SAP · M365 / Azure · Data migration · BI · RPA · LLM evaluation' },
                     { k: 'Building',     v: 'Proprietary AI in verification, governance, and orchestration' },
@@ -228,7 +260,6 @@ const Home: React.FC = () => {
                   >
                     <Linkedin className="mr-2 w-3.5 h-3.5 transition-transform duration-300 group-hover:scale-110" /> LinkedIn
                   </a>
-                  {/* PLACEHOLDER: drop the current resume at public/Noopur-Trivedi-Resume.pdf */}
                   <a
                     href="/Noopur-Trivedi-Resume.pdf"
                     target="_blank"
@@ -261,9 +292,7 @@ const Home: React.FC = () => {
               {
                 icon: Layers,
                 title: 'Requirements and governance as craft.',
-                /* HIDDEN (temporary): the requirement count — original ended
-                   "...from an LMS program with 160+ documented requirements to global SAP coordination." */
-                desc: 'Structured requirements, traceability, governance frameworks, and acceptance criteria that teams can build against, from enterprise LMS requirements to global SAP coordination.',
+                desc: 'Structured requirements, traceability, governance frameworks, and acceptance criteria that teams can build against, from an LMS program with 160+ documented requirements to global SAP coordination.',
               },
               {
                 icon: Compass,
@@ -291,6 +320,8 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <DeliveryArc />
 
       {/* ─── How I work — principles ─────────────────────────────────── */}
       <section className="border-b border-ink/10">
@@ -346,7 +377,7 @@ const Home: React.FC = () => {
         <div className="container-wide py-20">
           <div className="mb-14 max-w-2xl">
             <p className="eyebrow mb-3">Experience</p>
-            <h2 className="display-lg">Thirteen-plus years, five industries.</h2>
+            <h2 className="display-lg">Fourteen-plus years, five industries.</h2>
             <p className="lead mt-5">
               A progression through technical analysis, planning, quality,
               integration, business intelligence, and senior business analysis,
@@ -411,7 +442,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* ─── Skills ──────────────────────────────────────────────────── */}
-      <section className="border-b border-ink/10">
+      <section id="skills" className="border-b border-ink/10 scroll-mt-24">
         <div className="container-wide py-20">
           <div className="mb-12 max-w-2xl">
             <p className="eyebrow mb-3">Skills</p>
@@ -577,14 +608,11 @@ const Home: React.FC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 border border-ink/10 bg-surface divide-y sm:divide-y-0 sm:divide-x divide-ink/10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 border border-ink/10 bg-surface divide-x divide-y lg:divide-y-0 divide-ink/10">
             {[
-              /* HIDDEN (temporary) — restore these two tiles and switch the grid
-                 back to "grid-cols-2 lg:grid-cols-4 ... divide-x divide-y lg:divide-y-0"
               { to: '/work',      label: 'Enterprise Work',  sub: 'Programs led and delivered', icon: Briefcase },
               { to: '/ai',        label: 'AI Projects',      sub: 'The product portfolio',      icon: Sparkles },
-              */
-              { to: '/founder',   label: 'Founder Journey',  sub: 'Why I build',                icon: Rocket },
+              { to: '/',          label: 'Founder Journey',  sub: 'Why I build',                icon: Rocket },
               { to: '/who-i-am',  label: 'Who I Am',         sub: 'The person behind the work', icon: User },
             ].map((tile, i) => (
               <Link
@@ -610,28 +638,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ─── CTA ─────────────────────────────────────────────────────── */}
-      <section className="container-wide py-24 text-center">
-        <motion.h2 {...inView(0)} className="display-md mb-3">The best conversations start over coffee.</motion.h2>
-        <motion.p {...inView(0.05)} className="text-ink/55 text-sm mb-8 max-w-md mx-auto">
-          Hiring conversations, collaborations, investor and partner intros,
-          advisory, or simply comparing notes on where enterprise and AI meet.
-        </motion.p>
-        <motion.div {...inView(0.1)} className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link to="/contact" className="group btn-primary px-8 py-4 text-[13px]">
-            <Coffee className="mr-2 w-4 h-4" />
-            Schedule a Coffee Chat
-            <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 ease-out-soft group-hover:translate-x-1" />
-          </Link>
-          {/* HIDDEN (temporary) — restore with the /work page:
-              <Link to="/work" className="btn-outline px-8 py-4 text-[13px]">See the Work</Link> */}
-          <Link to="/who-i-am" className="btn-outline px-8 py-4 text-[13px]">
-            More About Me
-          </Link>
-        </motion.div>
-      </section>
-
-      <PageNav current="/" />
+      <PageNav current="/profile" />
     </div>
   )
 }
