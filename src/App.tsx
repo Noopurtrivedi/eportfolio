@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import Layout from './layouts/Layout'
 import Home from './pages/Home'
 import EnterpriseWork from './pages/EnterpriseWork'
@@ -11,8 +11,13 @@ import Photography from './pages/life/Photography'
 import Art from './pages/life/Art'
 import Animals from './pages/life/Animals'
 import Adventures from './pages/life/Adventures'
+import Admin from './pages/Admin'
 
 function App() {
+  const { pathname } = useLocation()
+  // Private admin page: full screen, outside the public layout (no navbar, footer or intro), not linked anywhere.
+  if (pathname === '/admin' || pathname === '/admin/') return <Admin />
+
   return (
     <Layout>
       <Routes>
